@@ -1,0 +1,53 @@
+{
+  "demo": true,
+  "theme": "modern",
+  "lang": "en",
+  "title": { "bn": "তিয়াসা ও অরিত্রর বিয়ে", "en": "Tiyasha & Aritra" },
+  "eyebrow": { "bn": "আমরা বিয়ে করছি", "en": "We're getting married" },
+  "names": [ { "bn": "তিয়াসা", "en": "Tiyasha" }, { "bn": "অরিত্র", "en": "Aritra" } ],
+  "joiner": { "bn": "ও", "en": "&" },
+  "ornament": { "rings": [ { "n": 6, "r": 18, "len": 30, "w": 10 }, { "n": 12, "r": 52, "len": 18, "w": 6, "circle": false } ] },
+  "petalColors": ["#C9D6C4", "#E6E1D6", "#9DB39F"],
+  "petalCount": 22,
+  "message": {
+    "bn": "সাত বছর, দুটো শহর আর একটা ভীষণ ধৈর্যশীল গ্রুপ চ্যাটের পর অবশেষে আমরা বিয়ে করছি। তোমাদের ছাড়া এই দিনটা অসম্পূর্ণ, তাই চলে এসো।",
+    "en": "Seven years, two cities and one very patient group chat later, we're finally getting married. It won't feel like our day without you, so come celebrate with us."
+  },
+  "hosts": { "bn": "তিয়াসা ও অরিত্র, আর আমাদের পরিবার", "en": "Tiyasha, Aritra and our families" },
+  "events": [
+    {
+      "id": "sangeet", "name": { "bn": "সঙ্গীত সন্ধ্যা", "en": "Sangeet Night" },
+      "note": { "bn": "গান, নাচ আর অনেকটা আড্ডা", "en": "Music, dancing and a lot of adda" },
+      "date": "2026-12-11", "time": "19:00", "hours": 4,
+      "venue": {
+        "name": { "bn": "দ্য রুফ, নিউ টাউন", "en": "The Roof, New Town" },
+        "address": { "bn": "অ্যাকশন এরিয়া ২, নিউ টাউন, কলকাতা ৭০০১৬১", "en": "Action Area II, New Town, Kolkata 700161" },
+        "mapQuery": "Action Area II, New Town, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "ইকো পার্ক", "en": "Eco Park" }, "x": -0.66, "y": -0.6 },
+          { "name": { "bn": "বিশ্ব বাংলা গেট", "en": "Biswa Bangla Gate" }, "x": 0.64, "y": 0.6 }
+        ],
+        "water": true
+      }
+    },
+    {
+      "id": "wedding", "name": { "bn": "বিয়ে", "en": "The Wedding" },
+      "note": { "bn": "লগ্ন রাত ৯টা ১৫ মিনিট", "en": "Lagna at 9:15 pm, dinner from 8" },
+      "date": "2026-12-12", "time": "19:30", "hours": 5,
+      "venue": {
+        "name": { "bn": "দ্য গ্লাসহাউস", "en": "The Glasshouse" },
+        "address": { "bn": "মেজর আর্টেরিয়াল রোড, নিউ টাউন, কলকাতা ৭০০১৫৬", "en": "Major Arterial Road, New Town, Kolkata 700156" },
+        "mapQuery": "Major Arterial Road, New Town, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "সিটি সেন্টার ২", "en": "City Centre 2" }, "x": -0.66, "y": 0.58 },
+          { "name": { "bn": "চিনার পার্ক", "en": "Chinar Park" }, "x": 0.62, "y": -0.6 }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    { "title": { "bn": "পোশাক", "en": "Dress code" }, "text": { "bn": "সঙ্গীতে প্যাস্টেল, বিয়েতে যা খুশি উৎসবের।", "en": "Pastels for the sangeet. Anything festive for the wedding." } },
+    { "title": { "bn": "যাতায়াত", "en": "Getting there" }, "text": { "bn": "দুটো জায়গাতেই পার্কিং আছে। বিমানবন্দর থেকে ২০ মিনিট।", "en": "Parking at both venues. 20 minutes from the airport." } },
+    { "title": { "bn": "উপহার", "en": "Gifts" }, "text": { "bn": "তোমরা আসছ, এটাই সবচেয়ে বড় উপহার।", "en": "Your presence is the gift. Truly." } }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "demo": true,
+  "theme": "traditional",
+  "lang": "bn",
+  "title": { "bn": "দেবলীনা ও ঋতমের শুভ বিবাহ", "en": "Debolina & Ritam's Wedding" },
+  "invocation": { "bn": "শ্রী শ্রী প্রজাপতয়ে নমঃ", "en": "Sri Sri Prajapataye Namah" },
+  "eyebrow": { "bn": "শুভ বিবাহ", "en": "Shubho Bibaho" },
+  "names": [ { "bn": "দেবলীনা", "en": "Debolina" }, { "bn": "ঋতম", "en": "Ritam" } ],
+  "joiner": { "bn": "ও", "en": "&" },
+  "petalColors": ["#E8A33D", "#F2C14E", "#C2412D", "#F6E1B5"],
+  "defaultMode": "both",
+  "modes": {
+    "both": {
+      "label": { "bn": "দুই পরিবার", "en": "Both families" },
+      "events": ["gayeholud", "biye", "boubhat"],
+      "message": {
+        "bn": "সবিনয় নিবেদন, আগামী ১৭ অগ্রহায়ণ ১৪৩৩, বৃহস্পতিবার, কল্যাণীয়া দেবলীনার সহিত শ্রীমান ঋতমের শুভ বিবাহ অনুষ্ঠিত হইবে। উক্ত শুভানুষ্ঠানে আপনার সবান্ধব উপস্থিতি ও আশীর্বাদ প্রার্থনা করি।",
+        "en": "With the blessings of our elders, we joyfully invite you and your family to the wedding of Debolina and Ritam on Thursday, 3 December 2026. Your presence and blessings would mean the world to us."
+      },
+      "hosts": { "bn": "চট্টোপাধ্যায় ও বন্দ্যোপাধ্যায় পরিবার", "en": "The Chattopadhyay and Bandyopadhyay families" },
+      "kids": { "bn": "দিদির বিয়েতে আসা চাই কিন্তু! — বুবাই, তিতির, পাপান", "en": "You simply have to come to Didi's wedding! — Bubai, Titir and Papan" }
+    },
+    "biye": {
+      "label": { "bn": "কনের বাড়ির লিংক", "en": "Bride's side link" },
+      "events": ["gayeholud", "biye"],
+      "message": {
+        "bn": "সবিনয় নিবেদন, আগামী ১৭ অগ্রহায়ণ ১৪৩৩, বৃহস্পতিবার, আমাদের একমাত্র কন্যা কল্যাণীয়া দেবলীনার সহিত শ্রীমান ঋতমের শুভ বিবাহ অনুষ্ঠিত হইবে। উক্ত শুভানুষ্ঠানে আপনার সবান্ধব উপস্থিতি ও আশীর্বাদ প্রার্থনা করি।",
+        "en": "We joyfully invite you and your family to the wedding of our only daughter Debolina with Ritam on Thursday, 3 December 2026. Please come and bless the couple."
+      },
+      "hosts": { "bn": "শ্রী প্রবীর ও শ্রীমতী মৌসুমী চট্টোপাধ্যায়", "en": "Prabir & Mousumi Chattopadhyay" },
+      "kids": { "bn": "দিদির বিয়েতে আসা চাই কিন্তু! — বুবাই, তিতির, পাপান", "en": "You simply have to come to Didi's wedding! — Bubai, Titir and Papan" }
+    },
+    "boubhat": {
+      "label": { "bn": "বরের বাড়ির লিংক", "en": "Groom's side link" },
+      "events": ["boubhat"],
+      "message": {
+        "bn": "সবিনয় নিবেদন, আমাদের পুত্র শ্রীমান ঋতমের সহিত কল্যাণীয়া দেবলীনার শুভ বিবাহ উপলক্ষে আগামী ১৯ অগ্রহায়ণ ১৪৩৩, শনিবার, বৌভাত ও প্রীতিভোজের আয়োজন করা হইয়াছে। নবদম্পতিকে আশীর্বাদ করিতে আপনার সবান্ধব উপস্থিতি প্রার্থনা করি।",
+        "en": "To celebrate the marriage of our son Ritam with Debolina, we warmly invite you and your family to the Bou Bhat and reception dinner on Saturday, 5 December 2026."
+      },
+      "hosts": { "bn": "শ্রী অশোক ও শ্রীমতী সুতপা বন্দ্যোপাধ্যায়", "en": "Ashok & Sutapa Bandyopadhyay" },
+      "kids": { "bn": "নতুন বৌদিকে দেখতে আসবেন কিন্তু! — রিমি, গোগোল", "en": "Come and meet our new Boudi! — Rimi and Gogol" }
+    }
+  },
+  "events": [
+    {
+      "id": "gayeholud", "name": { "bn": "গায়ে হলুদ", "en": "Gaye Holud" },
+      "note": { "bn": "কনের বাড়িতে, ঘরোয়া আয়োজন", "en": "An intimate morning at the bride's home" },
+      "date": "2026-12-03", "time": "09:00", "hours": 3,
+      "bengaliDate": { "bn": "১৭ অগ্রহায়ণ ১৪৩৩", "en": "17 Agrahayan 1433" },
+      "venue": {
+        "name": { "bn": "কনের বাড়ি", "en": "The bride's home" },
+        "address": { "bn": "৪২/১ হরিশ মুখার্জি রোড, ভবানীপুর, কলকাতা ৭০০০২৫", "en": "42/1 Harish Mukherjee Road, Bhowanipore, Kolkata 700025" },
+        "mapQuery": "Harish Mukherjee Road, Bhowanipore, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "যতীন দাস পার্ক মেট্রো", "en": "Jatin Das Park Metro" }, "x": -0.7, "y": 0.55 },
+          { "name": { "bn": "হাজরা মোড়", "en": "Hazra More" }, "x": 0.7, "y": -0.6 },
+          { "name": { "bn": "পূর্ণ সিনেমা", "en": "Purna Cinema" }, "x": 0.6, "y": 0.62 }
+        ]
+      }
+    },
+    {
+      "id": "biye", "name": { "bn": "শুভ বিবাহ", "en": "The Wedding" },
+      "note": { "bn": "শুভ লগ্ন: রাত ৮টা ৪২ মিনিট", "en": "Auspicious lagna: 8:42 pm" },
+      "date": "2026-12-03", "time": "19:00", "hours": 5,
+      "bengaliDate": { "bn": "১৭ অগ্রহায়ণ ১৪৩৩", "en": "17 Agrahayan 1433" },
+      "venue": {
+        "name": { "bn": "নবরত্ন ব্যাঙ্কোয়েট", "en": "Nabaratna Banquet" },
+        "address": { "bn": "সিএফ ব্লক, সেক্টর ১, সল্টলেক, কলকাতা ৭০০০৬৪", "en": "CF Block, Sector 1, Salt Lake, Kolkata 700064" },
+        "mapQuery": "CF Block, Salt Lake, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "সিটি সেন্টার ১", "en": "City Centre 1" }, "x": -0.68, "y": -0.6 },
+          { "name": { "bn": "করুণাময়ী বাসস্ট্যান্ড", "en": "Karunamoyee Bus Stand" }, "x": 0.66, "y": 0.6 },
+          { "name": { "bn": "সেন্ট্রাল পার্ক", "en": "Central Park" }, "x": 0.62, "y": -0.55 }
+        ]
+      }
+    },
+    {
+      "id": "boubhat", "name": { "bn": "বৌভাত ও প্রীতিভোজ", "en": "Bou Bhat & Reception" },
+      "note": { "bn": "নববধূকে বরণ ও সান্ধ্য ভোজ", "en": "Welcoming the bride, followed by dinner" },
+      "date": "2026-12-05", "time": "19:30", "hours": 4,
+      "bengaliDate": { "bn": "১৯ অগ্রহায়ণ ১৪৩৩", "en": "19 Agrahayan 1433" },
+      "venue": {
+        "name": { "bn": "শুভম ভবন", "en": "Shubham Bhawan" },
+        "address": { "bn": "১৮ জেমস লং সরণি, বেহালা, কলকাতা ৭০০০৩৪", "en": "18 James Long Sarani, Behala, Kolkata 700034" },
+        "mapQuery": "James Long Sarani, Behala, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "বেহালা চৌরাস্তা", "en": "Behala Chowrasta" }, "x": -0.66, "y": 0.58 },
+          { "name": { "bn": "সখেরবাজার", "en": "Sakherbazar" }, "x": 0.66, "y": -0.58 },
+          { "name": { "bn": "ঠাকুরপুকুর মোড়", "en": "Thakurpukur More" }, "x": -0.6, "y": -0.6 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "demo": true,
+  "theme": "annaprashan",
+  "lang": "bn",
+  "title": { "bn": "অহনার মুখেভাত", "en": "Ahana's Annaprashan" },
+  "eyebrow": { "bn": "মুখেভাতের নিমন্ত্রণ", "en": "Annaprashan · first rice" },
+  "names": [ { "bn": "অহনা", "en": "Ahana" } ],
+  "ornament": { "rings": [ { "n": 5, "r": 18, "len": 28, "w": 14 }, { "n": 10, "r": 50, "len": 16, "w": 8, "dot": true } ] },
+  "petalColors": ["#F4B6C2", "#F7D58B", "#FFFFFF", "#E98AA6"],
+  "message": {
+    "bn": "আমাদের ছোট্ট অহনা এবার প্রথম ভাত মুখে দেবে! মিষ্টিমুখের এই দিনে ওকে আশীর্বাদ করতে আপনাকে সপরিবারে আমন্ত্রণ জানাই।",
+    "en": "Our little Ahana is having her very first taste of rice! Please join us with your family to bless her on her Annaprashan."
+  },
+  "hosts": { "bn": "অনির্বাণ ও প্রিয়াঙ্কা সেনগুপ্ত", "en": "Anirban & Priyanka Sengupta" },
+  "kids": { "bn": "আমার মুখেভাতে আসবে তো? — অহনা (মিষ্টি)", "en": "You're coming to my first rice, right? — Ahana (Mishti)" },
+  "events": [
+    {
+      "id": "mukhebhaat", "name": { "bn": "অন্নপ্রাশন", "en": "Annaprashan" },
+      "note": { "bn": "পুজো সকাল ১০টায়, মধ্যাহ্নভোজ দুপুর ১টা থেকে", "en": "Puja at 10 am, lunch from 1 pm" },
+      "date": "2026-11-22", "time": "10:00", "hours": 6,
+      "bengaliDate": { "bn": "৬ অগ্রহায়ণ ১৪৩৩", "en": "6 Agrahayan 1433" },
+      "venue": {
+        "name": { "bn": "আনন্দ ভবন", "en": "Ananda Bhawan" },
+        "address": { "bn": "৭৭ নাগেরবাজার রোড, দমদম, কলকাতা ৭০০০২৮", "en": "77 Nagerbazar Road, Dum Dum, Kolkata 700028" },
+        "mapQuery": "Nagerbazar, Dum Dum, Kolkata",
+        "landmarks": [
+          { "name": { "bn": "নাগেরবাজার মোড়", "en": "Nagerbazar More" }, "x": -0.64, "y": -0.6 },
+          { "name": { "bn": "দমদম মেট্রো", "en": "Dum Dum Metro" }, "x": 0.64, "y": 0.6 },
+          { "name": { "bn": "ডায়মন্ড প্লাজা", "en": "Diamond Plaza" }, "x": 0.6, "y": -0.6 }
+        ]
+      }
+    }
+  ],
+  "menu": [
+    { "bn": "পরমান্ন", "en": "Paramanna" }, { "bn": "পাঁচ রকম ভাজা", "en": "Five kinds of bhaja" },
+    { "bn": "ছোলার ডাল", "en": "Cholar dal" }, { "bn": "ধোকার ডালনা", "en": "Dhokar dalna" },
+    { "bn": "রুই কালিয়া", "en": "Rui kalia" }, { "bn": "মাটন বিরিয়ানি", "en": "Mutton biryani" },
+    { "bn": "রসগোল্লা", "en": "Rosogolla" }, { "bn": "মিষ্টি দই", "en": "Mishti doi" }
+  ]
+}

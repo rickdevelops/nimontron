@@ -1,0 +1,181 @@
+/* Nimontron invitation styles. Each theme is one deliberate printed-card world, so pages stay single-theme. */
+:root {
+  /* traditional: sindoor red on handmade ivory, gold leaf */
+  --paper: #FBF3E4; --paper-2: #F4E4C8; --ink: #3A1410; --muted: #7A4A3A;
+  --accent: #9E1B1B; --accent-ink: #FFF6E6; --gold: #B8862B; --line: rgba(158, 27, 27, .22);
+  --map-land: #F6E9D2; --map-street: #FFFFFF; --map-main: #E9C98F; --map-park: #DCE6C3; --map-water: #CFE0E3;
+  --f-display: "Galada", "Marcellus", serif; --f-display-en: "Marcellus", "Tiro Bangla", serif;
+  --f-body: "Tiro Bangla", "Hind Siliguri", Georgia, serif;
+  --names-size: clamp(2.6rem, 11vw, 3.6rem);
+  color-scheme: light;
+}
+html[data-theme-name="modern"] {
+  /* modern minimal: gallery white, charcoal, one sage stroke */
+  --paper: #FAFAF7; --paper-2: #EEF0EA; --ink: #1E2321; --muted: #5C6560;
+  --accent: #46624F; --accent-ink: #FFFFFF; --gold: #46624F; --line: rgba(30, 35, 33, .14);
+  --map-land: #F1F2EE; --map-street: #FFFFFF; --map-main: #D5DBD3; --map-park: #DDE7DC; --map-water: #DCE6EA;
+  --f-display: "Bodoni Moda", "Hind Siliguri", serif; --f-display-en: "Bodoni Moda", Georgia, serif;
+  --f-body: "Figtree", "Hind Siliguri", system-ui, sans-serif;
+  --names-size: clamp(2.5rem, 10.5vw, 3.4rem);
+}
+html[data-theme-name="aiburobhat"] {
+  /* aiburobhat: turmeric, banana leaf, brass thala */
+  --paper: #FFF7DD; --paper-2: #F7E7A8; --ink: #23331F; --muted: #5A6B3E;
+  --accent: #2F5D34; --accent-ink: #FFF7DD; --gold: #C68A12; --line: rgba(47, 93, 52, .22);
+  --map-land: #F8EDC4; --map-street: #FFFDF3; --map-main: #E8C35A; --map-park: #CFE0B4; --map-water: #CFE3DC;
+  --f-display: "Atma", "Baloo Da 2", sans-serif; --f-display-en: "Atma", "Baloo Da 2", sans-serif;
+  --f-body: "Tiro Bangla", "Hind Siliguri", Georgia, serif;
+  --names-size: clamp(2.8rem, 12vw, 3.8rem);
+}
+html[data-theme-name="annaprashan"] {
+  /* mukhe bhaat: rice-white, alta pink, a touch of gold */
+  --paper: #FFF8F6; --paper-2: #FBE3E0; --ink: #3B2230; --muted: #7D5A68;
+  --accent: #C2366B; --accent-ink: #FFFFFF; --gold: #C9962E; --line: rgba(194, 54, 107, .2);
+  --map-land: #FCEDEA; --map-street: #FFFFFF; --map-main: #F3C9CF; --map-park: #E2EDD7; --map-water: #D8E8EE;
+  --f-display: "Baloo Da 2", "Atma", sans-serif; --f-display-en: "Baloo Da 2", sans-serif;
+  --f-body: "Hind Siliguri", "Figtree", system-ui, sans-serif;
+  --names-size: clamp(2.8rem, 12vw, 3.8rem);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper-2); }
+body {
+  margin: 0; background: var(--paper-2); color: var(--ink);
+  font: 400 1.05rem/1.7 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+html[lang="en"] body { line-height: 1.6; }
+#invite {
+  max-width: 560px; margin: 0 auto; background: var(--paper); min-height: 100vh;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px));
+  padding-bottom: 32px; overflow: hidden; position: relative;
+  box-shadow: 0 0 0 1px var(--line), 0 30px 80px -40px rgba(0,0,0,.25);
+}
+h1, h2, h3 { font-weight: 400; text-wrap: balance; margin: 0; }
+h2 { font-family: var(--f-display); font-size: 1.9rem; color: var(--accent); text-align: center; line-height: 1.25; }
+html[lang="en"] h2 { font-family: var(--f-display-en); }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* top bar */
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 14px 0; position: relative; z-index: 2; }
+.demo-tag { font: 600 .72rem/1 "Figtree", system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--paper); }
+.lang button { font: 500 .85rem/1 var(--f-body); border: 0; background: transparent; color: var(--muted); padding: 7px 12px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+
+/* hero */
+.hero { text-align: center; padding-block: 18px 10px; position: relative; }
+.ornament { width: 150px; height: 150px; display: block; margin: 4px auto 6px; animation: spin 120s linear infinite; }
+.orn-fill { fill: var(--gold); }
+.orn-line { fill: none; stroke: var(--accent); stroke-width: 1.3; opacity: .85; }
+.invocation { margin: 0; color: var(--accent); font-size: .95rem; letter-spacing: .02em; }
+.eyebrow { margin: 6px 0 0; font-size: .82rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; font-family: "Figtree", var(--f-body); }
+html[lang="bn"] .eyebrow { letter-spacing: .04em; text-transform: none; font-size: 1.1rem; font-family: var(--f-body); }
+.names { font-family: var(--f-display); font-size: var(--names-size); line-height: 1.05; color: var(--accent); margin-block: 10px 6px; display: flex; flex-direction: column; align-items: center; }
+html[lang="en"] .names { font-family: var(--f-display-en); }
+.names .amp { font-size: .5em; color: var(--gold); margin-block: 2px; font-family: var(--f-body); font-style: italic; }
+.hero-date { margin: 8px 0 0; font-size: 1.05rem; }
+.bdate { display: block; color: var(--muted); font-size: .9rem; }
+.countdown { display: inline-block; margin: 12px 0 0; padding: 6px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; color: var(--muted); }
+.countdown b { color: var(--accent); font-size: 1.1rem; font-weight: 600; }
+
+/* guest-link switcher */
+.modes { margin: 18px 0 4px; text-align: center; }
+.modes-label { display: block; font: 600 .7rem/1.4 "Figtree", system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+html[lang="bn"] .modes-label { font: 500 .85rem/1.4 var(--f-body); letter-spacing: 0; text-transform: none; }
+.modes div { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.modes a { text-decoration: none; padding: 7px 14px; border-radius: 999px; border: 1px dashed var(--line); color: var(--ink); font-size: .92rem; }
+.modes a[aria-current="true"] { border-style: solid; border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+
+/* message */
+.message { text-align: center; padding-block: 10px 6px; }
+.divider { width: 180px; height: 18px; display: block; margin: 16px auto; }
+.divider .orn-line { stroke-width: 1; }
+.msg { margin: 0 auto; max-width: 34ch; font-size: 1.12rem; }
+html[lang="en"] .msg { max-width: 38ch; }
+.hosts { margin: 18px 0 0; color: var(--muted); font-size: .98rem; }
+.hosts span { display: block; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 600; font-family: "Figtree", var(--f-body); }
+html[lang="bn"] .hosts span { letter-spacing: 0; font-size: .95rem; text-transform: none; font-family: var(--f-body); }
+
+/* events */
+.events { padding-block: 26px 4px; display: grid; gap: 18px; }
+.event { border: 1px solid var(--line); border-radius: 18px; padding: 18px; background: color-mix(in srgb, var(--paper) 70%, #fff); display: grid; gap: 14px; }
+.event h3 { font-family: var(--f-display); color: var(--accent); font-size: 1.65rem; line-height: 1.2; }
+html[lang="en"] .event h3 { font-family: var(--f-display-en); }
+.ev-note { margin: 2px 0 0; color: var(--muted); font-size: .92rem; }
+.event dl { margin: 0; display: grid; gap: 10px; }
+.event dl div { display: grid; grid-template-columns: 68px 1fr; gap: 10px; }
+.event dt { font: 600 .72rem/2 "Figtree", system-ui, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+html[lang="bn"] .event dt { font: 500 .92rem/1.8 var(--f-body); letter-spacing: 0; text-transform: none; }
+.event dd { margin: 0; min-width: 0; }
+.bdate-inline { color: var(--muted); font-size: .9rem; }
+.map-wrap { display: block; position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); text-decoration: none; }
+.minimap { display: block; width: 100%; height: auto; }
+.map-land { fill: var(--map-land); } .map-park { fill: var(--map-park); } .map-water { fill: var(--map-water); }
+.map-street { stroke: var(--map-street); stroke-width: 7; fill: none; }
+.map-main { stroke: var(--map-main); stroke-width: 11; fill: none; }
+.map-lm { fill: var(--paper); stroke: var(--muted); stroke-width: 2; }
+.map-label { font: 600 10.5px/1 var(--f-body); fill: var(--ink); paint-order: stroke; stroke: var(--map-land); stroke-width: 3px; }
+.map-pin { fill: var(--accent); } .map-pin-dot { fill: var(--accent-ink); }
+.map-pulse { fill: var(--accent); opacity: .18; transform-origin: center; transform-box: fill-box; animation: pulse 2.4s ease-out infinite; }
+.map-btn { display: flex; justify-content: center; align-items: center; gap: 6px; background: var(--accent); color: var(--accent-ink); font-size: .92rem; padding: 10px 12px; }
+.map-btn svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2; fill: none; }
+.cal-btn { justify-self: start; font-size: .9rem; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+/* menu */
+.menu { text-align: center; padding-block: 18px 0; }
+.menu ul { list-style: none; padding: 0; margin: 14px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 30rem; }
+.menu li { border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; font-size: .95rem; background: var(--paper); }
+
+/* notes */
+.notes { padding-block: 26px 0; }
+.note-grid { display: grid; gap: 12px; margin-top: 14px; }
+.note { border-left: 2px solid var(--accent); padding: 2px 0 2px 14px; }
+.note h3 { font-size: 1rem; font-weight: 600; color: var(--accent); font-family: var(--f-body); }
+.note p { margin: 2px 0 0; color: var(--muted); }
+
+/* kids */
+.kids { margin-top: 26px; text-align: center; padding: 16px; border: 1px dashed var(--gold); border-radius: 14px; }
+.kids p { margin: 0; font-family: var(--f-display); color: var(--accent); font-size: 1.2rem; }
+html[lang="en"] .kids p { font-family: var(--f-body); font-style: italic; font-size: 1.05rem; }
+
+/* RSVP */
+.rsvp { margin-top: 30px; padding: 22px 18px; border-radius: 20px; background: var(--paper-2); }
+.rsvp .sub { text-align: center; color: var(--muted); margin: 4px 0 16px; font-size: .95rem; }
+.rsvp form { display: grid; gap: 6px; }
+.rsvp label { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+.rsvp input:not([type=radio]):not([type=checkbox]), .rsvp textarea {
+  font: inherit; font-size: 1rem; padding: 11px 13px; border-radius: 12px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); width: 100%;
+}
+.rsvp fieldset { border: 0; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.rsvp legend { font-size: .9rem; color: var(--muted); margin-bottom: 6px; padding: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.chip, .check { margin: 0 !important; }
+.chip input, .check input { position: absolute; opacity: 0; }
+.chip span, .check span { display: inline-block; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: .95rem; cursor: pointer; }
+.chip input:checked + span, .check input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip input:focus-visible + span, .check input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.if-yes { display: grid; gap: 6px; }
+.stepper { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); justify-self: start; }
+.stepper button { width: 40px; height: 40px; border: 0; background: transparent; font-size: 1.3rem; color: var(--accent); cursor: pointer; border-radius: 999px; }
+.stepper output { min-width: 2ch; text-align: center; font-size: 1.1rem; font-weight: 600; }
+.form-err { color: var(--accent); min-height: 1.2em; margin: 4px 0 0; font-size: .9rem; }
+.send { margin-top: 4px; font: 600 1.05rem/1 var(--f-body); padding: 15px; border: 0; border-radius: 14px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.thanks { text-align: center; }
+.thanks .ornament { width: 96px; height: 96px; }
+.thanks h3 { font-family: var(--f-display); color: var(--accent); font-size: 2rem; }
+html[lang="en"] .thanks h3 { font-family: var(--f-display-en); }
+.thanks p { margin: 4px 0 0; }
+.demo-note { margin-top: 12px !important; font-size: .82rem; color: var(--muted); }
+
+/* footer */
+.foot { text-align: center; padding-block: 18px 0; color: var(--muted); font-size: .95rem; }
+.foot p { margin: 0 0 6px; }
+.made { font-size: .8rem; }
+
+.petals { position: fixed; inset: 0; pointer-events: none; z-index: 5; width: 100%; height: 100%; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0% { transform: scale(.6); opacity: .35; } 100% { transform: scale(2.2); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .ornament, .map-pulse { animation: none; } }

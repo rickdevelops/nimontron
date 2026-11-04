@@ -1,0 +1,42 @@
+{
+  "demo": true,
+  "theme": "aiburobhat",
+  "lang": "bn",
+  "title": { "bn": "সোহিনীর আইবুড়োভাত", "en": "Sohini's Aiburobhat" },
+  "eyebrow": { "bn": "আইবুড়োভাতের নিমন্ত্রণ", "en": "An Aiburobhat lunch" },
+  "names": [ { "bn": "সোহিনী", "en": "Sohini" } ],
+  "ornament": { "rings": [ { "n": 10, "r": 14, "len": 24, "w": 11 }, { "n": 20, "r": 42, "len": 20, "w": 8 }, { "n": 30, "r": 66, "len": 12, "w": 5, "dot": true } ] },
+  "petalColors": ["#F2C14E", "#E8A33D", "#7FA650", "#FFF1B8"],
+  "message": {
+    "bn": "বিয়ের আগে মেয়ের শেষ আইবুড়োভাত। কাঁসার থালায় সাজানো পঞ্চব্যঞ্জন, পাশে মা-মাসিদের আদর আর গল্পে-গানে ভরা একটা দুপুর। সোহিনীর আইবুড়োভাতে আপনাকে সপরিবারে নিমন্ত্রণ জানাই।",
+    "en": "One last Aiburobhat before our daughter's wedding: a feast on brass thalas, a houseful of aunts and an afternoon of stories and songs. We'd love you and your family to join us for Sohini's Aiburobhat."
+  },
+  "hosts": { "bn": "শ্রী তপন ও শ্রীমতী শর্মিষ্ঠা মিত্র", "en": "Tapan & Sharmistha Mitra" },
+  "kids": { "bn": "দিদির শেষ আইবুড়োভাত, আমরা কিন্তু পায়েস আগে খাব! — টুকাই, মিমি", "en": "Didi's last Aiburobhat. We're having the payesh first! — Tukai and Mimi" },
+  "events": [
+    {
+      "id": "aiburobhat", "name": { "bn": "আইবুড়োভাত", "en": "Aiburobhat" },
+      "note": { "bn": "দুপুরের ভোজ, বাড়িতেই", "en": "Lunch at home" },
+      "date": "2026-12-01", "time": "12:30", "hours": 4,
+      "bengaliDate": { "bn": "১৫ অগ্রহায়ণ ১৪৩৩", "en": "15 Agrahayan 1433" },
+      "venue": {
+        "name": { "bn": "মিত্র বাড়ি", "en": "The Mitra home" },
+        "address": { "bn": "৯ লেক প্লেস, কালীঘাট, কলকাতা ৭০০০২৯", "en": "9 Lake Place, Kalighat, Kolkata 700029" },
+        "mapQuery": "Lake Place, Kolkata",
+        "water": true,
+        "landmarks": [
+          { "name": { "bn": "রবীন্দ্র সরোবর", "en": "Rabindra Sarobar" }, "x": 0.62, "y": 0.62 },
+          { "name": { "bn": "দেশপ্রিয় পার্ক", "en": "Deshapriya Park" }, "x": -0.66, "y": -0.58 },
+          { "name": { "bn": "রাসবিহারী মোড়", "en": "Rashbehari More" }, "x": 0.66, "y": -0.6 }
+        ]
+      }
+    }
+  ],
+  "menu": [
+    { "bn": "শুক্তো", "en": "Shukto" }, { "bn": "মোচার ঘণ্ট", "en": "Mochar ghonto" },
+    { "bn": "ভাজা মুগের ডাল", "en": "Bhaja muger dal" }, { "bn": "ভেটকি পাতুরি", "en": "Bhetki paturi" },
+    { "bn": "চিংড়ির মালাইকারি", "en": "Chingri malaikari" }, { "bn": "কষা মাংস", "en": "Kosha mangsho" },
+    { "bn": "আমসত্ত্বের চাটনি", "en": "Aamsotto chutney" }, { "bn": "পায়েস", "en": "Payesh" },
+    { "bn": "মিষ্টি দই", "en": "Mishti doi" }
+  ]
+}

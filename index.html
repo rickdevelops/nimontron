@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nimontron Invitations</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Bengali-first wedding and event invitation websites. Bengali and English, one-tap RSVP, venue map. Free preview with your names.">
+<meta property="og:title" content="Nimontron · Your invitation, as a beautiful website">
+<meta property="og:description" content="Bengali and English, one-tap RSVP, venue map. Free preview with your names.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Tiro+Bangla&family=Figtree:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<style>
+/* Layout: kantha-stitched sheet. Dashed running-stitch rules divide every section, like thread on a quilt. */
+:root {
+  --paper: #F8F7F3; --sheet: #FFFFFF; --ink: #1B1E33; --soft: #565A72; --thread: #C0262D;
+  --marigold: #E39B2F; --indigo: #2A3170; --line: #DCDAD2; --tint: #F1EEE6; --on-thread: #FFFFFF;
+  --f-display: "Young Serif", "Tiro Bangla", Georgia, serif;
+  --f-bn: "Tiro Bangla", "Hind Siliguri", Georgia, serif;
+  --f-body: "Figtree", "Hind Siliguri", system-ui, -apple-system, sans-serif;
+  --max: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121429; --sheet: #191C36; --ink: #F3F1EA; --soft: #AEB1C8; --thread: #F0565C;
+    --marigold: #F2B04E; --indigo: #9EA8F5; --line: #2E3254; --tint: #1E2240; --on-thread: #1B0E10;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121429; --sheet: #191C36; --ink: #F3F1EA; --soft: #AEB1C8; --thread: #F0565C;
+  --marigold: #F2B04E; --indigo: #9EA8F5; --line: #2E3254; --tint: #1E2240; --on-thread: #1B0E10;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--f-body); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--thread); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.bn { font-family: var(--f-bn); }
+.stitch { height: 0; border: 0; border-top: 2px dashed var(--thread); opacity: .55; margin: 0; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--thread); }
+section { padding-block: 72px; }
+.sec-head { display: grid; gap: 10px; max-width: 44rem; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(1.9rem, 4.4vw, 2.7rem); line-height: 1.12; }
+.sec-head p { color: var(--soft); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 600 1rem/1 var(--f-body); text-decoration: none; padding: 16px 22px; border-radius: 14px; border: 2px solid transparent; cursor: pointer; }
+.btn-wa { background: var(--thread); color: var(--on-thread); }
+.btn-wa:hover { filter: brightness(1.06); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.mark { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+.mark .bn { font-size: 1.55rem; color: var(--thread); line-height: 1; }
+.mark .en { font: 700 .78rem/1 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+.nav nav { display: flex; align-items: center; gap: 22px; font-size: .95rem; }
+.nav nav a.lnk { text-decoration: none; color: var(--soft); }
+.nav nav a.lnk:hover { color: var(--ink); }
+.nav .btn { padding: 11px 16px; font-size: .92rem; border-radius: 11px; }
+@media (max-width: 760px) { .nav nav a.lnk { display: none; } }
+
+/* hero */
+.hero { padding-block: 56px 64px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.3rem, 4.8vw, 3.5rem); line-height: 1.04; margin-top: 14px; }
+.hero h1 em { font-style: normal; color: var(--thread); }
+.hero .lede { font-size: 1.15rem; color: var(--soft); margin-top: 18px; max-width: 34rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.fine { margin-top: 14px; font-size: .9rem; color: var(--soft); }
+.offer { margin-top: 26px; display: inline-flex; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; border: 2px dashed var(--marigold); border-radius: 16px; background: var(--sheet); }
+.offer .seal { width: 54px; height: 54px; border-radius: 50%; background: var(--marigold); color: #2A1A05; display: grid; place-items: center; font: 400 1.05rem/1 var(--f-display); text-align: center; flex: none; }
+.offer b { display: block; font-size: 1rem; }
+.offer span { font-size: .9rem; color: var(--soft); }
+.offer .left { font-variant-numeric: tabular-nums; color: var(--thread); font-weight: 700; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; gap: 40px; } }
+
+/* phone */
+.stage { position: relative; display: grid; place-items: center; padding: 10px 0; }
+.stage::before { content: ""; position: absolute; width: min(420px, 92%); aspect-ratio: 1; border-radius: 50%; border: 2px dashed var(--thread); opacity: .35; }
+.phone { position: relative; width: min(300px, 78vw); aspect-ratio: 390 / 820; border-radius: 44px; background: #0E0F18; padding: 11px; box-shadow: 0 40px 80px -30px rgba(20, 20, 50, .45), inset 0 0 0 2px #2B2D3E; }
+.phone video, .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 34px; background: #FBF3E4; max-width: 100%; }
+.tag-float { position: absolute; background: var(--sheet); border: 1px solid var(--line); border-radius: 12px; padding: 9px 13px; font-size: .85rem; box-shadow: 0 14px 30px -18px rgba(20, 20, 50, .45); display: flex; gap: 8px; align-items: center; }
+.tag-float i { width: 9px; height: 9px; border-radius: 50%; background: #2E9E5B; flex: none; }
+.tag-a { left: 0; top: 18%; } .tag-b { right: 0; bottom: 20%; }
+@media (max-width: 480px) { .tag-a { left: -4px; } .tag-b { right: -4px; } }
+
+/* ceremonies strip */
+.strip { padding-block: 0; }
+.strip .wrap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px; padding-block: 22px; border-block: 2px dashed color-mix(in srgb, var(--thread) 55%, transparent); }
+.strip p { font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+.strip ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin: 0; padding: 0; }
+.strip li { font-family: var(--f-bn); font-size: 1.2rem; }
+.strip li span { font: 500 .78rem/1 var(--f-body); color: var(--soft); margin-left: 6px; }
+
+/* features */
+.feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: var(--sheet); }
+.feat { padding: 26px 24px; border-right: 1px dashed var(--line); border-bottom: 1px dashed var(--line); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.feat:nth-child(3n) { border-right: 0; } .feat:nth-last-child(-n+3) { border-bottom: 0; }
+.feat svg { width: 30px; height: 30px; stroke: var(--thread); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.feat h3 { font-size: 1.25rem; }
+.feat p { color: var(--soft); font-size: .98rem; }
+@media (max-width: 860px) {
+  .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feat:nth-child(3n) { border-right: 1px dashed var(--line); } .feat:nth-child(2n) { border-right: 0; }
+  .feat:nth-last-child(-n+3) { border-bottom: 1px dashed var(--line); } .feat:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 540px) {
+  .feats { grid-template-columns: 1fr; }
+  .feat, .feat:nth-child(3n) { border-right: 0; } .feat:nth-last-child(-n+2) { border-bottom: 1px dashed var(--line); } .feat:last-child { border-bottom: 0; }
+}
+
+/* demos */
+.demos { background: var(--tint); }
+.demo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.demo { display: grid; grid-template-rows: auto 1fr; text-decoration: none; background: var(--sheet); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; min-width: 0; }
+.demo:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -28px rgba(20, 20, 50, .5); }
+.demo .shot { aspect-ratio: 4 / 5; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--tint); }
+.demo .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; max-width: 100%; }
+.demo .body { padding: 16px 18px 18px; display: grid; gap: 4px; align-content: start; }
+.demo .kind { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--thread); }
+.demo h3 { font-size: 1.2rem; }
+.demo .body p { font-size: .92rem; color: var(--soft); }
+.demo .go { margin-top: 8px; font-weight: 600; font-size: .92rem; color: var(--ink); }
+@media (max-width: 960px) { .demo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .demo-grid { gap: 12px; } .demo .body { padding: 12px 12px 14px; } .demo h3 { font-size: 1.05rem; } }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding-top: 52px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.steps li::before { content: counter(s); position: absolute; top: 0; left: 0; width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--thread); color: var(--thread); display: grid; place-items: center; font: 400 1.1rem/1 var(--f-display); background: var(--paper); z-index: 1; }
+.steps li::after { content: ""; position: absolute; top: 19px; left: 44px; right: -12px; border-top: 2px dashed color-mix(in srgb, var(--thread) 45%, transparent); }
+.steps li:last-child::after { display: none; }
+.steps h3 { font-size: 1.2rem; }
+.steps p { color: var(--soft); font-size: .97rem; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 30px; } .steps li:nth-child(2)::after { display: none; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } .steps li::after { display: none; } }
+
+/* packages */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.plan { background: var(--sheet); border: 1px solid var(--line); border-radius: 22px; padding: 26px 24px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 14px; min-width: 0; }
+.plan.star { border: 2px solid var(--thread); position: relative; }
+.plan.star .ribbon { position: absolute; top: -13px; left: 24px; background: var(--thread); color: var(--on-thread); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border-radius: 8px; }
+.plan h3 { font-size: 1.5rem; }
+.plan .for { color: var(--soft); font-size: .95rem; margin-top: 2px; }
+.price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.price b { font: 400 2.4rem/1 var(--f-display); }
+.price s { color: var(--soft); font-size: 1.05rem; }
+.price small { width: 100%; color: var(--thread); font-weight: 600; font-size: .88rem; }
+.plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; align-content: start; font-size: .97rem; }
+.plan li { padding-left: 24px; position: relative; }
+.plan li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 12px; border-top: 2px dashed var(--thread); }
+.plan .btn { width: 100%; }
+.plan:not(.star) .btn { background: transparent; color: var(--ink); border-color: var(--ink); }
+.plans-note { margin-top: 18px; color: var(--soft); font-size: .93rem; }
+@media (max-width: 900px) { .plans { grid-template-columns: 1fr; max-width: 30rem; } .plan.star { order: -1; margin-top: 8px; } }
+
+/* faq */
+.faq { display: grid; gap: 0; max-width: 46rem; border-top: 2px dashed color-mix(in srgb, var(--thread) 45%, transparent); }
+.faq details { border-bottom: 2px dashed color-mix(in srgb, var(--thread) 45%, transparent); padding-block: 18px; }
+.faq summary { cursor: pointer; font: 400 1.18rem/1.35 var(--f-display); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--thread); font-family: var(--f-body); font-size: 1.4rem; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin-top: 10px; color: var(--soft); max-width: 40rem; }
+
+/* close */
+.close { background: var(--indigo); color: #FFFFFF; }
+:root[data-theme="dark"] .close { color: #121429; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .close { color: #121429; } }
+.close .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 40px; align-items: center; }
+.close h2 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.1; }
+.close .sub { margin-top: 12px; opacity: .85; max-width: 34rem; }
+.close .cta-row .btn-ghost { border-color: currentColor; color: inherit; }
+.pay { border: 2px dashed currentColor; border-radius: 18px; padding: 20px; display: grid; gap: 10px; opacity: .95; }
+.pay h3 { font-size: 1.25rem; }
+.pay p { font-size: .95rem; opacity: .85; }
+.upi { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.upi code { font: 600 1rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 10px 12px; border-radius: 10px; background: color-mix(in srgb, currentColor 12%, transparent); user-select: all; word-break: break-all; }
+.upi button { font: 600 .9rem/1 var(--f-body); padding: 10px 12px; border-radius: 10px; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
+@media (max-width: 860px) { .close .wrap { grid-template-columns: 1fr; } }
+
+footer { padding-block: 28px 40px; color: var(--soft); font-size: .9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .demo { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Nimontron home"><span class="bn">নিমন্ত্রণ</span><span class="en">Nimontron</span></a>
+    <nav aria-label="Main">
+      <a class="lnk" href="#demos">Demos</a>
+      <a class="lnk" href="#packages">Packages</a>
+      <a class="lnk" href="#faq">FAQ</a>
+      <a class="btn btn-wa js-wa" href="#" data-msg="hello" target="_blank" rel="noopener">Message us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Bengali-first invitation websites</p>
+        <h1>Your wedding invitation, as a beautiful website. <em>In Bengali and English.</em></h1>
+        <p class="lede">Guests RSVP in one tap, find the venue on a map, and see every ceremony from Aiburobhat to Bou Bhat. Ready in 48 hours, shared on WhatsApp like any link.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Get a free preview with your names</a>
+          <a class="btn btn-ghost" href="#demos">See the demos</a>
+        </div>
+        <p class="fine">Send us your names and date<span class="js-via"></span>. Your personal preview arrives within a few hours and stays live for 48.</p>
+        <div class="offer">
+          <div class="seal">₹1,999</div>
+          <div><b>Founding couples: Classic at ₹1,999</b><span><span class="left js-left">10 of 10</span> founding slots open · 50% to book</span></div>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="phone">
+          <video class="js-hero" src="hero.mp4" poster="hero.jpg" autoplay muted loop playsinline aria-label="A Bengali wedding invitation website scrolling on a phone"></video>
+        </div>
+        <p class="tag-float tag-a"><i></i>Mashi just RSVP'd: 4 guests</p>
+        <p class="tag-float tag-b bn">বাংলা ⇄ English</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Ceremonies we design for">
+    <div class="wrap">
+      <p>Built for</p>
+      <ul>
+        <li>আইবুড়োভাত<span>Aiburobhat</span></li>
+        <li>গায়ে হলুদ<span>Gaye Holud</span></li>
+        <li>বিয়ে<span>Biye</span></li>
+        <li>বৌভাত<span>Bou Bhat</span></li>
+        <li>অন্নপ্রাশন<span>Annaprashan</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What your guests get</p>
+        <h2>Everything a printed card can't do, and the elders can still use it.</h2>
+      </div>
+      <div class="feats">
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h12M10 5v3M6 8c1 5 5 9 9 10M14 8c-1 5-5 9-9 10M17 27l6-15 6 15M19 22h8"/></svg><h3>Bengali and English</h3><p>One tap switches every word. Elders read it in Bangla, colleagues in English.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="5"/><path d="m10 16 4 4 8-9"/></svg><h3>One-tap RSVP</h3><p>Guests reply from WhatsApp. You get every answer by email with head counts per event.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-9-8.3-9-15a9 9 0 0 1 18 0c0 6.7-9 15-9 15Z"/><circle cx="16" cy="13" r="3"/></svg><h3>Venue map with landmarks</h3><p>“Near Karunamoyee bus stand” beats a pin. One button opens full Google Maps.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 19a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1 1M19 13a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1-1"/></svg><h3>A link for each side</h3><p>The bride's family sends Biye, the groom's family sends Bou Bhat. Same site, different events.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="4"/><path d="M5 13h22M11 4v6M21 4v6M11 19h4"/></svg><h3>Bengali dates and lagna</h3><p>Agrahayan dates and the lagna time sit beside the English date, the way a card should.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="8" height="8" rx="1"/><rect x="18" y="6" width="8" height="8" rx="1"/><rect x="6" y="18" width="8" height="8" rx="1"/><path d="M18 18h3v3h-3zM23 23h3v3h-3zM18 24v2M24 18h2"/></svg><h3>QR for printed cards</h3><p>Still printing cards for the elders? We add a QR code that opens the site.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demos" id="demos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Live demos</p>
+        <h2>Open one on your phone. Try the language switch and the RSVP.</h2>
+        <p>Every demo below runs on the same template. Yours gets your names, dates, venues and colours.</p>
+      </div>
+      <div class="demo-grid">
+        <a class="demo" href="traditional.html" target="_blank" rel="noopener">
+          <div class="shot"><img src="thumb-traditional.jpg" alt="Traditional red and gold wedding invitation"></div>
+          <div class="body"><span class="kind">Biye + Bou Bhat</span><h3>Traditional</h3><p>Sindoor red and gold, separate links for each family.</p><span class="go">Open demo →</span></div>
+        </a>
+        <a class="demo" href="modern.html" target="_blank" rel="noopener">
+          <div class="shot"><img src="thumb-modern.jpg" alt="Modern minimal wedding invitation"></div>
+          <div class="body"><span class="kind">English first</span><h3>Modern Minimal</h3><p>Sangeet and wedding, dress code and travel notes.</p><span class="go">Open demo →</span></div>
+        </a>
+        <a class="demo" href="aiburobhat.html" target="_blank" rel="noopener">
+          <div class="shot"><img src="thumb-aiburobhat.jpg" alt="Aiburobhat lunch invitation in turmeric and green"></div>
+          <div class="body"><span class="kind">Pre-wedding</span><h3>Aiburobhat</h3><p>Turmeric and banana leaf, with the full menu.</p><span class="go">Open demo →</span></div>
+        </a>
+        <a class="demo" href="annaprashan.html" target="_blank" rel="noopener">
+          <div class="shot"><img src="thumb-annaprashan.jpg" alt="Annaprashan invitation in pink and gold"></div>
+          <div class="body"><span class="kind">Mukhe Bhaat</span><h3>Annaprashan</h3><p>For baby's first rice, all year round.</p><span class="go">Open demo →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From one message to a live invitation in two days.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Message us</h3><p>Send your names, event dates and venues by Instagram DM or WhatsApp.</p></li>
+        <li><h3>See your preview</h3><p>Your own site with your names, within a few hours. Free, live for 48 hours.</p></li>
+        <li><h3>Book with 50%</h3><p>Pay half by UPI to lock it in. Send photos and family names.</p></li>
+        <li><h3>Share the link</h3><p>Live within 48 hours. One revision round included. Pay the rest on delivery.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="stitch">
+
+  <section id="packages">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Packages</p>
+        <h2>Three fixed prices. No surprises.</h2>
+        <p>Every site stays live for one year and works on any phone.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <div><h3>Starter</h3><p class="for">One event, simple and quick</p></div>
+          <div class="price"><b>₹1,499</b></div>
+          <ul>
+            <li>Up to 2 events</li>
+            <li>Bengali and English</li>
+            <li>Venue map with landmarks</li>
+            <li>RSVP with email alerts</li>
+            <li>1 revision round</li>
+          </ul>
+          <a class="btn btn-wa js-wa" href="#" data-msg="starter" target="_blank" rel="noopener">Choose Starter</a>
+        </div>
+        <div class="plan star">
+          <span class="ribbon">Founding offer</span>
+          <div><h3>Classic</h3><p class="for">The full Bengali wedding</p></div>
+          <div class="price"><b>₹1,999</b><s>₹3,499</s><small>For the first 10 couples</small></div>
+          <ul>
+            <li>Up to 5 events, Aiburobhat to Reception</li>
+            <li>Separate links for bride's and groom's side</li>
+            <li>Bengali dates and lagna times</li>
+            <li>RSVP per event with head counts</li>
+            <li>Photo gallery and countdown</li>
+            <li>QR code for printed cards</li>
+            <li>2 revision rounds</li>
+          </ul>
+          <a class="btn btn-wa js-wa" href="#" data-msg="classic" target="_blank" rel="noopener">Book Classic</a>
+        </div>
+        <div class="plan">
+          <div><h3>Royal</h3><p class="for">Custom look, every detail</p></div>
+          <div class="price"><b>₹7,999</b></div>
+          <ul>
+            <li>Everything in Classic</li>
+            <li>Custom colours and monogram</li>
+            <li>Unlimited events and guest links</li>
+            <li>Guest list export for caterers</li>
+            <li>Your own web address for a year</li>
+            <li>24-hour priority delivery</li>
+          </ul>
+          <a class="btn btn-wa js-wa" href="#" data-msg="royal" target="_blank" rel="noopener">Choose Royal</a>
+        </div>
+      </div>
+      <p class="plans-note">Founding couples keep a small “Made with Nimontron” line at the bottom of their site.</p>
+    </div>
+  </section>
+
+  <hr class="stitch">
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Questions</p>
+        <h2>What families usually ask.</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Can elders use it?</summary><p>Yes. It opens from WhatsApp like any link, text is large, and Bengali is the default. No app, no login.</p></details>
+        <details><summary>Can we still print cards?</summary><p>Yes. Classic and Royal include a QR code you can put on your printed card so guests open the site from it.</p></details>
+        <details><summary>How long does it stay live?</summary><p>One year from the first event. We can archive it as a keepsake after that.</p></details>
+        <details><summary>What do you need from us?</summary><p>Names, event dates and times, venues, and the family names to print. Photos are optional.</p></details>
+        <details><summary>Who sees the RSVP replies?</summary><p>Only you. Replies go to your email. We delete RSVP data 90 days after the event.</p></details>
+        <details><summary>Can you do other ceremonies?</summary><p>Yes: Annaprashan, Griha Probesh, birthdays and anniversaries. Message us with the date.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <div>
+        <h2>Getting married between 20 November and 12 December?</h2>
+        <p class="sub">Invites usually go out three weeks before. Send us your names today and see your preview tonight.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener">Get my free preview</a>
+          <a class="btn btn-ghost js-pay" href="#" target="_blank" rel="noopener">Book with 50% deposit</a>
+        </div>
+      </div>
+      <div class="pay">
+        <h3>How to book</h3>
+        <p class="js-book">Message us your names, event dates and venues. We reply with your free preview and the payment details.</p>
+        <div class="upi js-upi-row" hidden><code class="js-upi"></code><button type="button" id="copy-upi">Copy UPI ID</button></div>
+        <p class="js-contact"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><span class="bn">নিমন্ত্রণ</span> · Nimontron, Kolkata</span>
+    <span>Invitation websites for Bengali weddings and ceremonies</span>
+  </div>
+</footer>
+
+<script>
+/* ===== Edit these lines when your accounts are ready ===== */
+var SITE = {
+  instagram: "nimontron_web",        // Instagram handle without @ (used when WhatsApp is empty)
+  whatsapp: "",                          // WhatsApp Business number, digits only, e.g. 919876543210
+  payLink: "",                           // Razorpay / Instamojo link; empty = we send payment details in chat
+  upi: "",                               // your real UPI ID; empty hides the UPI box
+  foundingLeft: 10, foundingTotal: 10    // update as couples book
+};
+/* ========================================================== */
+(function () {
+  var msgs = {
+    hello: "Hi Nimontron! I'd like to know more about invitation websites.",
+    preview: "Hi Nimontron! Please make a free preview for us.\nNames: \nEvent(s): \nDate(s): \nVenue(s): ",
+    starter: "Hi Nimontron! We'd like the Starter package (Rs 1,499).\nNames: \nDate: ",
+    classic: "Hi Nimontron! We'd like the Classic founding offer (Rs 1,999).\nNames: \nDates: ",
+    royal: "Hi Nimontron! We'd like the Royal package (Rs 7,999).\nNames: \nDates: ",
+    deposit: "Hi Nimontron! We'd like to pay the 50% deposit to book.\nNames: \nPackage: "
+  };
+  var useWa = /^\d{10,15}$/.test(SITE.whatsapp);
+  function link(key) {
+    return useWa ? "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(msgs[key] || msgs.hello)
+                 : "https://ig.me/m/" + SITE.instagram;
+  }
+  document.querySelectorAll(".js-wa").forEach(function (a) { a.href = link(a.getAttribute("data-msg")); });
+  document.querySelector(".js-pay").href = SITE.payLink || link("deposit");
+  document.querySelectorAll(".js-via").forEach(function (e) { e.textContent = useWa ? " on WhatsApp" : " by Instagram DM to @" + SITE.instagram; });
+  var contact = document.querySelector(".js-contact");
+  if (useWa) {
+    var n = SITE.whatsapp.replace(/^91/, "");
+    contact.textContent = "WhatsApp: +91 " + n.slice(0, 5) + " " + n.slice(5) + (SITE.instagram ? " · Instagram: @" + SITE.instagram : "");
+  } else {
+    contact.innerHTML = 'Instagram: <a href="https://instagram.com/' + SITE.instagram + '" target="_blank" rel="noopener">@' + SITE.instagram + "</a>";
+  }
+  if (SITE.upi) {
+    document.querySelector(".js-upi-row").hidden = false;
+    document.querySelector(".js-upi").textContent = SITE.upi;
+    document.querySelector(".js-book").textContent = "Pay the 50% deposit to this UPI ID, then send us the screenshot.";
+  }
+  document.querySelectorAll(".js-left").forEach(function (e) { e.textContent = SITE.foundingLeft + " of " + SITE.foundingTotal; });
+  var btn = document.getElementById("copy-upi");
+  btn.addEventListener("click", function () {
+    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy UPI ID"; }, 1800); };
+    try { navigator.clipboard.writeText(SITE.upi).then(done, selectUpi); } catch (e) { selectUpi(); }
+  });
+  function selectUpi() {
+    var r = document.createRange(); r.selectNodeContents(document.querySelector(".js-upi"));
+    var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected";
+  }
+})();
+</script>
+</body>
+</html>
