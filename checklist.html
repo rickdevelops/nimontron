@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biye Checklist · Nimontron</title>
+<meta name="description" content="Free Bengali wedding checklist: what to book and buy 6 months, 2 months, 1 month, 2 weeks and 1 week before the Biye, plus the wedding-day bag. In Bengali and English.">
+<meta property="og:title" content="Biye Checklist: what to buy and book before a Bengali wedding">
+<meta property="og:description" content="Free, tick-as-you-go checklist in Bengali and English. From Nimontron.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Tiro+Bangla&family=Figtree:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single kantha-stitched sheet; each countdown stage is a stitched band with its own progress. */
+:root {
+  --paper: #F8F7F3; --sheet: #FFFFFF; --ink: #1B1E33; --soft: #565A72; --thread: #C0262D;
+  --marigold: #E39B2F; --indigo: #2A3170; --line: #DCDAD2; --tint: #F1EEE6; --on-thread: #FFFFFF; --done: #2E7D4F;
+  --f-display: "Young Serif", "Tiro Bangla", Georgia, serif;
+  --f-bn: "Tiro Bangla", "Hind Siliguri", Georgia, serif;
+  --f-body: "Figtree", "Hind Siliguri", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #121429; --sheet: #191C36; --ink: #F3F1EA; --soft: #AEB1C8; --thread: #F0565C;
+    --marigold: #F2B04E; --indigo: #9EA8F5; --line: #2E3254; --tint: #1E2240; --on-thread: #1B0E10; --done: #6FD39A; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #121429; --sheet: #191C36; --ink: #F3F1EA; --soft: #AEB1C8; --thread: #F0565C;
+  --marigold: #F2B04E; --indigo: #9EA8F5; --line: #2E3254; --tint: #1E2240; --on-thread: #1B0E10; --done: #6FD39A; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.04rem/1.6 var(--f-body); -webkit-font-smoothing: antialiased; }
+html[lang="bn"] body { font-family: var(--f-bn); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--thread); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.mark { text-decoration: none; display: flex; gap: 8px; align-items: baseline; }
+.mark .bn { font-family: var(--f-bn); color: var(--thread); font-size: 1.4rem; line-height: 1; }
+.mark .en { font: 700 .74rem/1 var(--f-body); letter-spacing: .16em; text-transform: uppercase; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.lang button { font: 500 .88rem/1 var(--f-body); border: 0; background: transparent; color: var(--soft); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--thread); color: var(--on-thread); }
+header.hero { padding-block: 36px 18px; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--thread); margin: 0; }
+html[lang="bn"] .eyebrow { letter-spacing: 0; font-size: .95rem; text-transform: none; }
+h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.1; margin: 10px 0 0; text-wrap: balance; }
+html[lang="bn"] h1 { font-family: var(--f-bn); }
+.lede { color: var(--soft); margin: 12px 0 0; max-width: 38rem; }
+.progress { margin-top: 22px; display: flex; align-items: center; gap: 12px; }
+.bar { flex: 1; height: 10px; border-radius: 999px; background: var(--tint); overflow: hidden; border: 1px solid var(--line); }
+.bar i { display: block; height: 100%; width: 0; background: var(--done); transition: width .3s ease; }
+.count { font-variant-numeric: tabular-nums; font-weight: 600; font-size: .95rem; min-width: 5.5em; text-align: right; }
+.stage { margin-top: 26px; background: var(--sheet); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.stage > div:first-child { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 18px 12px; border-bottom: 2px dashed color-mix(in srgb, var(--thread) 45%, transparent); }
+.stage h2 { font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; margin: 0; }
+html[lang="bn"] .stage h2 { font-family: var(--f-bn); }
+.stage .when { font-size: .85rem; color: var(--soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stage ul { list-style: none; margin: 0; padding: 6px 0; }
+.stage li label { display: flex; gap: 12px; align-items: flex-start; padding: 10px 18px; cursor: pointer; }
+.stage li label:hover { background: var(--tint); }
+.stage input { appearance: none; width: 22px; height: 22px; flex: none; margin-top: 2px; border: 2px solid var(--soft); border-radius: 6px; display: grid; place-items: center; cursor: pointer; background: var(--sheet); }
+.stage input:checked { background: var(--done); border-color: var(--done); }
+.stage input:checked::after { content: ""; width: 6px; height: 11px; border: solid var(--sheet); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translate(-1px, -1px); }
+.stage input:checked + span { color: var(--soft); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--soft) 60%, transparent); }
+.stage li small { display: block; color: var(--soft); font-size: .85rem; margin-top: 2px; text-decoration: none; }
+.cta { margin: 14px 18px 16px; padding: 12px 14px; border-radius: 12px; background: color-mix(in srgb, var(--thread) 9%, transparent); border: 1px dashed var(--thread); font-size: .94rem; }
+.cta a { color: var(--thread); font-weight: 700; }
+.rituals { margin-top: 30px; }
+.rituals h2 { font-family: var(--f-display); font-weight: 400; font-size: 1.5rem; margin: 0 0 6px; }
+html[lang="bn"] .rituals h2 { font-family: var(--f-bn); }
+.rituals ol { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: r; display: grid; gap: 8px; }
+.rituals li { counter-increment: r; display: grid; grid-template-columns: 2.2em 1fr; gap: 8px; align-items: baseline; }
+.rituals li::before { content: counter(r); font: 400 1.05rem/1 var(--f-display); color: var(--thread); text-align: right; }
+html[lang="bn"] .rituals li::before { content: counter(r, bengali); }
+.rituals li b { font-family: var(--f-bn); font-weight: 400; font-size: 1.12rem; }
+.rituals li span { color: var(--soft); font-size: .92rem; margin-left: 6px; }
+.tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.btn { font: 600 .95rem/1 var(--f-body); padding: 13px 18px; border-radius: 12px; border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn.primary { background: var(--thread); border-color: var(--thread); color: var(--on-thread); }
+.note { color: var(--soft); font-size: .85rem; margin-top: 10px; }
+footer { padding-block: 36px 44px; color: var(--soft); font-size: .9rem; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mark" href="index.html"><span class="bn">নিমন্ত্রণ</span><span class="en">Nimontron</span></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="bn" aria-pressed="false">বাংলা</button>
+      <button type="button" data-lang="en" aria-pressed="true">English</button>
+    </div>
+  </div>
+  <header class="hero">
+    <p class="eyebrow" data-t="eyebrow"></p>
+    <h1 data-t="title"></h1>
+    <p class="lede" data-t="lede"></p>
+    <div class="progress"><div class="bar" aria-hidden="true"><i id="bar"></i></div><span class="count" id="count"></span></div>
+  </header>
+  <main id="stages"></main>
+  <section class="rituals">
+    <h2 data-t="ritualsTitle"></h2>
+    <p class="note" data-t="ritualsNote"></p>
+    <ol id="rituals"></ol>
+  </section>
+  <div class="tools">
+    <a class="btn primary" id="cta-btn" href="https://ig.me/m/nimontron_web" target="_blank" rel="noopener" data-t="ctaBtn"></a>
+    <button class="btn" type="button" id="copy" data-t="copyBtn"></button>
+    <button class="btn" type="button" id="reset" data-t="resetBtn"></button>
+  </div>
+  <p class="note" id="msg" role="status" data-t="saveNote"></p>
+  <footer><span data-t="foot"></span> · <a href="index.html" data-t="home"></a></footer>
+</div>
+<script>
+(function () {
+  var T = {
+    en: { eyebrow: "Free checklist", title: "Biye Checklist: what to book and buy, and when",
+      lede: "A countdown for Bengali weddings, from fixing the date to packing the wedding-day bag. Tick items as you go; your ticks stay on this phone.",
+      ritualsTitle: "The rituals, in order", ritualsNote: "Customs differ between families. Check the details with your purohit and elders.",
+      ctaBtn: "Get a free invite preview", copyBtn: "Copy checklist", resetBtn: "Clear ticks",
+      saveNote: "Your ticks are saved on this device only.", copied: "Checklist copied. Paste it in your family group.",
+      cleared: "All ticks cleared.", done: "done", foot: "Made with love by Nimontron, Kolkata", home: "See invitation demos",
+      invite: "Invites go out about a month before. Nimontron makes them as a website with RSVP and a venue map.", inviteLink: "See the demos" },
+    bn: { eyebrow: "বিনামূল্যে চেকলিস্ট", title: "বিয়ের চেকলিস্ট: কখন কী বুক করবেন, কী কিনবেন",
+      lede: "দিন ঠিক করা থেকে বিয়ের দিনের ব্যাগ গোছানো পর্যন্ত, বাঙালি বিয়ের পুরো কাউন্টডাউন। কাজ হয়ে গেলে টিক দিন; টিকগুলো এই ফোনেই থাকবে।",
+      ritualsTitle: "আচার-অনুষ্ঠান, পরপর", ritualsNote: "পরিবারভেদে নিয়ম আলাদা হয়। খুঁটিনাটি পুরোহিত ও বাড়ির বড়দের সঙ্গে মিলিয়ে নিন।",
+      ctaBtn: "বিনামূল্যে নিমন্ত্রণের নমুনা পান", copyBtn: "চেকলিস্ট কপি করুন", resetBtn: "টিক মুছুন",
+      saveNote: "টিকগুলো শুধু এই ডিভাইসে সেভ থাকে।", copied: "চেকলিস্ট কপি হয়েছে। পরিবারের গ্রুপে পেস্ট করুন।",
+      cleared: "সব টিক মুছে দেওয়া হয়েছে।", done: "হয়েছে", foot: "ভালোবাসা দিয়ে বানানো, নিমন্ত্রণ, কলকাতা", home: "নিমন্ত্রণের নমুনা দেখুন",
+      invite: "নিমন্ত্রণ পাঠানো হয় মোটামুটি এক মাস আগে। নিমন্ত্রণ সেটা বানিয়ে দেয় ওয়েবসাইট হিসেবে, আরএসভিপি আর ম্যাপ সমেত।", inviteLink: "নমুনা দেখুন" }
+  };
+  var S = [
+    { id: "m6", when: { en: "3–6 months before", bn: "৩–৬ মাস আগে" }, title: { en: "Lock the big things", bn: "বড় কাজগুলো পাকা করুন" }, items: [
+      { en: "Fix the date from the panjika with both families", bn: "পঞ্জিকা দেখে দুই পরিবার মিলে দিন ঠিক করুন" },
+      { en: "Book the venue", bn: "বিয়েবাড়ি বা ভেন্যু বুক করুন" },
+      { en: "Book the caterer and taste the menu", bn: "ক্যাটারার বুক করুন, মেনু চেখে নিন" },
+      { en: "Book the photographer and videographer", bn: "ফটোগ্রাফার ও ভিডিওগ্রাফার বুক করুন" },
+      { en: "Book the purohit", bn: "পুরোহিত ঠিক করুন" },
+      { en: "Draft the guest list for both sides", bn: "দুই বাড়ির অতিথি তালিকা তৈরি করুন" } ] },
+    { id: "m2", when: { en: "2 months before", bn: "২ মাস আগে" }, title: { en: "Clothes and jewellery", bn: "পোশাক ও গয়না" }, items: [
+      { en: "Benarasi for the Biye, saree for the reception", bn: "বিয়ের বেনারসি, রিসেপশনের শাড়ি" },
+      { en: "Groom's dhoti-panjabi and reception outfit", bn: "বরের ধুতি-পাঞ্জাবি ও রিসেপশনের পোশাক" },
+      { en: "Gold jewellery and shankha-pola", bn: "সোনার গয়না ও শাঁখা-পলা" },
+      { en: "Book the bridal makeup artist", bn: "কনের মেকআপ আর্টিস্ট বুক করুন" },
+      { en: "Book the decorator", bn: "ডেকোরেটর বুক করুন" } ] },
+    { id: "m1", when: { en: "1 month before", bn: "১ মাস আগে" }, title: { en: "Invites and fittings", bn: "নিমন্ত্রণ ও ফিটিং" }, invite: true, items: [
+      { en: "Send the invitations to every guest", bn: "সব অতিথিকে নিমন্ত্রণ পাঠান" },
+      { en: "Order the topor and mukut", bn: "টোপর ও মুকুট অর্ডার দিন" },
+      { en: "Makeup trial", bn: "মেকআপ ট্রায়াল" },
+      { en: "Final fitting of blouse and panjabi", bn: "ব্লাউজ ও পাঞ্জাবির শেষ ফিটিং" },
+      { en: "Footwear for both of you", bn: "দুজনের জুতো" } ] },
+    { id: "w2", when: { en: "2 weeks before", bn: "২ সপ্তাহ আগে" }, title: { en: "Tattva and gifts", bn: "তত্ত্ব ও উপহার" }, items: [
+      { en: "List and buy everything for the tattva", bn: "তত্ত্বের জিনিসের তালিকা করে কিনে ফেলুন" },
+      { en: "Book someone to decorate the tattva trays", bn: "তত্ত্ব সাজানোর লোক ঠিক করুন" },
+      { en: "Gifts for close relatives", bn: "কাছের আত্মীয়দের উপহার" },
+      { en: "Saree and items for Gaye Holud", bn: "গায়ে হলুদের শাড়ি ও সামগ্রী" },
+      { en: "Cars for the barjatri and the bidaay", bn: "বরযাত্রী ও বিদায়ের গাড়ি" } ] },
+    { id: "w1", when: { en: "1 week before", bn: "১ সপ্তাহ আগে" }, title: { en: "Final checks", bn: "শেষ মুহূর্তের কাজ" }, items: [
+      { en: "Aiburobhat with the family", bn: "পরিবারের সঙ্গে আইবুড়োভাত" },
+      { en: "Give the caterer the final head count", bn: "ক্যাটারারকে চূড়ান্ত অতিথি সংখ্যা জানান", note: { en: "Your RSVP list makes this easy.", bn: "আরএসভিপি তালিকা থাকলে কাজটা সহজ।" } },
+      { en: "Settle advances and keep cash envelopes ready", bn: "অগ্রিম মিটিয়ে টাকার খাম তৈরি রাখুন" },
+      { en: "Mehendi and alta", bn: "মেহেন্দি ও আলতা" },
+      { en: "Pack the wedding-day bag", bn: "বিয়ের দিনের ব্যাগ গুছিয়ে নিন" } ] },
+    { id: "bag", when: { en: "On the day", bn: "বিয়ের দিন" }, title: { en: "The wedding-day bag", bn: "বিয়ের দিনের ব্যাগ" }, items: [
+      { en: "Safety pins and hair pins", bn: "সেফটিপিন ও হেয়ারপিন" },
+      { en: "Extra sindoor and alta", bn: "বাড়তি সিঁদুর ও আলতা" },
+      { en: "Phone chargers and a power bank", bn: "ফোনের চার্জার ও পাওয়ার ব্যাংক" },
+      { en: "Tissues, wet wipes and a small mirror", bn: "টিস্যু, ওয়েট ওয়াইপস ও ছোট আয়না" },
+      { en: "Water, ORS and a light snack", bn: "জল, ওআরএস ও হালকা খাবার" },
+      { en: "Basic first aid: plasters and your usual medicines", bn: "প্রাথমিক চিকিৎসা: প্লাস্টার ও নিয়মিত ওষুধ" },
+      { en: "Venue address and key phone numbers on paper", bn: "ভেন্যুর ঠিকানা ও জরুরি ফোন নম্বর কাগজে লেখা" } ] }
+  ];
+  var R = [
+    ["আশীর্বাদ", "Ashirbad"], ["আইবুড়োভাত", "Aiburobhat"], ["গায়ে হলুদ", "Gaye Holud"], ["শুভদৃষ্টি", "Shubho Drishti"],
+    ["মালাবদল", "Mala Badal"], ["সম্প্রদান", "Sampradan"], ["সিঁদুরদান", "Sindoor Daan"], ["বাসর", "Bashor"],
+    ["বিদায়", "Bidaay"], ["কালরাত্রি", "Kaal Ratri"], ["বৌভাত", "Bou Bhat"], ["ফুলশয্যা", "Phool Shojja"]
+  ];
+  var KEY = "nimontron-checklist-v1", lang = "en", ticks = {};
+  try { ticks = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { ticks = {}; }
+  try { var sl = localStorage.getItem(KEY + "-lang"); if (sl === "bn" || sl === "en") lang = sl; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(ticks)); } catch (e) {} }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function bnNum(n) { return lang === "bn" ? String(n).replace(/\d/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }) : String(n); }
+  function render() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang); });
+    document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = T[lang][el.getAttribute("data-t")]; });
+    document.getElementById("stages").innerHTML = S.map(function (st) {
+      return '<section class="stage" aria-labelledby="h-' + st.id + '"><div><h2 id="h-' + st.id + '">' + esc(st.title[lang]) + '</h2><span class="when">' + esc(st.when[lang]) + "</span></div><ul>" +
+        st.items.map(function (it, i) {
+          var id = st.id + "-" + i;
+          return '<li><label for="c-' + id + '"><input type="checkbox" id="c-' + id + '" data-id="' + id + '"' + (ticks[id] ? " checked" : "") + "><span>" + esc(it[lang]) +
+            (it.note ? "<small>" + esc(it.note[lang]) + "</small>" : "") + "</span></label></li>";
+        }).join("") + "</ul>" +
+        (st.invite ? '<p class="cta">' + esc(T[lang].invite) + ' <a href="index.html#demos">' + esc(T[lang].inviteLink) + " →</a></p>" : "") + "</section>";
+    }).join("");
+    document.getElementById("rituals").innerHTML = R.map(function (r) {
+      return "<li><div><b>" + r[0] + "</b>" + (lang === "en" ? "<span>" + r[1] + "</span>" : "") + "</div></li>";
+    }).join("");
+    document.querySelectorAll("#stages input").forEach(function (cb) {
+      cb.addEventListener("change", function () { if (cb.checked) ticks[cb.getAttribute("data-id")] = 1; else delete ticks[cb.getAttribute("data-id")]; save(); progress(); });
+    });
+    progress();
+  }
+  function progress() {
+    var total = 0; S.forEach(function (s) { total += s.items.length; });
+    var done = Object.keys(ticks).length;
+    document.getElementById("bar").style.width = Math.round(done / total * 100) + "%";
+    document.getElementById("count").textContent = bnNum(done) + " / " + bnNum(total) + " " + T[lang].done;
+  }
+  document.querySelectorAll("[data-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { lang = b.getAttribute("data-lang"); try { localStorage.setItem(KEY + "-lang", lang); } catch (e) {} render(); });
+  });
+  document.getElementById("reset").addEventListener("click", function () { ticks = {}; save(); render(); msg(T[lang].cleared); });
+  document.getElementById("copy").addEventListener("click", function () {
+    var txt = T[lang].title + "\n\n" + S.map(function (st) {
+      return st.when[lang] + ": " + st.title[lang] + "\n" + st.items.map(function (it, i) { return (ticks[st.id + "-" + i] ? "✅ " : "⬜ ") + it[lang]; }).join("\n");
+    }).join("\n\n") + "\n\n" + location.href.split("#")[0];
+    var ok = function () { msg(T[lang].copied); };
+    try { navigator.clipboard.writeText(txt).then(ok, function () { fallback(txt); }); } catch (e) { fallback(txt); }
+  });
+  function fallback(txt) {
+    var ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); msg(T[lang].copied); } catch (e) {} ta.remove();
+  }
+  function msg(m) { var el = document.getElementById("msg"); el.textContent = m; setTimeout(function () { el.textContent = T[lang].saveNote; }, 3000); }
+  render();
+})();
+</script>
+</body>
+</html>
