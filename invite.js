@@ -36,7 +36,7 @@
       thanks: "ধন্যবাদ!", thanksSub: "আপনার উত্তর পৌঁছে গেছে। দেখা হচ্ছে শিগগিরই।",
       openMap: "পুরো ম্যাপ খুলুন", addCal: "ক্যালেন্ডারে রাখুন", days: "দিন বাকি", today: "আজই সেই দিন",
       venue: "স্থান", time: "সময়", invitedBy: "নিবেদক", menu: "ভোজের তালিকা", details: "জেনে রাখুন",
-      lang: "ভাষা", madeWith: "Nimontron দিয়ে তৈরি", ownEvent: "নিজের অনুষ্ঠানের জন্য এমন নিমন্ত্রণ চান?",
+      lang: "ভাষা", madeWith: "Made with 💌 by Nimontron", ownEvent: "নিজের অনুষ্ঠানের জন্য এমন নিমন্ত্রণ চান?",
       demo: "নমুনা", demoNote: "এটি একটি নমুনা সাইট। আসল সাইটে প্রতিটি উত্তর সঙ্গে সঙ্গে দম্পতির ইমেলে পৌঁছে যায়।",
       viewing: "অতিথিরা পান নিজের লিংক", required: "নামটা লিখে দিন", pickOne: "অন্তত একটি অনুষ্ঠান বেছে নিন",
       landmarks: "কাছেই"
@@ -48,7 +48,7 @@
       thanks: "Thank you!", thanksSub: "Your RSVP has reached the family. See you soon.",
       openMap: "Open full map", addCal: "Add to calendar", days: "days to go", today: "It's today",
       venue: "Venue", time: "Time", invitedBy: "With love from", menu: "On the menu", details: "Good to know",
-      lang: "Language", madeWith: "Made with Nimontron", ownEvent: "Want an invite like this for your event?",
+      lang: "Language", madeWith: "Made with 💌 by Nimontron", ownEvent: "Want an invite like this for your event?",
       demo: "Demo", demoNote: "This is a demo site. On a real site, every RSVP reaches the couple by email instantly.",
       viewing: "Each side gets its own link", required: "Please add your name", pickOne: "Pick at least one event",
       landmarks: "Nearby"

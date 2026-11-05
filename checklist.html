@@ -117,14 +117,14 @@ footer { padding-block: 36px 44px; color: var(--soft); font-size: .9rem; }
       ritualsTitle: "The rituals, in order", ritualsNote: "Customs differ between families. Check the details with your purohit and elders.",
       ctaBtn: "Get a free invite preview", copyBtn: "Copy checklist", resetBtn: "Clear ticks",
       saveNote: "Your ticks are saved on this device only.", copied: "Checklist copied. Paste it in your family group.",
-      cleared: "All ticks cleared.", done: "done", foot: "Made with love by Nimontron, Kolkata", home: "See invitation demos",
+      cleared: "All ticks cleared.", done: "done", foot: "Made with 💌 by Nimontron · Kolkata", home: "See invitation demos",
       invite: "Invites go out about a month before. Nimontron makes them as a website with RSVP and a venue map.", inviteLink: "See the demos" },
     bn: { eyebrow: "বিনামূল্যে চেকলিস্ট", title: "বিয়ের চেকলিস্ট: কখন কী বুক করবেন, কী কিনবেন",
       lede: "দিন ঠিক করা থেকে বিয়ের দিনের ব্যাগ গোছানো পর্যন্ত, বাঙালি বিয়ের পুরো কাউন্টডাউন। কাজ হয়ে গেলে টিক দিন; টিকগুলো এই ফোনেই থাকবে।",
       ritualsTitle: "আচার-অনুষ্ঠান, পরপর", ritualsNote: "পরিবারভেদে নিয়ম আলাদা হয়। খুঁটিনাটি পুরোহিত ও বাড়ির বড়দের সঙ্গে মিলিয়ে নিন।",
       ctaBtn: "বিনামূল্যে নিমন্ত্রণের নমুনা পান", copyBtn: "চেকলিস্ট কপি করুন", resetBtn: "টিক মুছুন",
       saveNote: "টিকগুলো শুধু এই ডিভাইসে সেভ থাকে।", copied: "চেকলিস্ট কপি হয়েছে। পরিবারের গ্রুপে পেস্ট করুন।",
-      cleared: "সব টিক মুছে দেওয়া হয়েছে।", done: "হয়েছে", foot: "ভালোবাসা দিয়ে বানানো, নিমন্ত্রণ, কলকাতা", home: "নিমন্ত্রণের নমুনা দেখুন",
+      cleared: "সব টিক মুছে দেওয়া হয়েছে।", done: "হয়েছে", foot: "Made with 💌 by Nimontron · কলকাতা", home: "নিমন্ত্রণের নমুনা দেখুন",
       invite: "নিমন্ত্রণ পাঠানো হয় মোটামুটি এক মাস আগে। নিমন্ত্রণ সেটা বানিয়ে দেয় ওয়েবসাইট হিসেবে, আরএসভিপি আর ম্যাপ সমেত।", inviteLink: "নমুনা দেখুন" }
   };
   var S = [
@@ -175,7 +175,9 @@ footer { padding-block: 36px 44px; color: var(--soft); font-size: .9rem; }
   ];
   var KEY = "nimontron-checklist-v1", lang = "en", ticks = {};
   try { ticks = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { ticks = {}; }
-  try { var sl = localStorage.getItem(KEY + "-lang"); if (sl === "bn" || sl === "en") lang = sl; } catch (e) {}
+  try { if ((navigator.languages || [navigator.language || ""]).some(function (l) { return /^bn/i.test(l); })) lang = "bn"; } catch (e) {}
+  try { var sl = localStorage.getItem("nimontron-lang") || localStorage.getItem(KEY + "-lang"); if (sl === "bn" || sl === "en") lang = sl; } catch (e) {}
+  try { var ql = new URLSearchParams(location.search).get("lang"); if (ql === "bn" || ql === "en") lang = ql; } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(ticks)); } catch (e) {} }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function bnNum(n) { return lang === "bn" ? String(n).replace(/\d/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }) : String(n); }
@@ -207,7 +209,7 @@ footer { padding-block: 36px 44px; color: var(--soft); font-size: .9rem; }
     document.getElementById("count").textContent = bnNum(done) + " / " + bnNum(total) + " " + T[lang].done;
   }
   document.querySelectorAll("[data-lang]").forEach(function (b) {
-    b.addEventListener("click", function () { lang = b.getAttribute("data-lang"); try { localStorage.setItem(KEY + "-lang", lang); } catch (e) {} render(); });
+    b.addEventListener("click", function () { lang = b.getAttribute("data-lang"); try { localStorage.setItem(KEY + "-lang", lang); localStorage.setItem("nimontron-lang", lang); } catch (e) {} render(); });
   });
   document.getElementById("reset").addEventListener("click", function () { ticks = {}; save(); render(); msg(T[lang].cleared); });
   document.getElementById("copy").addEventListener("click", function () {

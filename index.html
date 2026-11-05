@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nimontron Invitations</title>
+<title>Nimontron · Bengali wedding invitation websites</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Bengali-first wedding and event invitation websites. Bengali and English, one-tap RSVP, venue map. Free preview with your names.">
+<meta name="description" content="Bengali-first wedding and event invitation websites. Bengali and English, one-tap RSVP, venue map, your own domain. Free preview with your names.">
 <meta property="og:title" content="Nimontron · Your invitation, as a beautiful website">
 <meta property="og:description" content="Bengali and English, one-tap RSVP, venue map. Free preview with your names.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,6 +193,50 @@ footer { padding-block: 28px 40px; color: var(--soft); font-size: .9rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .demo { transition: none; } }
+
+/* language switch */
+.lang { position: relative; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 11px; background: var(--sheet); padding: 0 8px 0 10px; height: 40px; color: var(--ink); }
+.lang svg { width: 17px; height: 17px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.lang select { appearance: none; -webkit-appearance: none; border: 0; background: transparent; color: inherit; font: 600 .92rem/1 var(--f-body); padding: 0 18px 0 0; height: 100%; cursor: pointer; }
+.lang::after { content: ""; position: absolute; right: 10px; top: 50%; width: 6px; height: 6px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+.lang select:focus-visible { outline: none; }
+.lang:focus-within { outline: 2px solid var(--thread); outline-offset: 2px; }
+.lang select option { color: #1B1E33; background: #fff; }
+@media (max-width: 760px) { .nav nav { gap: 10px; } }
+@media (max-width: 430px) { .mark .en { display: none; } .nav .btn { padding: 11px 12px; } }
+
+/* Bengali typography */
+html[lang="bn"] { --f-display: "Tiro Bangla", "Hind Siliguri", Georgia, serif; --f-body: "Hind Siliguri", "Figtree", system-ui, sans-serif; }
+html[lang="bn"] .eyebrow, html[lang="bn"] .demo .kind, html[lang="bn"] .strip p, html[lang="bn"] .plan.star .ribbon { text-transform: none; letter-spacing: .02em; font-size: .9rem; }
+html[lang="bn"] h1, html[lang="bn"] h2, html[lang="bn"] h3 { letter-spacing: 0; line-height: 1.3; }
+html[lang="bn"] .hero h1 { line-height: 1.22; }
+html[lang="bn"] body { line-height: 1.7; }
+
+/* real wedding */
+.real .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 48px; align-items: center; }
+.real .sec-head { margin-bottom: 22px; }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; padding: 0; }
+.chips li { border: 1px dashed color-mix(in srgb, var(--thread) 60%, transparent); border-radius: 999px; padding: 7px 13px; font-size: .9rem; background: var(--sheet); }
+.peek { position: relative; overflow: hidden; }
+.peek .lock { position: absolute; left: 11px; right: 11px; bottom: 11px; height: 36%; border-radius: 0 0 34px 34px; display: grid; place-items: center; align-content: center; gap: 8px; padding: 18px; text-align: center; color: #FFF7EC;
+  background: linear-gradient(to bottom, rgba(40, 10, 24, 0) 0%, rgba(40, 10, 24, .55) 30%, rgba(40, 10, 24, .82) 100%);
+  -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%); mask-image: linear-gradient(to bottom, transparent 0, #000 22%); }
+.peek .lock svg { width: 30px; height: 30px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; margin-top: 18px; }
+.peek .lock b { font-size: .98rem; font-weight: 600; max-width: 15rem; line-height: 1.35; }
+.peek .lock span { font-size: .8rem; opacity: .85; }
+@media (max-width: 860px) { .real .wrap { grid-template-columns: 1fr; gap: 36px; } }
+
+/* custom domain add-on */
+.addon { margin-top: 18px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px 22px; align-items: center; padding: 22px 24px; border: 2px dashed var(--marigold); border-radius: 22px; background: var(--sheet); }
+.addon .globe { width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--marigold) 22%, transparent); display: grid; place-items: center; }
+.addon .globe svg { width: 26px; height: 26px; stroke: var(--ink); fill: none; stroke-width: 1.6; }
+.addon h3 { font-size: 1.3rem; }
+.addon p { color: var(--soft); font-size: .97rem; margin-top: 4px; }
+.addon p code { font: 600 .9rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); background: var(--tint); padding: 2px 6px; border-radius: 6px; white-space: nowrap; }
+.addon .btn { background: transparent; color: var(--ink); border-color: var(--ink); }
+@media (max-width: 760px) { .addon { grid-template-columns: auto minmax(0, 1fr); align-items: start; padding: 20px 18px; } .addon .btn { grid-column: 1 / -1; width: 100%; } }
+footer .made { color: var(--ink); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -201,11 +245,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <div class="wrap">
     <a class="mark" href="#top" aria-label="Nimontron home"><span class="bn">নিমন্ত্রণ</span><span class="en">Nimontron</span></a>
     <nav aria-label="Main">
-      <a class="lnk" href="checklist.html">Free checklist</a>
-      <a class="lnk" href="#demos">Demos</a>
-      <a class="lnk" href="#packages">Packages</a>
-      <a class="lnk" href="#faq">FAQ</a>
-      <a class="btn btn-wa js-wa" href="#" data-msg="hello" target="_blank" rel="noopener">Message us</a>
+      <a class="lnk" href="checklist.html" data-i18n="nav.check">Free checklist</a>
+      <a class="lnk" href="#demos" data-i18n="nav.demos">Demos</a>
+      <a class="lnk" href="#packages" data-i18n="nav.pack">Packages</a>
+      <a class="lnk" href="#faq" data-i18n="nav.faq">FAQ</a>
+      <label class="lang" title="Language / ভাষা">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        <select id="lang" aria-label="Language / ভাষা">
+          <option value="en">English</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </label>
+      <a class="btn btn-wa js-wa" href="#" data-msg="hello" target="_blank" rel="noopener" data-i18n="nav.msg">Message us</a>
     </nav>
   </div>
 </header>
@@ -214,27 +265,27 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Bengali-first invitation websites</p>
-        <h1>Your wedding invitation, as a beautiful website. <em>In Bengali and English.</em></h1>
-        <p class="lede">Guests RSVP in one tap, find the venue on a map, and see every ceremony from Aiburobhat to Bou Bhat. Ready in 48 hours, shared on WhatsApp like any link.</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Bengali-first invitation websites</p>
+        <h1 data-i18n="hero.h1">Your wedding invitation, as a beautiful website. <em>In Bengali and English.</em></h1>
+        <p class="lede" data-i18n="hero.lede">Guests RSVP in one tap, find the venue on a map, and see every ceremony from Aiburobhat to Bou Bhat. Ready in 48 hours, shared on WhatsApp like any link.</p>
         <div class="cta-row">
           <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-            Get a free preview with your names</a>
-          <a class="btn btn-ghost" href="#demos">See the demos</a>
+            <span data-i18n="hero.cta">Get a free preview with your names</span></a>
+          <a class="btn btn-ghost" href="#demos" data-i18n="hero.see">See the demos</a>
         </div>
-        <p class="fine">Send us your names and date<span class="js-via"></span>. Your personal preview arrives within a few hours and stays live for 48.</p>
+        <p class="fine" data-i18n="hero.fine">Send us your names and date<span class="js-via"></span>. Your personal preview arrives within a few hours and stays live for 48.</p>
         <div class="offer">
-          <div class="seal">₹1,999</div>
-          <div><b>Founding couples: Classic at ₹1,999</b><span><span class="left js-left">10 of 10</span> founding slots open · 50% to book</span></div>
+          <div class="seal" data-i18n="price.classic">₹1,999</div>
+          <div><b data-i18n="offer.b">Founding couples: Classic at ₹1,999</b><span data-i18n="offer.s"><span class="left js-left">10 of 10</span> founding slots open · 50% to book</span></div>
         </div>
-        <p class="fine"><a href="checklist.html">Free Biye checklist: what to buy and book, in Bangla + English →</a></p>
+        <p class="fine"><a href="checklist.html" data-i18n="hero.check">Free Biye checklist: what to buy and book, in Bangla + English →</a></p>
       </div>
       <div class="stage">
         <div class="phone">
           <video class="js-hero" src="hero.mp4" poster="hero.jpg" autoplay muted loop playsinline aria-label="A Bengali wedding invitation website scrolling on a phone"></video>
         </div>
-        <p class="tag-float tag-a"><i></i>Mashi just RSVP'd: 4 guests</p>
+        <p class="tag-float tag-a"><i></i><span data-i18n="tag.a">Mashi just RSVP'd: 4 guests</span></p>
         <p class="tag-float tag-b bn">বাংলা ⇄ English</p>
       </div>
     </div>
@@ -242,7 +293,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
   <section class="strip" aria-label="Ceremonies we design for">
     <div class="wrap">
-      <p>Built for</p>
+      <p data-i18n="strip">Built for</p>
       <ul>
         <li>আইবুড়োভাত<span>Aiburobhat</span></li>
         <li>গায়ে হলুদ<span>Gaye Holud</span></li>
@@ -256,16 +307,16 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section>
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">What your guests get</p>
-        <h2>Everything a printed card can't do, and the elders can still use it.</h2>
+        <p class="eyebrow" data-i18n="feat.eyebrow">What your guests get</p>
+        <h2 data-i18n="feat.h2">Everything a printed card can't do, and the elders can still use it.</h2>
       </div>
       <div class="feats">
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h12M10 5v3M6 8c1 5 5 9 9 10M14 8c-1 5-5 9-9 10M17 27l6-15 6 15M19 22h8"/></svg><h3>Bengali and English</h3><p>One tap switches every word. Elders read it in Bangla, colleagues in English.</p></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="5"/><path d="m10 16 4 4 8-9"/></svg><h3>One-tap RSVP</h3><p>Guests reply from WhatsApp. You get every answer by email with head counts per event.</p></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-9-8.3-9-15a9 9 0 0 1 18 0c0 6.7-9 15-9 15Z"/><circle cx="16" cy="13" r="3"/></svg><h3>Venue map with landmarks</h3><p>“Near Karunamoyee bus stand” beats a pin. One button opens full Google Maps.</p></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 19a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1 1M19 13a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1-1"/></svg><h3>A link for each side</h3><p>The bride's family sends Biye, the groom's family sends Bou Bhat. Same site, different events.</p></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="4"/><path d="M5 13h22M11 4v6M21 4v6M11 19h4"/></svg><h3>Bengali dates and lagna</h3><p>Agrahayan dates and the lagna time sit beside the English date, the way a card should.</p></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="8" height="8" rx="1"/><rect x="18" y="6" width="8" height="8" rx="1"/><rect x="6" y="18" width="8" height="8" rx="1"/><path d="M18 18h3v3h-3zM23 23h3v3h-3zM18 24v2M24 18h2"/></svg><h3>QR for printed cards</h3><p>Still printing cards for the elders? We add a QR code that opens the site.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h12M10 5v3M6 8c1 5 5 9 9 10M14 8c-1 5-5 9-9 10M17 27l6-15 6 15M19 22h8"/></svg><h3 data-i18n="f1h">Bengali and English</h3><p data-i18n="f1p">One tap switches every word. Elders read it in Bangla, colleagues in English.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="5"/><path d="m10 16 4 4 8-9"/></svg><h3 data-i18n="f2h">One-tap RSVP</h3><p data-i18n="f2p">Guests reply from WhatsApp. You get every answer by email with head counts per event.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-9-8.3-9-15a9 9 0 0 1 18 0c0 6.7-9 15-9 15Z"/><circle cx="16" cy="13" r="3"/></svg><h3 data-i18n="f3h">Venue map with landmarks</h3><p data-i18n="f3p">“Near Karunamoyee bus stand” beats a pin. One button opens full Google Maps.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 19a5 5 0 0 0 7 0l4-4a5 5 0 0 0-7-7l-1 1M19 13a5 5 0 0 0-7 0l-4 4a5 5 0 0 0 7 7l1-1"/></svg><h3 data-i18n="f4h">A link for each side</h3><p data-i18n="f4p">The bride's family sends Biye, the groom's family sends Bou Bhat. Same site, different events.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="4"/><path d="M5 13h22M11 4v6M21 4v6M11 19h4"/></svg><h3 data-i18n="f5h">Bengali dates and lagna</h3><p data-i18n="f5p">Agrahayan dates and the lagna time sit beside the English date, the way a card should.</p></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="8" height="8" rx="1"/><rect x="18" y="6" width="8" height="8" rx="1"/><rect x="6" y="18" width="8" height="8" rx="1"/><path d="M18 18h3v3h-3zM23 23h3v3h-3zM18 24v2M24 18h2"/></svg><h3 data-i18n="f6h">QR for printed cards</h3><p data-i18n="f6p">Still printing cards for the elders? We add a QR code that opens the site.</p></div>
       </div>
     </div>
   </section>
@@ -273,42 +324,72 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="demos" id="demos">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Live demos</p>
-        <h2>Open one on your phone. Try the language switch and the RSVP.</h2>
-        <p>Every demo below runs on the same template. Yours gets your names, dates, venues and colours.</p>
+        <p class="eyebrow" data-i18n="demos.eyebrow">Live demos</p>
+        <h2 data-i18n="demos.h2">Open one on your phone. Try the language switch and the RSVP.</h2>
+        <p data-i18n="demos.p">Every demo below runs on the same template. Yours gets your names, dates, venues and colours.</p>
       </div>
       <div class="demo-grid">
         <a class="demo" href="traditional.html" target="_blank" rel="noopener">
           <div class="shot"><img src="thumb-traditional.jpg" alt="Traditional red and gold wedding invitation"></div>
-          <div class="body"><span class="kind">Biye + Bou Bhat</span><h3>Traditional</h3><p>Sindoor red and gold, separate links for each family.</p><span class="go">Open demo →</span></div>
+          <div class="body"><span class="kind" data-i18n="d1k">Biye + Bou Bhat</span><h3 data-i18n="d1h">Traditional</h3><p data-i18n="d1p">Sindoor red and gold, separate links for each family.</p><span class="go" data-i18n="go">Open demo →</span></div>
         </a>
         <a class="demo" href="modern.html" target="_blank" rel="noopener">
           <div class="shot"><img src="thumb-modern.jpg" alt="Modern minimal wedding invitation"></div>
-          <div class="body"><span class="kind">English first</span><h3>Modern Minimal</h3><p>Sangeet and wedding, dress code and travel notes.</p><span class="go">Open demo →</span></div>
+          <div class="body"><span class="kind" data-i18n="d2k">English first</span><h3 data-i18n="d2h">Modern Minimal</h3><p data-i18n="d2p">Sangeet and wedding, dress code and travel notes.</p><span class="go" data-i18n="go">Open demo →</span></div>
         </a>
         <a class="demo" href="aiburobhat.html" target="_blank" rel="noopener">
           <div class="shot"><img src="thumb-aiburobhat.jpg" alt="Aiburobhat lunch invitation in turmeric and green"></div>
-          <div class="body"><span class="kind">Pre-wedding</span><h3>Aiburobhat</h3><p>Turmeric and banana leaf, with the full menu.</p><span class="go">Open demo →</span></div>
+          <div class="body"><span class="kind" data-i18n="d3k">Pre-wedding</span><h3 data-i18n="d3h">Aiburobhat</h3><p data-i18n="d3p">Turmeric and banana leaf, with the full menu.</p><span class="go" data-i18n="go">Open demo →</span></div>
         </a>
         <a class="demo" href="annaprashan.html" target="_blank" rel="noopener">
           <div class="shot"><img src="thumb-annaprashan.jpg" alt="Annaprashan invitation in pink and gold"></div>
-          <div class="body"><span class="kind">Mukhe Bhaat</span><h3>Annaprashan</h3><p>For baby's first rice, all year round.</p><span class="go">Open demo →</span></div>
+          <div class="body"><span class="kind" data-i18n="d4k">Mukhe Bhaat</span><h3 data-i18n="d4h">Annaprashan</h3><p data-i18n="d4p">For baby's first rice, all year round.</p><span class="go" data-i18n="go">Open demo →</span></div>
         </a>
       </div>
     </div>
   </section>
 
+  <section class="real" id="real">
+    <div class="wrap">
+      <div>
+        <div class="sec-head">
+          <p class="eyebrow" data-i18n="real.eyebrow">A real wedding</p>
+          <h2 data-i18n="real.h2">Arnab &amp; Srijita's invitation, on their own web address.</h2>
+          <p data-i18n="real.p">From Auckland to Kolkata. Their guests opened a sealed envelope, then the couple's story, in Bengali and English, with RSVP, a venue map and separate links for Biye and Bou Bhat. Here's a peek; the rest stays private for their guests.</p>
+        </div>
+        <ul class="chips">
+          <li data-i18n="real.c1">Opens like an envelope</li>
+          <li data-i18n="real.c2">Own domain: arsri.online</li>
+          <li data-i18n="real.c3">RSVP for every event</li>
+        </ul>
+        <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener" data-i18n="real.cta">Want one like this? Get your free preview</a>
+      </div>
+      <div class="stage">
+        <div class="phone peek">
+          <video class="js-peek" src="arsri-teaser.mp4" poster="arsri-teaser.jpg" muted loop playsinline preload="metadata" aria-label="The opening of Arnab and Srijita's wedding website: an envelope opens and the page scrolls, then blurs"></video>
+          <div class="lock" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            <b data-i18n="real.lock">The rest is for their guests only</b>
+            <span data-i18n="real.lock2">Yours can look like this</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="stitch">
+
   <section>
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">How it works</p>
-        <h2>From one message to a live invitation in two days.</h2>
+        <p class="eyebrow" data-i18n="steps.eyebrow">How it works</p>
+        <h2 data-i18n="steps.h2">From one message to a live invitation in two days.</h2>
       </div>
       <ol class="steps">
-        <li><h3>Message us</h3><p>Send your names, event dates and venues by Instagram DM or WhatsApp.</p></li>
-        <li><h3>See your preview</h3><p>Your own site with your names, within a few hours. Free, live for 48 hours.</p></li>
-        <li><h3>Book with 50%</h3><p>Pay half by UPI to lock it in. Send photos and family names.</p></li>
-        <li><h3>Share the link</h3><p>Live within 48 hours. One revision round included. Pay the rest on delivery.</p></li>
+        <li><h3 data-i18n="s1h">Message us</h3><p data-i18n="s1p">Send your names, event dates and venues by Instagram DM.</p></li>
+        <li><h3 data-i18n="s2h">See your preview</h3><p data-i18n="s2p">Your own site with your names, within a few hours. Free, live for 48 hours.</p></li>
+        <li><h3 data-i18n="s3h">Book with 50%</h3><p data-i18n="s3p">Pay half by UPI to lock it in. Send photos and family names.</p></li>
+        <li><h3 data-i18n="s4h">Share the link</h3><p data-i18n="s4p">Live within 48 hours. One revision round included. Pay the rest on delivery.</p></li>
       </ol>
     </div>
   </section>
@@ -318,53 +399,61 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section id="packages">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Packages</p>
-        <h2>Three fixed prices. No surprises.</h2>
-        <p>Every site stays live for one year and works on any phone.</p>
+        <p class="eyebrow" data-i18n="pk.eyebrow">Packages</p>
+        <h2 data-i18n="pk.h2">Three fixed prices. No surprises.</h2>
+        <p data-i18n="pk.p">Every site stays live for one year and works on any phone.</p>
       </div>
       <div class="plans">
         <div class="plan">
-          <div><h3>Starter</h3><p class="for">One event, simple and quick</p></div>
-          <div class="price"><b>₹1,499</b></div>
+          <div><h3 data-i18n="st.h">Starter</h3><p class="for" data-i18n="st.for">One event, simple and quick</p></div>
+          <div class="price"><b data-i18n="price.starter">₹1,499</b></div>
           <ul>
-            <li>Up to 2 events</li>
-            <li>Bengali and English</li>
-            <li>Venue map with landmarks</li>
-            <li>RSVP with email alerts</li>
-            <li>1 revision round</li>
+            <li data-i18n="st.1">Up to 2 events</li>
+            <li data-i18n="st.2">Bengali and English</li>
+            <li data-i18n="st.3">Venue map with landmarks</li>
+            <li data-i18n="st.4">RSVP with email alerts</li>
+            <li data-i18n="st.5">1 revision round</li>
           </ul>
-          <a class="btn btn-wa js-wa" href="#" data-msg="starter" target="_blank" rel="noopener">Choose Starter</a>
+          <a class="btn btn-wa js-wa" href="#" data-msg="starter" target="_blank" rel="noopener" data-i18n="st.btn">Choose Starter</a>
         </div>
         <div class="plan star">
-          <span class="ribbon">Founding offer</span>
-          <div><h3>Classic</h3><p class="for">The full Bengali wedding</p></div>
-          <div class="price"><b>₹1,999</b><s>₹3,499</s><small>For the first 10 couples</small></div>
+          <span class="ribbon" data-i18n="cl.ribbon">Founding offer</span>
+          <div><h3 data-i18n="cl.h">Classic</h3><p class="for" data-i18n="cl.for">The full Bengali wedding</p></div>
+          <div class="price"><b data-i18n="price.classic">₹1,999</b><s data-i18n="price.classicOld">₹3,499</s><small data-i18n="cl.small">For the first 10 couples</small></div>
           <ul>
-            <li>Up to 5 events, Aiburobhat to Reception</li>
-            <li>Separate links for bride's and groom's side</li>
-            <li>Bengali dates and lagna times</li>
-            <li>RSVP per event with head counts</li>
-            <li>Photo gallery and countdown</li>
-            <li>QR code for printed cards</li>
-            <li>2 revision rounds</li>
+            <li data-i18n="cl.1">Up to 5 events, Aiburobhat to Reception</li>
+            <li data-i18n="cl.2">Separate links for bride's and groom's side</li>
+            <li data-i18n="cl.3">Bengali dates and lagna times</li>
+            <li data-i18n="cl.4">RSVP per event with head counts</li>
+            <li data-i18n="cl.5">Photo gallery and countdown</li>
+            <li data-i18n="cl.6">QR code for printed cards</li>
+            <li data-i18n="cl.7">2 revision rounds</li>
           </ul>
-          <a class="btn btn-wa js-wa" href="#" data-msg="classic" target="_blank" rel="noopener">Book Classic</a>
+          <a class="btn btn-wa js-wa" href="#" data-msg="classic" target="_blank" rel="noopener" data-i18n="cl.btn">Book Classic</a>
         </div>
         <div class="plan">
-          <div><h3>Royal</h3><p class="for">Custom look, every detail</p></div>
-          <div class="price"><b>₹7,999</b></div>
+          <div><h3 data-i18n="ro.h">Royal</h3><p class="for" data-i18n="ro.for">Custom look, every detail</p></div>
+          <div class="price"><b data-i18n="price.royal">₹7,999</b></div>
           <ul>
-            <li>Everything in Classic</li>
-            <li>Custom colours and monogram</li>
-            <li>Unlimited events and guest links</li>
-            <li>Guest list export for caterers</li>
-            <li>Your own web address for a year</li>
-            <li>24-hour priority delivery</li>
+            <li data-i18n="ro.1">Everything in Classic</li>
+            <li data-i18n="ro.2">Custom colours and monogram</li>
+            <li data-i18n="ro.3">Unlimited events and guest links</li>
+            <li data-i18n="ro.4">Guest list export for caterers</li>
+            <li data-i18n="ro.5">Your own web address for a year</li>
+            <li data-i18n="ro.6">24-hour priority delivery</li>
           </ul>
-          <a class="btn btn-wa js-wa" href="#" data-msg="royal" target="_blank" rel="noopener">Choose Royal</a>
+          <a class="btn btn-wa js-wa" href="#" data-msg="royal" target="_blank" rel="noopener" data-i18n="ro.btn">Choose Royal</a>
         </div>
       </div>
-      <p class="plans-note">Founding couples keep a small “Made with Nimontron” line at the bottom of their site.</p>
+      <div class="addon" id="domain">
+        <div class="globe"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg></div>
+        <div>
+          <h3 data-i18n="dom.h">Add-on: your own web address</h3>
+          <p data-i18n="dom.p">Want your names in the link, like <code>ritam-debolina.in</code> or <code>tiyasha-aritra.online</code>? We register it and connect your invite. The price depends on the name and the ending (.in, .online, .com and others), so we quote it in chat. Included with Royal for a year.</p>
+        </div>
+        <a class="btn js-wa" href="#" data-msg="domain" target="_blank" rel="noopener" data-i18n="dom.btn">Ask for a domain price</a>
+      </div>
+      <p class="plans-note" data-i18n="pk.note">Founding couples keep a small “Made with 💌 by Nimontron” line at the bottom of their site.</p>
     </div>
   </section>
 
@@ -373,16 +462,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section id="faq">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Questions</p>
-        <h2>What families usually ask.</h2>
+        <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
+        <h2 data-i18n="faq.h2">What families usually ask.</h2>
       </div>
       <div class="faq">
-        <details open><summary>Can elders use it?</summary><p>Yes. It opens from WhatsApp like any link, text is large, and Bengali is the default. No app, no login.</p></details>
-        <details><summary>Can we still print cards?</summary><p>Yes. Classic and Royal include a QR code you can put on your printed card so guests open the site from it.</p></details>
-        <details><summary>How long does it stay live?</summary><p>One year from the first event. We can archive it as a keepsake after that.</p></details>
-        <details><summary>What do you need from us?</summary><p>Names, event dates and times, venues, and the family names to print. Photos are optional.</p></details>
-        <details><summary>Who sees the RSVP replies?</summary><p>Only you. Replies go to your email. We delete RSVP data 90 days after the event.</p></details>
-        <details><summary>Can you do other ceremonies?</summary><p>Yes: Annaprashan, Griha Probesh, birthdays and anniversaries. Message us with the date.</p></details>
+        <details open><summary data-i18n="q1">Can elders use it?</summary><p data-i18n="a1">Yes. It opens from WhatsApp like any link, the text is large, and Bengali is one tap away. No app, no login.</p></details>
+        <details><summary data-i18n="q2">Can we still print cards?</summary><p data-i18n="a2">Yes. Classic and Royal include a QR code you can put on your printed card so guests open the site from it.</p></details>
+        <details><summary data-i18n="q3">How long does it stay live?</summary><p data-i18n="a3">One year from the first event. We can archive it as a keepsake after that.</p></details>
+        <details><summary data-i18n="q4">Can we have our own domain name?</summary><p data-i18n="a4">Yes. Tell us the name you want and we'll check what's available and quote the price. It may be .in or .online rather than .com.</p></details>
+        <details><summary data-i18n="q5">What do you need from us?</summary><p data-i18n="a5">Names, event dates and times, venues, and the family names to print. Photos are optional.</p></details>
+        <details><summary data-i18n="q6">Who sees the RSVP replies?</summary><p data-i18n="a6">Only you. Replies go to your email. We delete RSVP data 90 days after the event.</p></details>
+        <details><summary data-i18n="q7">Can you do other ceremonies?</summary><p data-i18n="a7">Yes: Annaprashan, Griha Probesh, birthdays and anniversaries. Message us with the date.</p></details>
       </div>
     </div>
   </section>
@@ -390,17 +480,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="close">
     <div class="wrap">
       <div>
-        <h2>Getting married between 20 November and 12 December?</h2>
-        <p class="sub">Invites usually go out three weeks before. Send us your names today and see your preview tonight.</p>
+        <h2 data-i18n="close.h2">Getting married between 20 November and 12 December?</h2>
+        <p class="sub" data-i18n="close.sub">Invites usually go out three weeks before. Send us your names today and see your preview tonight.</p>
         <div class="cta-row">
-          <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener">Get my free preview</a>
-          <a class="btn btn-ghost js-pay" href="#" target="_blank" rel="noopener">Book with 50% deposit</a>
+          <a class="btn btn-wa js-wa" href="#" data-msg="preview" target="_blank" rel="noopener" data-i18n="close.cta">Get my free preview</a>
+          <a class="btn btn-ghost js-pay" href="#" target="_blank" rel="noopener" data-i18n="close.pay">Book with 50% deposit</a>
         </div>
       </div>
       <div class="pay">
-        <h3>How to book</h3>
-        <p class="js-book">Message us your names, event dates and venues. We reply with your free preview and the payment details.</p>
-        <div class="upi js-upi-row" hidden><code class="js-upi"></code><button type="button" id="copy-upi">Copy UPI ID</button></div>
+        <h3 data-i18n="pay.h">How to book</h3>
+        <p class="js-book"></p>
+        <div class="upi js-upi-row" hidden><code class="js-upi"></code><button type="button" id="copy-upi"></button></div>
         <p class="js-contact"></p>
       </div>
     </div>
@@ -409,8 +499,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer>
   <div class="wrap">
-    <span><span class="bn">নিমন্ত্রণ</span> · Nimontron, Kolkata</span>
-    <span>Invitation websites for Bengali weddings and ceremonies</span>
+    <span><a class="made" href="#top">Made with 💌 by Nimontron</a> · <span data-i18n="foot.city">Kolkata</span></span>
+    <span data-i18n="foot.r">Invitation websites for Bengali weddings and ceremonies</span>
   </div>
 </footer>
 
@@ -424,6 +514,89 @@ var SITE = {
   foundingLeft: 10, foundingTotal: 10    // update as couples book
 };
 /* ========================================================== */
+
+/* Bengali text. English lives in the HTML above; each data-i18n key here replaces it when বাংলা is chosen. */
+var BN = {
+  "nav.check": "বিনামূল্যে চেকলিস্ট", "nav.demos": "নমুনা", "nav.pack": "প্যাকেজ", "nav.faq": "প্রশ্নোত্তর", "nav.msg": "মেসেজ করুন",
+  "hero.eyebrow": "বাঙালির নিমন্ত্রণ, এবার ওয়েবসাইটে",
+  "hero.h1": "বিয়ের নিমন্ত্রণপত্র, এবার সুন্দর একটা ওয়েবসাইটে। <em>বাংলা আর ইংরেজি, দুই ভাষাতেই।</em>",
+  "hero.lede": "অতিথিরা এক ট্যাপে জানিয়ে দেবেন আসছেন কি না, ম্যাপে খুঁজে নেবেন বিয়েবাড়ি, দেখে নেবেন আইবুড়োভাত থেকে বৌভাত পর্যন্ত সব অনুষ্ঠান। ৪৮ ঘণ্টায় তৈরি, হোয়াটসঅ্যাপে পাঠান যেকোনো লিংকের মতো।",
+  "hero.cta": "আপনার নামে বিনামূল্যে নমুনা নিন",
+  "hero.see": "নমুনা দেখুন",
+  "hero.fine": "আপনাদের নাম আর বিয়ের তারিখ পাঠান<span class=\"js-via\"></span>। কয়েক ঘণ্টার মধ্যে পৌঁছে যাবে আপনাদের নিজস্ব নমুনা, থাকবে ৪৮ ঘণ্টা।",
+  "offer.b": "প্রথম ১০ জোড়ার জন্য: ক্লাসিক মাত্র ₹১,৯৯৯",
+  "offer.s": "<span class=\"left js-left\"></span> জায়গা খালি · বুকিংয়ে ৫০%",
+  "hero.check": "বিনামূল্যে বিয়ের চেকলিস্ট: কখন কী কিনবেন, কী বুক করবেন →",
+  "tag.a": "মাসি জানালেন: ৪ জন আসছেন",
+  "strip": "যে অনুষ্ঠানের জন্য",
+  "feat.eyebrow": "অতিথিরা যা পাবেন",
+  "feat.h2": "ছাপানো কার্ড যা পারে না, সবই পারে। আর বাড়ির বড়রাও সহজে ব্যবহার করতে পারেন।",
+  "f1h": "বাংলা আর ইংরেজি", "f1p": "এক ট্যাপে পুরো নিমন্ত্রণ বদলে যায়। বড়রা পড়বেন বাংলায়, অফিসের বন্ধুরা ইংরেজিতে।",
+  "f2h": "এক ট্যাপে আরএসভিপি", "f2p": "অতিথিরা হোয়াটসঅ্যাপ থেকেই উত্তর দেন। প্রতিটি উত্তর, অনুষ্ঠান-ভিত্তিক অতিথি সংখ্যা সহ, পৌঁছে যায় আপনার ইমেলে।",
+  "f3h": "চেনা ল্যান্ডমার্ক সহ ম্যাপ", "f3p": "“করুণাময়ী বাসস্ট্যান্ডের পাশে” লেখা থাকলে খুঁজতে সুবিধা। এক ট্যাপে খোলে পুরো গুগল ম্যাপ।",
+  "f4h": "দুই বাড়ির আলাদা লিংক", "f4p": "কনের বাড়ি পাঠায় বিয়ের লিংক, বরের বাড়ি বৌভাতের। একই সাইট, আলাদা অনুষ্ঠান।",
+  "f5h": "বাংলা তারিখ আর লগ্ন", "f5p": "ইংরেজি তারিখের পাশেই অগ্রহায়ণের তারিখ আর লগ্নের সময়, ঠিক যেমন কার্ডে থাকে।",
+  "f6h": "ছাপানো কার্ডে কিউআর কোড", "f6p": "বড়দের জন্য কার্ড ছাপাচ্ছেন? কার্ডে কিউআর কোড দিয়ে দিই, স্ক্যান করলেই খুলবে সাইট।",
+  "demos.eyebrow": "লাইভ নমুনা",
+  "demos.h2": "ফোনে খুলে দেখুন। ভাষা বদলে দেখুন, আরএসভিপি করে দেখুন।",
+  "demos.p": "নিচের সব নমুনা একই টেমপ্লেটে তৈরি। আপনারটায় থাকবে আপনাদের নাম, তারিখ, ভেন্যু আর পছন্দের রং।",
+  "d1k": "বিয়ে + বৌভাত", "d1h": "ঐতিহ্যবাহী", "d1p": "সিঁদুর-লাল আর সোনালি, দুই পরিবারের আলাদা লিংক।",
+  "d2k": "ইংরেজি-প্রধান", "d2h": "আধুনিক মিনিমাল", "d2p": "সঙ্গীত আর বিয়ে, পোশাকের নিয়ম আর যাতায়াতের তথ্য।",
+  "d3k": "বিয়ের আগে", "d3h": "আইবুড়োভাত", "d3p": "হলুদ আর কলাপাতার রঙে, পুরো মেনু সমেত।",
+  "d4k": "মুখেভাত", "d4h": "অন্নপ্রাশন", "d4p": "শিশুর প্রথম ভাতের জন্য, সারা বছর।",
+  "go": "নমুনা খুলুন →",
+  "real.eyebrow": "সত্যিকারের একটি বিয়ে",
+  "real.h2": "অর্ণব ও সৃজিতার নিমন্ত্রণ, নিজেদের ওয়েব ঠিকানায়।",
+  "real.p": "অকল্যান্ড থেকে কলকাতা। ওঁদের অতিথিরা প্রথমে খুলেছেন একটা খাম, তারপর দুজনের গল্প, বাংলা আর ইংরেজিতে, সঙ্গে আরএসভিপি, ভেন্যুর ম্যাপ, আর বিয়ে ও বৌভাতের আলাদা লিংক। এখানে একটু ঝলক দেখুন; বাকিটা শুধু ওঁদের অতিথিদের জন্য।",
+  "real.c1": "খামের মতো খোলে", "real.c2": "নিজস্ব ডোমেন: arsri.online", "real.c3": "প্রতিটি অনুষ্ঠানের আরএসভিপি",
+  "real.cta": "এমন একটা চান? বিনামূল্যে নমুনা নিন",
+  "real.lock": "বাকিটা শুধু ওঁদের অতিথিদের জন্য", "real.lock2": "আপনারটাও হতে পারে এমন",
+  "steps.eyebrow": "কীভাবে হয়", "steps.h2": "একটা মেসেজ থেকে দুদিনে তৈরি নিমন্ত্রণ।",
+  "s1h": "মেসেজ করুন", "s1p": "ইনস্টাগ্রাম ডিএম-এ নাম, অনুষ্ঠানের তারিখ আর ভেন্যু পাঠান।",
+  "s2h": "নমুনা দেখুন", "s2p": "কয়েক ঘণ্টার মধ্যে আপনাদের নামে সাইট। বিনামূল্যে, থাকবে ৪৮ ঘণ্টা।",
+  "s3h": "৫০% দিয়ে বুক করুন", "s3p": "ইউপিআই-তে অর্ধেক টাকা দিয়ে পাকা করুন। ছবি আর পরিবারের নাম পাঠান।",
+  "s4h": "লিংক পাঠান", "s4p": "৪৮ ঘণ্টায় লাইভ। একবার সংশোধন ফ্রি। বাকি টাকা ডেলিভারির সময়।",
+  "pk.eyebrow": "প্যাকেজ", "pk.h2": "তিনটে নির্দিষ্ট দাম। কোনো লুকোনো খরচ নেই।", "pk.p": "প্রতিটি সাইট এক বছর লাইভ থাকে, যেকোনো ফোনে চলে।",
+  "price.starter": "₹১,৪৯৯", "price.classic": "₹১,৯৯৯", "price.classicOld": "₹৩,৪৯৯", "price.royal": "₹৭,৯৯৯",
+  "st.h": "স্টার্টার", "st.for": "একটা অনুষ্ঠান, সহজ আর তাড়াতাড়ি",
+  "st.1": "২টি পর্যন্ত অনুষ্ঠান", "st.2": "বাংলা আর ইংরেজি", "st.3": "ল্যান্ডমার্ক সহ ভেন্যুর ম্যাপ", "st.4": "ইমেল অ্যালার্ট সহ আরএসভিপি", "st.5": "১ বার সংশোধন",
+  "st.btn": "স্টার্টার নিন",
+  "cl.ribbon": "শুরুর অফার", "cl.h": "ক্লাসিক", "cl.for": "পুরো বাঙালি বিয়ে", "cl.small": "প্রথম ১০ জোড়ার জন্য",
+  "cl.1": "আইবুড়োভাত থেকে রিসেপশন, ৫টি পর্যন্ত অনুষ্ঠান", "cl.2": "কনে আর বরের বাড়ির আলাদা লিংক", "cl.3": "বাংলা তারিখ আর লগ্নের সময়",
+  "cl.4": "প্রতিটি অনুষ্ঠানের আলাদা আরএসভিপি ও অতিথি সংখ্যা", "cl.5": "ছবির গ্যালারি আর কাউন্টডাউন", "cl.6": "ছাপানো কার্ডের জন্য কিউআর কোড", "cl.7": "২ বার সংশোধন",
+  "cl.btn": "ক্লাসিক বুক করুন",
+  "ro.h": "রয়্যাল", "ro.for": "নিজের মতো ডিজাইন, প্রতিটি খুঁটিনাটি",
+  "ro.1": "ক্লাসিকের সবকিছু", "ro.2": "নিজের রং আর মনোগ্রাম", "ro.3": "যত খুশি অনুষ্ঠান আর অতিথি-লিংক", "ro.4": "ক্যাটারারের জন্য অতিথি তালিকা",
+  "ro.5": "এক বছরের জন্য নিজস্ব ওয়েব ঠিকানা", "ro.6": "২৪ ঘণ্টায় ডেলিভারি",
+  "ro.btn": "রয়্যাল নিন",
+  "dom.h": "অ্যাড-অন: নিজস্ব ওয়েব ঠিকানা",
+  "dom.p": "লিংকে নিজেদের নাম চান, যেমন <code>ritam-debolina.in</code> বা <code>tiyasha-aritra.online</code>? আমরা ডোমেন কিনে আপনাদের নিমন্ত্রণের সঙ্গে জুড়ে দেব। দাম নির্ভর করে নাম আর শেষাংশের (.in, .online, .com ইত্যাদি) উপর, তাই চ্যাটে জানিয়ে দিই। রয়্যাল প্যাকেজে এক বছরের জন্য অন্তর্ভুক্ত।",
+  "dom.btn": "ডোমেনের দাম জানুন",
+  "pk.note": "শুরুর অফারের জোড়াদের সাইটের নিচে ছোট করে লেখা থাকে “Made with 💌 by Nimontron”।",
+  "faq.eyebrow": "প্রশ্ন", "faq.h2": "পরিবারগুলো সাধারণত যা জানতে চায়।",
+  "q1": "বাড়ির বড়রা ব্যবহার করতে পারবেন?", "a1": "হ্যাঁ। হোয়াটসঅ্যাপ থেকে যেকোনো লিংকের মতোই খোলে, লেখা বড়, আর এক ট্যাপেই বাংলা। কোনো অ্যাপ বা লগইন লাগে না।",
+  "q2": "কার্ড ছাপানো যাবে তো?", "a2": "হ্যাঁ। ক্লাসিক আর রয়্যালে একটা কিউআর কোড থাকে, কার্ডে ছেপে দিলে অতিথিরা স্ক্যান করেই সাইট খুলতে পারবেন।",
+  "q3": "সাইট কতদিন থাকবে?", "a3": "প্রথম অনুষ্ঠানের দিন থেকে এক বছর। তারপর স্মৃতি হিসেবে রেখে দেওয়া যায়।",
+  "q4": "নিজেদের নামে ডোমেন পাওয়া যাবে?", "a4": "হ্যাঁ। কোন নাম চান জানান, আমরা দেখে নিয়ে দাম জানিয়ে দেব। .com না-ও হতে পারে, .in বা .online হতে পারে।",
+  "q5": "আমাদের কী কী দিতে হবে?", "a5": "নাম, অনুষ্ঠানের তারিখ ও সময়, ভেন্যু, আর নিমন্ত্রণে যে পরিবারের নাম থাকবে। ছবি দিলে ভালো, না দিলেও চলবে।",
+  "q6": "আরএসভিপি-র উত্তর কারা দেখতে পায়?", "a6": "শুধু আপনারা। উত্তর যায় আপনাদের ইমেলে। অনুষ্ঠানের ৯০ দিন পরে আমরা সেই তথ্য মুছে ফেলি।",
+  "q7": "অন্য অনুষ্ঠানের জন্যও হয়?", "a7": "হ্যাঁ: অন্নপ্রাশন, গৃহপ্রবেশ, জন্মদিন, বিবাহবার্ষিকী। তারিখ জানিয়ে মেসেজ করুন।",
+  "close.h2": "২০ নভেম্বর থেকে ১২ ডিসেম্বরের মধ্যে বিয়ে?",
+  "close.sub": "নিমন্ত্রণ সাধারণত তিন সপ্তাহ আগে পাঠানো হয়। আজই নাম পাঠান, আজ রাতেই নমুনা দেখুন।",
+  "close.cta": "বিনামূল্যে নমুনা চাই", "close.pay": "৫০% দিয়ে বুক করুন",
+  "pay.h": "কীভাবে বুক করবেন",
+  "foot.city": "কলকাতা", "foot.r": "বাঙালি বিয়ে ও অনুষ্ঠানের নিমন্ত্রণ-ওয়েবসাইট"
+};
+var UI = {
+  en: { title: "Nimontron · Bengali wedding invitation websites", via: function (h) { return " by Instagram DM to @" + h; }, viaWa: " on WhatsApp",
+        left: function (a, b) { return a + " of " + b; }, book: "Message us your names, event dates and venues. We reply with your free preview and the payment details.",
+        bookUpi: "Pay the 50% deposit to this UPI ID, then send us the screenshot.", copy: "Copy UPI ID", copied: "Copied", selected: "Selected" },
+  bn: { title: "নিমন্ত্রণ · বাঙালি বিয়ের নিমন্ত্রণ-ওয়েবসাইট", via: function (h) { return " ইনস্টাগ্রাম ডিএম-এ (@" + h + ")"; }, viaWa: " হোয়াটসঅ্যাপে",
+        left: function (a, b) { return bnNum(b) + "টির মধ্যে " + bnNum(a) + "টি"; }, book: "নাম, অনুষ্ঠানের তারিখ আর ভেন্যু মেসেজ করুন। আমরা বিনামূল্যে নমুনা আর পেমেন্টের তথ্য পাঠিয়ে দেব।",
+        bookUpi: "এই ইউপিআই আইডি-তে ৫০% পাঠিয়ে স্ক্রিনশট পাঠান।", copy: "ইউপিআই আইডি কপি করুন", copied: "কপি হয়েছে", selected: "সিলেক্ট হয়েছে" }
+};
+function bnNum(n) { return String(n).replace(/\d/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }); }
+
 (function () {
   var msgs = {
     hello: "Hi Nimontron! I'd like to know more about invitation websites.",
@@ -431,38 +604,78 @@ var SITE = {
     starter: "Hi Nimontron! We'd like the Starter package (Rs 1,499).\nNames: \nDate: ",
     classic: "Hi Nimontron! We'd like the Classic founding offer (Rs 1,999).\nNames: \nDates: ",
     royal: "Hi Nimontron! We'd like the Royal package (Rs 7,999).\nNames: \nDates: ",
-    deposit: "Hi Nimontron! We'd like to pay the 50% deposit to book.\nNames: \nPackage: "
+    deposit: "Hi Nimontron! We'd like to pay the 50% deposit to book.\nNames: \nPackage: ",
+    domain: "Hi Nimontron! We'd like our own web address for the invite.\nNames: \nDomain we'd like (e.g. ritam-debolina.in): "
   };
   var useWa = /^\d{10,15}$/.test(SITE.whatsapp);
+  var lang = "en";
+  var nodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n]"));
+  nodes.forEach(function (e) { e._en = e.innerHTML; });
+  var enTitle = document.title;
+
   function link(key) {
     return useWa ? "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(msgs[key] || msgs.hello)
                  : "https://ig.me/m/" + SITE.instagram;
   }
-  document.querySelectorAll(".js-wa").forEach(function (a) { a.href = link(a.getAttribute("data-msg")); });
-  document.querySelector(".js-pay").href = SITE.payLink || link("deposit");
-  document.querySelectorAll(".js-via").forEach(function (e) { e.textContent = useWa ? " on WhatsApp" : " by Instagram DM to @" + SITE.instagram; });
-  var contact = document.querySelector(".js-contact");
-  if (useWa) {
-    var n = SITE.whatsapp.replace(/^91/, "");
-    contact.textContent = "WhatsApp: +91 " + n.slice(0, 5) + " " + n.slice(5) + (SITE.instagram ? " · Instagram: @" + SITE.instagram : "");
-  } else {
-    contact.innerHTML = 'Instagram: <a href="https://instagram.com/' + SITE.instagram + '" target="_blank" rel="noopener">@' + SITE.instagram + "</a>";
+  function dynamic() {
+    var t = UI[lang];
+    document.querySelectorAll(".js-wa").forEach(function (a) { a.href = link(a.getAttribute("data-msg")); });
+    document.querySelector(".js-pay").href = SITE.payLink || link("deposit");
+    document.querySelectorAll(".js-via").forEach(function (e) { e.textContent = useWa ? t.viaWa : t.via(SITE.instagram); });
+    document.querySelectorAll(".js-left").forEach(function (e) { e.textContent = t.left(SITE.foundingLeft, SITE.foundingTotal); });
+    var contact = document.querySelector(".js-contact");
+    if (useWa) {
+      var n = SITE.whatsapp.replace(/^91/, "");
+      contact.textContent = "WhatsApp: +91 " + n.slice(0, 5) + " " + n.slice(5) + (SITE.instagram ? " · Instagram: @" + SITE.instagram : "");
+    } else {
+      contact.innerHTML = 'Instagram: <a href="https://instagram.com/' + SITE.instagram + '" target="_blank" rel="noopener">@' + SITE.instagram + "</a>";
+    }
+    document.querySelector(".js-book").textContent = SITE.upi ? t.bookUpi : t.book;
+    if (SITE.upi) {
+      document.querySelector(".js-upi-row").hidden = false;
+      document.querySelector(".js-upi").textContent = SITE.upi;
+    }
+    document.getElementById("copy-upi").textContent = t.copy;
   }
-  if (SITE.upi) {
-    document.querySelector(".js-upi-row").hidden = false;
-    document.querySelector(".js-upi").textContent = SITE.upi;
-    document.querySelector(".js-book").textContent = "Pay the 50% deposit to this UPI ID, then send us the screenshot.";
+  function setLang(l, save) {
+    lang = l === "bn" ? "bn" : "en";
+    document.documentElement.lang = lang;
+    nodes.forEach(function (e) {
+      var k = e.getAttribute("data-i18n");
+      e.innerHTML = lang === "bn" && BN[k] != null ? BN[k] : e._en;
+    });
+    document.title = lang === "bn" ? UI.bn.title : enTitle;
+    sel.value = lang;
+    dynamic();
+    if (save) { try { localStorage.setItem("nimontron-lang", lang); } catch (e) {} }
   }
-  document.querySelectorAll(".js-left").forEach(function (e) { e.textContent = SITE.foundingLeft + " of " + SITE.foundingTotal; });
+
+  var sel = document.getElementById("lang");
+  var start = "en";
+  try { if ((navigator.languages || [navigator.language || ""]).some(function (l) { return /^bn/i.test(l); })) start = "bn"; } catch (e) {}
+  try { var saved = localStorage.getItem("nimontron-lang"); if (saved === "bn" || saved === "en") start = saved; } catch (e) {}
+  try { var q = new URLSearchParams(location.search).get("lang"); if (q === "bn" || q === "en") start = q; } catch (e) {}
+  setLang(start, false);
+  sel.addEventListener("change", function () { setLang(sel.value, true); });
+
   var btn = document.getElementById("copy-upi");
   btn.addEventListener("click", function () {
-    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy UPI ID"; }, 1800); };
+    var t = UI[lang];
+    var done = function () { btn.textContent = t.copied; setTimeout(function () { btn.textContent = UI[lang].copy; }, 1800); };
     try { navigator.clipboard.writeText(SITE.upi).then(done, selectUpi); } catch (e) { selectUpi(); }
   });
   function selectUpi() {
     var r = document.createRange(); r.selectNodeContents(document.querySelector(".js-upi"));
-    var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected";
+    var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = UI[lang].selected;
   }
+
+  /* play the real-wedding peek only while it is on screen */
+  var peek = document.querySelector(".js-peek");
+  if (peek && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { var p = peek.play(); if (p && p.catch) p.catch(function () {}); } else peek.pause(); });
+    }, { threshold: 0.35 }).observe(peek);
+  } else if (peek) { peek.autoplay = true; }
 })();
 </script>
 </body>
