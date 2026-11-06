@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<title>Nimontron</title>
+<rect width="512" height="512" rx="112" fill="#121429"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(0.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(45.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(90.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(135.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(180.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(225.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(270.0 256 256)"/>
+<ellipse cx="256" cy="143.0" rx="32.0" ry="75.0" fill="#F0565C" transform="rotate(315.0 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(22.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(67.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(112.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(157.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(202.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(247.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(292.5 256 256)"/>
+<ellipse cx="256" cy="172.0" rx="19.0" ry="46.0" fill="#F5B942" transform="rotate(337.5 256 256)"/>
+<circle cx="256" cy="256" r="46" fill="#121429"/>
+<circle cx="256" cy="256" r="26" fill="#F5B942"/>
+</svg>
