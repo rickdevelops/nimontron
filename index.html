@@ -118,11 +118,11 @@ section { padding-block: 88px; position: relative; }
 .env-flap { left: 0; right: 0; top: 0; height: 58%; transform-origin: 50% 0; transform: translateZ(30px) rotateX(0deg); transition: transform 1s cubic-bezier(.5, 0, .2, 1) .1s; }
 .env-flap .face { position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); backface-visibility: hidden; border-radius: 16px 16px 0 0; }
 .env-flap .front { background: linear-gradient(180deg, #A9212A, #7E161F); box-shadow: inset 0 2px 0 rgba(233, 182, 90, .5); }
-.env-flap .back { background: linear-gradient(0deg, #6A121A, #4E0D14); transform: rotateY(180deg) rotateZ(180deg); clip-path: polygon(0 100%, 100% 100%, 50% 0); }
+.env-flap .back { background: radial-gradient(circle, rgba(246, 213, 142, .5) 0 2px, transparent 3px) 0 0 / 18px 18px, linear-gradient(0deg, #B3242D, #7E161F); transform: rotateY(180deg) rotateZ(180deg); clip-path: polygon(0 100%, 100% 100%, 50% 0); }
 .wax { left: 50%; top: 58%; width: calc(var(--ew) * .2); aspect-ratio: 1; margin: calc(var(--ew) * -.1) 0 0 calc(var(--ew) * -.1); border-radius: 50%; transform: translateZ(34px); display: grid; place-items: center; color: var(--gold2); font: 400 calc(var(--ew) * .07)/1 var(--f-script);
   background: radial-gradient(circle at 34% 30%, #F0646A, #C0262D 45%, #861319 80%); box-shadow: inset 0 -5px 10px rgba(0, 0, 0, .4), inset 0 4px 6px rgba(255, 255, 255, .2), 0 12px 22px -10px rgba(0, 0, 0, .8); transition: transform .7s cubic-bezier(.5, 0, .3, 1), opacity .5s ease .2s; }
 .wax::before { content: ""; position: absolute; inset: 9%; border-radius: 50%; border: 2px dotted rgba(246, 213, 142, .6); }
-.stage3d.open .env-flap { transform: translateZ(0) rotateX(178deg); }
+.stage3d.open .env-flap { transform: translateZ(0) rotateX(176deg); }
 .stage3d.open .wax { transform: translateZ(60px) translateY(-30%) scale(.4) rotate(-40deg); opacity: 0; }
 .stage3d.open .env-phone { opacity: 1; transform: translateZ(14px) translateY(calc(var(--ew) * -.42)) scale(1); }
 .stage3d.open .env-phone.float { animation: floaty 5s ease-in-out infinite; }
