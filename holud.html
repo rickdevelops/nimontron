@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="bn" data-default-lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#FFD23F">
+<title>মৌমিতার গায়ে হলুদ</title>
+<meta name="title-bn" content="মৌমিতার গায়ে হলুদ"><meta name="title-en" content="Moumita's Gaye Holud">
+<meta property="og:title" content="Moumita's Gaye Holud">
+<meta property="og:description" content="Moumita's Gaye Holud · Nimontron demo invitation">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="tpl.css">
+<style>
+:root{--y:#FFD23F;--g:#1F7A3A;--p:#E8336D;--ink:#2B1A05;--acc:#1F7A3A;--on-acc:#fff;--tb-bg:rgba(255,255,255,.85);--tb-ink:#2B1A05;--in-bg:#FFFBEA;--in-line:#2B1A05;--r-in:16px;--r-btn:999px}
+body{background:var(--y);color:var(--ink);font:500 17px/1.6 "Baloo Da 2",system-ui,sans-serif}
+.toran{position:fixed;left:0;right:0;top:0;height:0;z-index:5;pointer-events:none}
+.toran::before{content:"";position:absolute;left:-2%;right:-2%;top:0;height:10px;background:repeating-linear-gradient(90deg,#1F7A3A 0 22px,#2E9E4F 22px 44px);border-radius:0 0 10px 10px}
+.str{position:absolute;top:6px;left:var(--l);display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;animation:swing 3.2s ease-in-out infinite alternate;animation-delay:calc(var(--d) * -1)}
+.str i{width:18px;height:18px;border-radius:50%;margin-top:-3px;background:radial-gradient(circle at 35% 30%,#FFE9A8,var(--c) 55%,#B95500);box-shadow:0 2px 3px rgba(0,0,0,.18)}
+.str b{width:16px;height:22px;background:#2E9E4F;border-radius:0 100% 0 100%;transform:rotate(45deg);margin-top:2px}
+@keyframes swing{from{transform:perspective(400px) rotateZ(-5deg) rotateX(12deg)}to{transform:perspective(400px) rotateZ(5deg) rotateX(-12deg)}}
+.blob{position:absolute;border-radius:50%;filter:blur(0);opacity:.55}
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 20px 60px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;pointer-events:none}
+.hero .hand{position:absolute;width:160px;opacity:.22}
+.hero h1{font-weight:800;font-size:clamp(4rem,22vw,7rem);line-height:.95;color:var(--g);text-shadow:4px 4px 0 #fff,8px 8px 0 rgba(43,26,5,.15);transform:rotate(-4deg)}
+html[lang=en] .hero h1{font-size:clamp(3.4rem,17vw,6rem)}
+.hero .who{display:inline-block;margin-top:18px;background:var(--p);color:#fff;font-weight:800;font-size:1.5rem;padding:8px 22px;border-radius:999px;transform:rotate(3deg);box-shadow:0 10px 0 -2px rgba(0,0,0,.15)}
+.hero .when{margin-top:20px;font-weight:700;font-size:1.2rem}
+.hero .cd{display:inline-flex;gap:8px;align-items:baseline;margin-top:14px;background:#fff;border-radius:18px;padding:8px 18px;font-weight:700;border:3px solid var(--ink)}
+.hero .cd b{font-size:1.8rem;color:var(--p)}
+.js .hero .pop{opacity:0;transform:scale(.4) rotate(-12deg)}
+.js.ready .hero .pop{opacity:1;transform:var(--t,none);transition:all .8s cubic-bezier(.3,1.6,.5,1);transition-delay:var(--dl,0s)}
+section{padding:56px 18px;max-width:560px;margin:0 auto}
+.h2{font-weight:800;font-size:2rem;text-align:center;line-height:1.1;margin-bottom:22px}
+.h2 span.hl{background:#fff;padding:0 10px;border-radius:12px;box-shadow:4px 4px 0 var(--ink)}
+.sticks{display:grid;gap:18px;perspective:900px}
+.stk{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:16px 18px;box-shadow:6px 6px 0 var(--ink);transform:rotate(var(--rot)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease}
+.js .stk.rv{transform:rotate(var(--rot)) translateZ(-300px) rotateY(60deg);opacity:0}
+.js .stk.rv.in{transform:rotate(var(--rot)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));opacity:1;transition:transform .9s cubic-bezier(.3,1.4,.5,1),opacity .5s;transition-delay:calc(var(--i)*110ms)}
+.stk .em{font-size:2.6rem;width:66px;height:66px;display:grid;place-items:center;background:var(--y);border-radius:50%;border:3px solid var(--ink)}
+.stk h3{font-weight:800;font-size:1.35rem;line-height:1.1;color:var(--g)}
+.stk p{font-size:.98rem;line-height:1.4}
+.stk .acts{display:flex;gap:12px;margin-top:6px;font-weight:700;font-size:.9rem}
+.wear{background:#fff;border:3px solid var(--ink);border-radius:26px;padding:24px;text-align:center;box-shadow:6px 6px 0 var(--ink)}
+.dots{display:flex;justify-content:center;gap:10px;margin:12px 0}
+.dots i{width:40px;height:40px;border-radius:50%;border:3px solid var(--ink)}
+.bring{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.bring li{background:var(--y);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700}
+.rsvp{background:#fff;border:3px solid var(--ink);border-radius:26px;padding:26px 20px;box-shadow:6px 6px 0 var(--ink)}
+footer{padding:20px 20px 60px}
+footer .made a{color:var(--g)}
+</style>
+</head>
+<body>
+<header class="tb"><a class="tag" href="index.html#demos">← DEMO · NIMONTRON</a><div class="lg" role="group" aria-label="Language"><button type="button" data-setlang="bn" aria-pressed="false">বাংলা</button><button type="button" data-setlang="en" aria-pressed="false">English</button></div></header>
+<div class="toran" aria-hidden="true"><div class="str" style="--d:0.00s;--l:0.0%"><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><b></b></div><div class="str" style="--d:0.37s;--l:10.0%"><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><b></b></div><div class="str" style="--d:0.74s;--l:20.0%"><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><b></b></div><div class="str" style="--d:1.11s;--l:30.0%"><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><b></b></div><div class="str" style="--d:0.08s;--l:40.0%"><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><b></b></div><div class="str" style="--d:0.45s;--l:50.0%"><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><b></b></div><div class="str" style="--d:0.82s;--l:60.0%"><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><b></b></div><div class="str" style="--d:1.19s;--l:70.0%"><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><b></b></div><div class="str" style="--d:0.16s;--l:80.0%"><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><b></b></div><div class="str" style="--d:0.53s;--l:90.0%"><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><b></b></div><div class="str" style="--d:0.90s;--l:100.0%"><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><i style="--c:#FF9F1C"></i><i style="--c:#FFBF00"></i><i style="--c:#FF7B00"></i><b></b></div></div>
+<section class="hero" style="max-width:none">
+<div class="bg" aria-hidden="true"><div data-depth="1.2" style="position:absolute;left:-30px;top:22%"><svg class="hand" viewBox="0 0 100 120"><path d="M30 118C14 100 10 70 18 52c4-9 10-8 12 0l4 16V18c0-10 12-10 12 0v34-44c0-10 12-10 12 0v44-36c0-10 12-10 12 0v40-26c0-10 11-10 11 0v44c0 30-10 44-26 44Z" fill="#E8A317"/></svg></div><div data-depth=".7" style="position:absolute;right:-20px;bottom:18%;transform:rotate(20deg)"><div style="transform:rotate(25deg)"><svg class="hand" viewBox="0 0 100 120"><path d="M30 118C14 100 10 70 18 52c4-9 10-8 12 0l4 16V18c0-10 12-10 12 0v34-44c0-10 12-10 12 0v44-36c0-10 12-10 12 0v40-26c0-10 11-10 11 0v44c0 30-10 44-26 44Z" fill="#E8A317"/></svg></div></div>
+<div data-depth=".4" class="blob" style="width:220px;height:220px;background:#FFB000;right:-60px;top:12%"></div><div data-depth="1" class="blob" style="width:160px;height:160px;background:#FF8FB1;left:-40px;bottom:8%"></div></div>
+<div style="position:relative">
+<h1 class="pop" style="--t:rotate(-4deg)"><span class="b">গায়ে<br>হলুদ!</span><span class="e">Gaye<br>Holud!</span></h1>
+<p><span class="who pop" style="--t:rotate(3deg);--dl:.25s"><span class="b">মৌমিতার</span><span class="e">Moumita's</span> 💛</span></p>
+<p class="when pop" style="--dl:.4s"><span class="b">শনিবার, ৬ ফেব্রুয়ারি ২০২৭ · সকাল থেকে রাত</span><span class="e">Saturday, 6 February 2027 · morning till late</span></p>
+<p class="cd pop" style="--dl:.55s"><b data-count-to="2027-02-06T09:00:00+05:30">–</b> <span class="b">দিন বাকি</span><span class="e">days to go</span></p>
+</div></section>
+<section class="rv"><h2 class="h2"><span class="hl"><span class="b">সারাদিনের প্ল্যান</span><span class="e">The day's plan</span></span></h2><div class="sticks"><div class="stk rv" data-tilt style="--i:0;--rot:-2deg"><div class="em">🌼</div><div><h3><span class="b">গায়ে হলুদ</span><span class="e">Gaye Holud</span></h3><p><span class="b">শনিবার ৬ ফেব্রুয়ারি · সকাল ৯টা</span><span class="e">Sat 6 Feb · 9:00 am</span><br><span class="b">দত্ত বাড়ির উঠোন, শ্যামবাজার</span><span class="e">Dutta house courtyard, Shyambazar</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ</span><span class="e">Map</span> 📍</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gaye%20Holud%20%C2%B7%20Moumita%27s%20Gaye%20Holud&dates=20270206T090000/20270206T120000&ctz=Asia/Kolkata&location=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডার</span><span class="e">Calendar</span> 🗓️</a></div></div></div><div class="stk rv" data-tilt style="--i:1;--rot:1.5deg"><div class="em">🍛</div><div><h3><span class="b">দুপুরের খাওয়া</span><span class="e">Lunch</span></h3><p><span class="b">দুপুর ১টা · কলাপাতায়</span><span class="e">1:00 pm · on banana leaf</span><br><span class="b">দত্ত বাড়ির ছাদ</span><span class="e">Dutta house rooftop</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ</span><span class="e">Map</span> 📍</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lunch%20%C2%B7%20Moumita%27s%20Gaye%20Holud&dates=20270206T130000/20270206T160000&ctz=Asia/Kolkata&location=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডার</span><span class="e">Calendar</span> 🗓️</a></div></div></div><div class="stk rv" data-tilt style="--i:2;--rot:-1deg"><div class="em">🌿</div><div><h3><span class="b">মেহেন্দি</span><span class="e">Mehendi</span></h3><p><span class="b">বিকেল ৫টা</span><span class="e">5:00 pm</span><br><span class="b">দত্ত বাড়ির বৈঠকখানা</span><span class="e">Dutta house front room</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ</span><span class="e">Map</span> 📍</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mehendi%20%C2%B7%20Moumita%27s%20Gaye%20Holud&dates=20270206T170000/20270206T200000&ctz=Asia/Kolkata&location=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডার</span><span class="e">Calendar</span> 🗓️</a></div></div></div><div class="stk rv" data-tilt style="--i:3;--rot:2deg"><div class="em">🎶</div><div><h3><span class="b">সঙ্গীত</span><span class="e">Sangeet</span></h3><p><span class="b">রাত ৮টা · গান আর নাচ</span><span class="e">8:00 pm · songs & dancing</span><br><span class="b">দত্ত বাড়ির ছাদ</span><span class="e">Dutta house rooftop</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ</span><span class="e">Map</span> 📍</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeet%20%C2%B7%20Moumita%27s%20Gaye%20Holud&dates=20270206T200000/20270206T230000&ctz=Asia/Kolkata&location=Shyambazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডার</span><span class="e">Calendar</span> 🗓️</a></div></div></div></div></section>
+<section><div class="wear rv"><h2 class="h2" style="margin-bottom:6px"><span class="b">হলুদ পরে আসুন!</span><span class="e">Wear yellow!</span></h2><p><span class="b">হলুদ, সবুজ বা গোলাপি। সাদা পরলে রঙ লাগবেই, আগে থেকে বলে রাখলাম 😄</span><span class="e">Yellow, green or pink. Wear white and you will get turmeric on it. You've been warned 😄</span></p>
+<div class="dots"><i style="background:#FFD23F"></i><i style="background:#1F7A3A"></i><i style="background:#E8336D"></i><i style="background:#FF8A00"></i></div>
+<ul class="bring"><li><span class="b">পুরনো চপ্পল</span><span class="e">Old chappals</span></li><li><span class="b">গানের লিস্ট</span><span class="e">Your song request</span></li><li><span class="b">খিদে</span><span class="e">An appetite</span></li></ul></div></section>
+<section><div class="rsvp rv"><h2 class="h2"><span class="b">আসছিস তো?</span><span class="e">You're coming, right?</span></h2><form id="rsvp-form" novalidate>
+<label class="l" for="r-name"><span class="b">আপনার নাম</span><span class="e">Your name</span></label><input type="text" id="r-name" autocomplete="name">
+<fieldset class="att"><legend class="sr">RSVP</legend>
+<label><input type="radio" name="att" value="yes" checked><span><span class="b">আসছি 🙌</span><span class="e">Joyfully yes 🙌</span></span></label>
+<label><input type="radio" name="att" value="no"><span><span class="b">এবার পারছি না</span><span class="e">Can't make it</span></span></label></fieldset>
+<div id="if-yes" style="display:grid;gap:10px">
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">মোট কতজন</span><span class="e">Number of guests</span></span>
+<div class="step"><button type="button" data-g="-1" aria-label="fewer">−</button><output id="g-out">২</output><button type="button" data-g="1" aria-label="more">+</button></div>
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">কোন কোন অনুষ্ঠানে</span><span class="e">Which events</span></span>
+<div style="display:grid;gap:8px"><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">গায়ে হলুদ</span><span class="e">Gaye Holud</span></label><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">মেহেন্দি</span><span class="e">Mehendi</span></label><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">সঙ্গীত</span><span class="e">Sangeet</span></label></div></div>
+<label class="l" for="r-note"><span class="b">আশীর্বাদ বা শুভেচ্ছা (ঐচ্ছিক)</span><span class="e">A blessing or note (optional)</span></label><textarea id="r-note" rows="2"></textarea>
+<p class="err" id="r-err" role="alert"></p>
+<button class="send" type="submit"><span class="b">জানিয়ে দিন</span><span class="e">Send RSVP</span></button>
+</form>
+<div class="thanks" id="r-thanks" hidden><div class="big">💌</div><h3><span class="b">ধন্যবাদ!</span><span class="e">Thank you!</span></h3><p><span class="b">উত্তর পৌঁছে গেছে। এটি নমুনা সাইট; আসল সাইটে উত্তর সঙ্গে সঙ্গে পরিবারের ইমেলে যায়।</span><span class="e">Your reply is in. This is a demo; on a real site it reaches the family's email instantly.</span></p></div></div></section>
+<footer><p class="made"><a href="index.html">Made with 💌 by Nimontron</a> · <span class="b">নিজের অনুষ্ঠানের জন্য এমন নিমন্ত্রণ চান?</span><span class="e">Want an invite like this?</span> <a href="https://ig.me/m/nimontron_web" target="_blank" rel="noopener"><span class="b">মেসেজ করুন</span><span class="e">Message us</span></a></p></footer><script src="tpl.js" defer></script>
+</body>
+</html>

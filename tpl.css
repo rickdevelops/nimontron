@@ -1,0 +1,43 @@
+/* Shared base for the bespoke Nimontron templates (royal, times, holud, story). Each page adds its own look. */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+html[lang="bn"] .e,html[lang="en"] .b{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--acc,#C0262D);outline-offset:3px;border-radius:6px}
+
+/* top bar */
+.tb{position:fixed;z-index:60;top:max(10px,env(safe-area-inset-top));left:10px;right:10px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.tb>*{pointer-events:auto}
+.tb .tag{font:600 12px/1 system-ui,sans-serif;letter-spacing:.06em;text-decoration:none;padding:9px 12px;border-radius:999px;background:var(--tb-bg,rgba(255,255,255,.85));color:var(--tb-ink,#222);box-shadow:0 6px 16px -8px rgba(0,0,0,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tb .lg{display:flex;padding:3px;border-radius:999px;background:var(--tb-bg,rgba(255,255,255,.85));box-shadow:0 6px 16px -8px rgba(0,0,0,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tb .lg button{border:0;background:transparent;color:var(--tb-ink,#222);font:600 13px/1 system-ui,sans-serif;padding:8px 12px;border-radius:999px;cursor:pointer;min-height:34px}
+.tb .lg button[aria-pressed="true"]{background:var(--acc,#C0262D);color:var(--on-acc,#fff)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.js .rv.in{opacity:1;transform:none}
+
+/* RSVP */
+.rsvp form{display:grid;gap:10px;text-align:left}
+.rsvp label.l{font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px}
+.rsvp input[type=text],.rsvp textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border-radius:var(--r-in,12px);border:1.5px solid var(--in-line,rgba(0,0,0,.18));background:var(--in-bg,#fff);color:inherit}
+.rsvp .att{display:flex;gap:8px;flex-wrap:wrap;border:0;padding:0;margin:4px 0 0}
+.rsvp .att label{flex:1 1 140px;position:relative}
+.rsvp .att input{position:absolute;opacity:0}
+.rsvp .att label>span{display:block;text-align:center;padding:12px;border-radius:var(--r-in,12px);border:1.5px solid var(--in-line,rgba(0,0,0,.18));font-weight:600;cursor:pointer;background:var(--in-bg,#fff)}
+.rsvp .att input:checked+span{background:var(--acc,#C0262D);color:var(--on-acc,#fff);border-color:transparent}
+.rsvp .att input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+.rsvp .step{display:flex;align-items:center;gap:14px}
+.rsvp .step button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--in-line,rgba(0,0,0,.2));background:var(--in-bg,#fff);color:inherit;font-size:22px;cursor:pointer}
+.rsvp .step output{font-size:1.4rem;font-weight:700;min-width:2ch;text-align:center}
+.rsvp .send{margin-top:8px;border:0;border-radius:var(--r-btn,14px);padding:16px;font:700 1rem/1 inherit;font-family:inherit;background:var(--acc,#C0262D);color:var(--on-acc,#fff);cursor:pointer}
+.rsvp .err{color:#C0262D;font-size:.9rem;min-height:1.2em}
+.rsvp .thanks{text-align:center;padding:20px 0}
+.rsvp .thanks .big{font-size:3rem}
+.made{font-size:.85rem;opacity:.85;text-align:center}
+.made a{font-weight:700;text-decoration:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.js .rv{opacity:1;transform:none}}

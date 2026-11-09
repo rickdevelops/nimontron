@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="bn" data-default-lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B0A0F">
+<title>ঈশানী ও অয়নের শুভ বিবাহ</title>
+<meta name="title-bn" content="ঈশানী ও অয়নের শুভ বিবাহ"><meta name="title-en" content="Ishani & Ayan's Wedding">
+<meta property="og:title" content="Ishani & Ayan's Wedding">
+<meta property="og:description" content="Ishani & Ayan's wedding · Nimontron demo invitation">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="tpl.css">
+<style>
+:root{--bg:#0B0A0F;--gold:#E2B85C;--gold2:#F8DFA0;--ivory:#F6EEDC;--acc:#E2B85C;--on-acc:#1A1206;--tb-bg:rgba(20,16,10,.7);--tb-ink:#F6EEDC;--in-bg:rgba(255,255,255,.06);--in-line:rgba(226,184,92,.45);--r-in:4px;--r-btn:4px}
+body{background:var(--bg);color:var(--ivory);font:400 17px/1.65 "Hind Siliguri",system-ui,sans-serif}
+.cz{font-family:Cinzel,"Tiro Bangla",serif;letter-spacing:.06em}
+html[lang=bn] .cz{font-family:"Tiro Bangla",serif;letter-spacing:0}
+.gold{background:linear-gradient(100deg,#B98A35,var(--gold2) 30%,#C99A45 50%,var(--gold2) 70%,#B98A35);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
+@keyframes sheen{50%{background-position:100% 0}}
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;perspective:900px;padding:90px 20px 60px}
+.tunnel{position:absolute;inset:0;display:grid;place-items:center;transform-style:preserve-3d;pointer-events:none}
+.tunnel .layer{position:absolute;width:min(92vw,520px);transition:transform .2s linear}
+.arch{width:100%;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(226,184,92,.25))}
+.dust{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(248,223,160,.7) 0 1px,transparent 1.5px);background-size:46px 46px;opacity:.35;animation:drift 30s linear infinite;mask-image:radial-gradient(closest-side,#000,transparent)}
+@keyframes drift{to{background-position:0 -460px}}
+.hero .in{position:relative;z-index:2;max-width:22rem}
+.hero .pre{font-size:.95rem;color:var(--gold);opacity:.9}
+.hero .sb{font-size:1rem;letter-spacing:.4em;color:var(--gold);margin:22px 0 14px}
+html[lang=bn] .hero .sb{letter-spacing:.05em;font-size:1.4rem}
+.hero h1{font-weight:600;font-size:clamp(2.9rem,13vw,4.4rem);line-height:1.02}
+html[lang=bn] .hero h1{line-height:1.25}
+.hero .amp{display:block;font-size:2rem;color:var(--gold);margin:6px 0;font-family:Cinzel,serif}
+.hero .dt{margin-top:22px;font-size:1.05rem;letter-spacing:.08em}
+.cd{display:inline-flex;gap:10px;align-items:baseline;margin-top:20px;padding:10px 20px;border:1px solid rgba(226,184,92,.5)}
+.cd b{font:600 1.6rem/1 Cinzel,"Tiro Bangla",serif;color:var(--gold2)}
+.cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:.75rem;letter-spacing:.3em;color:var(--gold);opacity:.8;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+.js .intro .hero .in>*{opacity:0;transform:translateY(20px);transition:opacity 1s ease,transform 1s ease}
+.js.ready .intro .hero .in>*{opacity:1;transform:none}
+.js.ready .intro .hero .in>*:nth-child(2){transition-delay:.15s}.js.ready .intro .hero .in>*:nth-child(3){transition-delay:.3s}.js.ready .intro .hero .in>*:nth-child(4){transition-delay:.45s}.js.ready .intro .hero .in>*:nth-child(5){transition-delay:.6s}
+section{padding:70px 20px;max-width:560px;margin:0 auto}
+.h2{text-align:center;font-weight:600;font-size:1.7rem;color:var(--gold2);margin-bottom:26px}
+.rule{display:flex;align-items:center;gap:12px;justify-content:center;color:var(--gold);margin:0 0 26px}
+.rule::before,.rule::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{transform:scaleX(-1)}
+.msg{text-align:center;font-size:1.1rem;color:#E8DFC9}
+.msg .from{display:block;margin-top:16px;font-size:.92rem;color:var(--gold)}
+.evs{display:grid;gap:18px;perspective:1000px}
+.ev{position:relative;padding:26px 24px;background:linear-gradient(160deg,#16131B,#0E0C12);border:1px solid rgba(226,184,92,.45);transform-origin:50% 0;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s ease}
+.js .ev.rv{transform:rotateX(-70deg);opacity:0}
+.js .ev.rv.in{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));opacity:1;transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .6s ease;transition-delay:calc(var(--i)*120ms)}
+.ev::before,.ev::after{content:"";position:absolute;width:16px;height:16px;border:1px solid var(--gold)}
+.ev::before{top:6px;left:6px;border-right:0;border-bottom:0}.ev::after{bottom:6px;right:6px;border-left:0;border-top:0}
+.ev h3{font-weight:600;font-size:1.45rem;color:var(--gold2)}
+.ev .when{margin-top:6px}
+.ev .where{color:#CFC4AE;font-size:.95rem}
+.ev .acts{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.ev .acts a{font-size:.85rem;font-weight:600;text-decoration:none;padding:9px 14px;border:1px solid rgba(226,184,92,.55);color:var(--gold2)}
+.dress{text-align:center}
+.sw{display:flex;justify-content:center;gap:14px;margin:18px 0 10px}
+.sw i{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 2px rgba(226,184,92,.5),0 10px 20px -8px #000}
+.rsvp{border:1px solid rgba(226,184,92,.45);padding:34px 22px;background:#100E14}
+.rsvp .send{letter-spacing:.1em}
+footer{padding:40px 20px 60px;text-align:center}
+footer .made a{color:var(--gold2)}
+</style>
+</head>
+<body>
+<header class="tb"><a class="tag" href="index.html#demos">← DEMO · NIMONTRON</a><div class="lg" role="group" aria-label="Language"><button type="button" data-setlang="bn" aria-pressed="false">বাংলা</button><button type="button" data-setlang="en" aria-pressed="false">English</button></div></header>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B98A35"/><stop offset=".5" stop-color="#F8DFA0"/><stop offset="1" stop-color="#B98A35"/></linearGradient></defs></svg>
+<main class="intro">
+<section class="hero" style="max-width:none">
+<div class="dust"></div>
+<div class="tunnel">
+<div class="layer" data-depth="1.6"><div style="opacity:.25;transform:scale(1.5)"><svg class="arch " viewBox="0 0 400 560" aria-hidden="true"><path d="M20 560V230C20 120 110 40 200 14C290 40 380 120 380 230V560" fill="none" stroke="url(#gg)" stroke-width="2"/><path d="M44 560V238C44 140 122 70 200 46C278 70 356 140 356 238V560" fill="none" stroke="url(#gg)" stroke-width="1.2" opacity=".6"/></svg></div></div>
+<div class="layer" data-depth="1.1"><div style="opacity:.45;transform:scale(1.25)"><svg class="arch " viewBox="0 0 400 560" aria-hidden="true"><path d="M20 560V230C20 120 110 40 200 14C290 40 380 120 380 230V560" fill="none" stroke="url(#gg)" stroke-width="2.5"/><path d="M44 560V238C44 140 122 70 200 46C278 70 356 140 356 238V560" fill="none" stroke="url(#gg)" stroke-width="1.2" opacity=".6"/></svg></div></div>
+<div class="layer" data-depth=".6"><div style="opacity:.75;transform:scale(1.05)"><svg class="arch " viewBox="0 0 400 560" aria-hidden="true"><path d="M20 560V230C20 120 110 40 200 14C290 40 380 120 380 230V560" fill="none" stroke="url(#gg)" stroke-width="3"/><path d="M44 560V238C44 140 122 70 200 46C278 70 356 140 356 238V560" fill="none" stroke="url(#gg)" stroke-width="1.2" opacity=".6"/></svg></div></div>
+<div class="layer" data-depth=".25"><div><svg class="arch " viewBox="0 0 400 560" aria-hidden="true"><path d="M20 560V230C20 120 110 40 200 14C290 40 380 120 380 230V560" fill="none" stroke="url(#gg)" stroke-width="4"/><path d="M44 560V238C44 140 122 70 200 46C278 70 356 140 356 238V560" fill="none" stroke="url(#gg)" stroke-width="1.2" opacity=".6"/></svg></div></div>
+</div>
+<div class="in">
+<p class="pre"><span class="b">শ্রী শ্রী প্রজাপতয়ে নমঃ</span><span class="e">With the blessings of our families</span></p>
+<p class="sb cz"><span class="b">শুভ বিবাহ</span><span class="e">TOGETHER WITH THEIR FAMILIES</span></p>
+<h1 class="cz gold"><span class="b">ঈশানী</span><span class="e">Ishani</span><span class="amp"><span class="b">ও</span><span class="e">&amp;</span></span><span class="b">অয়ন</span><span class="e">Ayan</span></h1>
+<p class="dt cz"><span class="b">শুক্রবার, ২২ জানুয়ারি ২০২৭ · মাঘ ১৪৩৩</span><span class="e">FRIDAY · 22 JANUARY 2027</span></p>
+<p class="cd"><b data-count-to="2027-01-22T19:30:00+05:30">–</b> <span class="b">দিন বাকি</span><span class="e">days to go</span></p>
+</div>
+<p class="cue"><span class="b">নিচে দেখুন</span><span class="e">SCROLL</span> ↓</p>
+</section>
+<section class="rv"><div class="rule">✦</div><p class="msg"><span class="b">মিত্র ও সেন পরিবারের পক্ষ থেকে সাদর আমন্ত্রণ। আমাদের কন্যা ঈশানী এবং অয়নের শুভ বিবাহে আপনার উপস্থিতি ও আশীর্বাদ একান্ত কাম্য।</span><span class="e">The Mitra and Sen families request the pleasure of your company as Ishani and Ayan begin their life together. Your presence and blessings would mean the world.</span><span class="from"><span class="b">— মিত্র ও সেন পরিবার</span><span class="e">— The Mitra & Sen families</span></span></p></section>
+<section><h2 class="h2 cz rv"><span class="b">অনুষ্ঠানসূচি</span><span class="e">THE CELEBRATIONS</span></h2><div class="evs"><article class="ev rv" data-tilt style="--i:0"><h3 class="cz"><span class="b">আশীর্বাদ</span><span class="e">Ashirbad</span></h3><p class="when"><span class="b">সোমবার, ১৮ জানুয়ারি · সন্ধ্যা ৬টা</span><span class="e">Monday, 18 January · 6:00 pm</span></p><p class="where"><span class="b">মিত্র বাড়ি, শোভাবাজার</span><span class="e">Mitra Bari, Shobhabazar</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shobhabazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ খুলুন</span><span class="e">Open map</span> ↗</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ashirbad%20%C2%B7%20Ishani%20%26%20Ayan%27s%20Wedding&dates=20270118T180000/20270118T220000&ctz=Asia/Kolkata&location=Shobhabazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">Add to calendar</span></a></div></article><article class="ev rv" data-tilt style="--i:1"><h3 class="cz"><span class="b">গায়ে হলুদ</span><span class="e">Gaye Holud</span></h3><p class="when"><span class="b">শুক্রবার, ২২ জানুয়ারি · সকাল ৮টা</span><span class="e">Friday, 22 January · 8:00 am</span></p><p class="where"><span class="b">মিত্র বাড়ি, শোভাবাজার</span><span class="e">Mitra Bari, Shobhabazar</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Shobhabazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ খুলুন</span><span class="e">Open map</span> ↗</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gaye%20Holud%20%C2%B7%20Ishani%20%26%20Ayan%27s%20Wedding&dates=20270122T080000/20270122T120000&ctz=Asia/Kolkata&location=Shobhabazar%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">Add to calendar</span></a></div></article><article class="ev rv" data-tilt style="--i:2"><h3 class="cz"><span class="b">শুভ বিবাহ</span><span class="e">The Wedding</span></h3><p class="when"><span class="b">শুক্রবার, ২২ জানুয়ারি · রাত ৭:৩০</span><span class="e">Friday, 22 January · 7:30 pm</span></p><p class="where"><span class="b">দরবার হল, বালিগঞ্জ</span><span class="e">The Durbar Hall, Ballygunge</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Ballygunge%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ খুলুন</span><span class="e">Open map</span> ↗</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20%C2%B7%20Ishani%20%26%20Ayan%27s%20Wedding&dates=20270122T193000/20270122T233000&ctz=Asia/Kolkata&location=Ballygunge%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">Add to calendar</span></a></div></article><article class="ev rv" data-tilt style="--i:3"><h3 class="cz"><span class="b">বৌভাত</span><span class="e">Bou Bhat</span></h3><p class="when"><span class="b">রবিবার, ২৪ জানুয়ারি · রাত ৮টা</span><span class="e">Sunday, 24 January · 8:00 pm</span></p><p class="where"><span class="b">অয়নদের বাড়ি, সল্টলেক</span><span class="e">Ayan's home, Salt Lake</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Salt%20Lake%20Sector%201%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ খুলুন</span><span class="e">Open map</span> ↗</a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bou%20Bhat%20%C2%B7%20Ishani%20%26%20Ayan%27s%20Wedding&dates=20270124T200000/20270124T230000&ctz=Asia/Kolkata&location=Salt%20Lake%20Sector%201%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">Add to calendar</span></a></div></article></div></section>
+<section class="dress rv"><h2 class="h2 cz"><span class="b">পোশাক</span><span class="e">DRESS CODE</span></h2><p><span class="b">সোনালি, হাতির দাঁতের রঙ বা গাঢ় লাল। রাতের অনুষ্ঠান, তাই একটু ঝলমলে চলবে।</span><span class="e">Gold, ivory or deep red. It's an evening affair, so a little sparkle is welcome.</span></p><div class="sw"><i style="background:#E2B85C"></i><i style="background:#F6EEDC"></i><i style="background:#7A1220"></i><i style="background:#14121A"></i></div></section>
+<section><div class="rsvp rv"><h2 class="h2 cz"><span class="b">আসছেন তো?</span><span class="e">KINDLY REPLY</span></h2><form id="rsvp-form" novalidate>
+<label class="l" for="r-name"><span class="b">আপনার নাম</span><span class="e">Your name</span></label><input type="text" id="r-name" autocomplete="name">
+<fieldset class="att"><legend class="sr">RSVP</legend>
+<label><input type="radio" name="att" value="yes" checked><span><span class="b">আসছি 🙌</span><span class="e">Joyfully yes 🙌</span></span></label>
+<label><input type="radio" name="att" value="no"><span><span class="b">এবার পারছি না</span><span class="e">Can't make it</span></span></label></fieldset>
+<div id="if-yes" style="display:grid;gap:10px">
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">মোট কতজন</span><span class="e">Number of guests</span></span>
+<div class="step"><button type="button" data-g="-1" aria-label="fewer">−</button><output id="g-out">২</output><button type="button" data-g="1" aria-label="more">+</button></div>
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">কোন কোন অনুষ্ঠানে</span><span class="e">Which events</span></span>
+<div style="display:grid;gap:8px"><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">শুভ বিবাহ</span><span class="e">The Wedding</span></label><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">বৌভাত</span><span class="e">Bou Bhat</span></label></div></div>
+<label class="l" for="r-note"><span class="b">আশীর্বাদ বা শুভেচ্ছা (ঐচ্ছিক)</span><span class="e">A blessing or note (optional)</span></label><textarea id="r-note" rows="2"></textarea>
+<p class="err" id="r-err" role="alert"></p>
+<button class="send" type="submit"><span class="b">জানিয়ে দিন</span><span class="e">Send RSVP</span></button>
+</form>
+<div class="thanks" id="r-thanks" hidden><div class="big">💌</div><h3><span class="b">ধন্যবাদ!</span><span class="e">Thank you!</span></h3><p><span class="b">উত্তর পৌঁছে গেছে। এটি নমুনা সাইট; আসল সাইটে উত্তর সঙ্গে সঙ্গে পরিবারের ইমেলে যায়।</span><span class="e">Your reply is in. This is a demo; on a real site it reaches the family's email instantly.</span></p></div></div></section>
+<footer><div class="rule">✦</div><p class="made"><a href="index.html">Made with 💌 by Nimontron</a> · <span class="b">নিজের অনুষ্ঠানের জন্য এমন নিমন্ত্রণ চান?</span><span class="e">Want an invite like this?</span> <a href="https://ig.me/m/nimontron_web" target="_blank" rel="noopener"><span class="b">মেসেজ করুন</span><span class="e">Message us</span></a></p></footer>
+</main><script src="tpl.js" defer></script>
+</body>
+</html>

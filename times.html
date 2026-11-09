@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="bn" data-default-lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2B2723">
+<title>সায়ন ও রিয়ার বিয়ে · বিয়ের বার্তা</title>
+<meta name="title-bn" content="সায়ন ও রিয়ার বিয়ে · বিয়ের বার্তা"><meta name="title-en" content="Sayan & Riya's Wedding · The Biye Times">
+<meta property="og:title" content="Sayan & Riya's Wedding · The Biye Times">
+<meta property="og:description" content="Sayan & Riya's wedding · Nimontron demo invitation">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Figtree:wght@600;700;800&family=Tiro+Bangla&display=swap">
+<link rel="stylesheet" href="tpl.css">
+<style>
+:root{--paper:#F1EADB;--ink:#1D1B18;--red:#B3231E;--acc:#1D1B18;--on-acc:#F1EADB;--tb-bg:rgba(241,234,219,.9);--tb-ink:#1D1B18;--in-bg:#FBF7EE;--in-line:#1D1B18;--r-in:0;--r-btn:0}
+body{background:#2B2723;color:var(--ink);font:400 17px/1.55 Lora,"Tiro Bangla",Georgia,serif}
+.pf{font-family:"Playfair Display","Tiro Bangla",Georgia,serif}
+html[lang=bn] .pf{font-family:"Tiro Bangla",serif}
+.stage{perspective:1400px;padding:70px 10px 40px}
+.paper{max-width:620px;margin:0 auto;background:var(--paper);padding:22px 18px 30px;box-shadow:0 40px 80px -30px #000,inset 0 0 120px rgba(120,90,40,.18);transform-origin:50% 40%}
+.js .paper{animation:spin 1.5s cubic-bezier(.2,.75,.25,1) both .15s}
+@keyframes spin{0%{transform:rotate(-720deg) scale(.05);opacity:0}60%{opacity:1}100%{transform:rotate(0) scale(1)}}
+.mast{text-align:center;border-bottom:4px double var(--ink);padding-bottom:10px}
+.mast .top{display:flex;justify-content:space-between;font:600 11px/1.3 Figtree,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:8px}
+.mast h1{font-weight:900;font-size:clamp(2.6rem,12vw,4.2rem);line-height:.95;letter-spacing:-.01em}
+html[lang=bn] .mast h1{font-weight:400;line-height:1.2}
+.mast .sub{font:italic 600 14px/1.4 Lora,serif;margin-top:6px}
+.dateline{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font:700 11px/1.4 Figtree,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding:7px 0;margin-bottom:16px}
+.kicker{font:800 12px/1 Figtree,system-ui,sans-serif;letter-spacing:.14em;color:var(--red);text-transform:uppercase}
+.head{font-weight:900;font-size:clamp(2rem,9vw,3rem);line-height:1.02;margin:8px 0 10px}
+html[lang=bn] .head{font-weight:400;line-height:1.25}
+.deck{font-style:italic;font-size:1.08rem;border-left:3px solid var(--red);padding-left:12px;margin-bottom:16px}
+figure{margin:0 0 16px;border:1px solid var(--ink);padding:6px;background:#E9E1CF}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font:italic 13px/1.4 Lora,serif;padding-top:6px}
+.cols{column-count:2;column-gap:22px;column-rule:1px solid rgba(29,27,24,.35);font-size:.98rem;text-align:justify;hyphens:auto}
+.cols p{margin-bottom:10px}
+.cols p:first-child::first-letter{float:left;font:900 3.4rem/.8 "Playfair Display",serif;padding:4px 6px 0 0;color:var(--red)}
+html[lang=bn] .cols p:first-child::first-letter{font-family:"Tiro Bangla",serif;font-weight:400}
+@media (max-width:440px){.cols{column-count:1}}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.box{border:2px solid var(--ink);padding:12px;text-align:center}
+.box b{display:block;font:800 11px/1 Figtree,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.box .big{font:900 2.2rem/1 "Playfair Display",serif}
+.rule2{border:0;border-top:4px double var(--ink);margin:20px 0}
+.notices h2{font:900 1.5rem/1 "Playfair Display","Tiro Bangla",serif;text-align:center;margin-bottom:12px}
+html[lang=bn] .notices h2{font-family:"Tiro Bangla",serif;font-weight:400}
+.notice{border:1px solid var(--ink);padding:14px;margin-bottom:10px;background:rgba(255,255,255,.25);transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease}
+.js .notice.rv{transform:perspective(800px) rotateY(-80deg);transform-origin:0 50%}
+.js .notice.rv.in{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(var(--i)*140ms)}
+.notice h3{font:900 1.3rem/1.1 "Playfair Display","Tiro Bangla",serif}
+html[lang=bn] .notice h3{font-family:"Tiro Bangla",serif;font-weight:400}
+.notice .acts{display:flex;gap:14px;margin-top:8px;font:700 13px/1 Figtree,system-ui,sans-serif}
+.menu{columns:2;font-size:.95rem;list-style:none;padding:0;margin:0}
+.menu li{border-bottom:1px dotted var(--ink);padding:4px 0;break-inside:avoid}
+.ticket{position:relative;margin:24px auto 0;max-width:520px;background:#F7E7A6;color:#2A2410;padding:22px 20px;border-radius:6px;box-shadow:0 20px 40px -20px #000;transform:rotate(-1.2deg)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:0;bottom:0;width:12px;background:radial-gradient(circle at 0 50%,#2B2723 6px,transparent 6.5px) 0 0/12px 18px repeat-y}
+.ticket::before{left:-6px}.ticket::after{right:-6px;transform:scaleX(-1)}
+.ticket .tt{display:flex;justify-content:space-between;font:800 12px/1 Figtree,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px dashed #2A2410;padding-bottom:10px;margin-bottom:12px}
+.ticket h2{font:900 1.6rem/1.1 "Playfair Display","Tiro Bangla",serif;margin-bottom:10px}
+html[lang=bn] .ticket h2{font-family:"Tiro Bangla",serif;font-weight:400}
+footer{padding:26px 20px 50px;color:#E9E1CF}
+footer .made a{color:#F7E7A6}
+</style>
+</head>
+<body>
+<header class="tb"><a class="tag" href="index.html#demos">← DEMO · NIMONTRON</a><div class="lg" role="group" aria-label="Language"><button type="button" data-setlang="bn" aria-pressed="false">বাংলা</button><button type="button" data-setlang="en" aria-pressed="false">English</button></div></header>
+<div class="stage"><article class="paper">
+<header class="mast"><div class="top"><span><span class="b">কলকাতা</span><span class="e">Kolkata</span></span><span><span class="b">মূল্য: আপনার আশীর্বাদ</span><span class="e">Price: your blessings</span></span></div>
+<h1 class="pf"><span class="b">বিয়ের বার্তা</span><span class="e">The Biye Times</span></h1><p class="sub"><span class="b">সবচেয়ে মিষ্টি খবর, সবার আগে</span><span class="e">All the news that's fit to celebrate</span></p></header>
+<div class="dateline"><span><span class="b">রবিবার, ৭ ফেব্রুয়ারি ২০২৭</span><span class="e">Sunday, 7 February 2027</span></span><span><span class="b">মাঘ ১৪৩৩</span><span class="e">Special wedding edition</span></span></div>
+<p class="kicker"><span class="b">ব্রেকিং</span><span class="e">Breaking</span></p>
+<h2 class="head pf"><span class="b">এই মাঘেই সায়ন আর রিয়ার বিয়ে</span><span class="e">Sayan and Riya to wed this Magh</span></h2>
+<p class="deck"><span class="b">আট বছরের বন্ধুত্ব, অগুনতি ফুচকা আর একটা বৃষ্টিভেজা প্রস্তাবের পর অবশেষে খবরটা পাকা।</span><span class="e">After eight years of friendship, countless phuchkas and one rain-soaked proposal, it's official.</span></p>
+<figure><svg viewBox="0 0 600 300" aria-label="Howrah Bridge at dusk" role="img"><defs><pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="#222"/></pattern><pattern id="ht2" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="#222"/></pattern></defs>
+<rect width="600" height="300" fill="#E9E1CF"/><rect y="0" width="600" height="170" fill="url(#ht2)" opacity=".45"/><circle cx="430" cy="120" r="34" fill="#E9E1CF"/>
+<g fill="url(#ht)"><rect x="100" y="70" width="18" height="160"/><rect x="482" y="70" width="18" height="160"/><path d="M118 80Q300 180 482 80L482 96Q300 196 118 96Z"/><rect x="0" y="196" width="600" height="14"/><path d="M118 80L200 196M160 104L240 196M240 140L300 196M360 140L300 196M440 104L360 196M482 80L400 196" stroke="#222" stroke-width="4"/></g>
+<rect y="210" width="600" height="90" fill="url(#ht2)" opacity=".7"/><path d="M60 250h70l-10 12H70zM470 262h60l-8 10h-44z" fill="#222"/></svg><figcaption><span class="b">হাওড়া ব্রিজ, যেখানে প্রস্তাবটা হয়েছিল। ছবি: আমাদের নিজস্ব শিল্পী।</span><span class="e">Howrah Bridge, where the question was popped. Illustration: our staff artist.</span></figcaption></figure>
+<div class="cols"><p><span class="b">আমাদের নিজস্ব সংবাদদাতা জানাচ্ছেন, বেহালার রিয়া আর দমদমের সায়ন ৭ ফেব্রুয়ারি টালিগঞ্জে সাত পাকে বাঁধা পড়ছেন। দুই পরিবার জানিয়েছে, আপনি না এলে আনন্দ অসম্পূর্ণ থাকবে।</span><span class="e">Our correspondent reports that Riya of Behala and Sayan of Dum Dum will tie the knot in Tollygunge on 7 February. Both families confirm the celebration will not be complete without you.</span></p>
+<p><span class="b">সূত্রের খবর, প্রথম দেখা কলেজ স্ট্রিটের এক পুরনো বইয়ের দোকানে। দুজনেই একই বইয়ের শেষ কপিটা চেয়েছিলেন। বইটা এখনও কার কাছে, সেই বিতর্ক আজও চলছে।</span><span class="e">Sources say they first met at a College Street bookstall, both reaching for the last copy of the same book. Who kept it is still under debate.</span></p>
+<p><span class="b">ভোজের তালিকা নিয়ে দুই পক্ষেই উত্তেজনা তুঙ্গে। মিষ্টি দই নিয়ে কোনো আপস হবে না বলে জানা গেছে।</span><span class="e">Feelings run high over the menu. We understand there will be no compromise on the mishti doi.</span></p></div>
+<div class="boxes"><div class="box"><b><span class="b">আবহাওয়া</span><span class="e">Weather</span></b><span class="big">100%</span><br><span class="b">মিষ্টির সম্ভাবনা</span><span class="e">chance of mishti</span></div><div class="box"><b><span class="b">বাকি আছে</span><span class="e">Days to go</span></b><span class="big" data-count-to="2027-02-07T19:00:00+05:30">–</span><br><span class="b">দিন</span><span class="e">days</span></div></div>
+<hr class="rule2">
+<section class="notices"><h2><span class="b">অনুষ্ঠান বিজ্ঞপ্তি</span><span class="e">Public notices</span></h2><div class="notice rv" data-tilt style="--i:0"><div class="kicker"><span class="b">বিজ্ঞপ্তি</span><span class="e">Notice</span> · 1</div><h3><span class="b">আইবুড়োভাত</span><span class="e">Aiburobhat</span></h3><p><span class="b">শুক্রবার ৫ ফেব্রুয়ারি, দুপুর ১টা</span><span class="e">Fri 5 Feb, 1:00 pm</span> · <span class="b">রিয়াদের বাড়ি, বেহালা</span><span class="e">Riya's home, Behala</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Behala%20Chowrasta%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ ↗</span><span class="e">MAP ↗</span></a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Aiburobhat%20%C2%B7%20Sayan%20%26%20Riya%27s%20Wedding%20%C2%B7%20The%20Biye%20Times&dates=20270205T130000/20270205T170000&ctz=Asia/Kolkata&location=Behala%20Chowrasta%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">ADD TO CALENDAR</span></a></div></div><div class="notice rv" data-tilt style="--i:1"><div class="kicker"><span class="b">বিজ্ঞপ্তি</span><span class="e">Notice</span> · 2</div><h3><span class="b">বিয়ে</span><span class="e">The Wedding</span></h3><p><span class="b">রবিবার ৭ ফেব্রুয়ারি, সন্ধ্যা ৭টা</span><span class="e">Sun 7 Feb, 7:00 pm</span> · <span class="b">শুভম ব্যাঙ্কোয়েট, টালিগঞ্জ</span><span class="e">Shubham Banquet, Tollygunge</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Tollygunge%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ ↗</span><span class="e">MAP ↗</span></a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20%C2%B7%20Sayan%20%26%20Riya%27s%20Wedding%20%C2%B7%20The%20Biye%20Times&dates=20270207T190000/20270207T230000&ctz=Asia/Kolkata&location=Tollygunge%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">ADD TO CALENDAR</span></a></div></div><div class="notice rv" data-tilt style="--i:2"><div class="kicker"><span class="b">বিজ্ঞপ্তি</span><span class="e">Notice</span> · 3</div><h3><span class="b">বৌভাত</span><span class="e">Bou Bhat</span></h3><p><span class="b">মঙ্গলবার ৯ ফেব্রুয়ারি, রাত ৮টা</span><span class="e">Tue 9 Feb, 8:00 pm</span> · <span class="b">সায়নদের বাড়ি, দমদম</span><span class="e">Sayan's home, Dum Dum</span></p>
+<div class="acts"><a href="https://www.google.com/maps/search/?api=1&query=Dum%20Dum%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ম্যাপ ↗</span><span class="e">MAP ↗</span></a><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bou%20Bhat%20%C2%B7%20Sayan%20%26%20Riya%27s%20Wedding%20%C2%B7%20The%20Biye%20Times&dates=20270209T200000/20270209T230000&ctz=Asia/Kolkata&location=Dum%20Dum%2C%20Kolkata" target="_blank" rel="noopener"><span class="b">ক্যালেন্ডারে রাখুন</span><span class="e">ADD TO CALENDAR</span></a></div></div></section>
+<hr class="rule2">
+<section><p class="kicker" style="text-align:center;margin-bottom:8px"><span class="b">বৌভাতের মেনু</span><span class="e">Bou Bhat menu, exclusive</span></p><ul class="menu"><li><span class="b">রাধাবল্লভী</span><span class="e">Radhaballavi</span></li><li><span class="b">ছোলার ডাল</span><span class="e">Cholar dal</span></li><li><span class="b">ভেটকি পাতুরি</span><span class="e">Bhetki paturi</span></li><li><span class="b">চিংড়ি মালাইকারি</span><span class="e">Chingri malaikari</span></li><li><span class="b">কষা মাংস</span><span class="e">Kosha mangsho</span></li><li><span class="b">মিষ্টি দই</span><span class="e">Mishti doi</span></li></ul></section>
+<div class="ticket rsvp rv"><div class="tt"><span><span class="b">ট্রাম টিকিট</span><span class="e">Tram ticket</span></span><span>No. 070227</span></div><h2><span class="b">আসছেন তো? টিকিট কাটুন</span><span class="e">Coming? Punch your ticket</span></h2><form id="rsvp-form" novalidate>
+<label class="l" for="r-name"><span class="b">আপনার নাম</span><span class="e">Your name</span></label><input type="text" id="r-name" autocomplete="name">
+<fieldset class="att"><legend class="sr">RSVP</legend>
+<label><input type="radio" name="att" value="yes" checked><span><span class="b">আসছি 🙌</span><span class="e">Joyfully yes 🙌</span></span></label>
+<label><input type="radio" name="att" value="no"><span><span class="b">এবার পারছি না</span><span class="e">Can't make it</span></span></label></fieldset>
+<div id="if-yes" style="display:grid;gap:10px">
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">মোট কতজন</span><span class="e">Number of guests</span></span>
+<div class="step"><button type="button" data-g="-1" aria-label="fewer">−</button><output id="g-out">২</output><button type="button" data-g="1" aria-label="more">+</button></div>
+<span class="l" style="font-size:.9rem;font-weight:600;opacity:.85;margin-top:6px"><span class="b">কোন কোন অনুষ্ঠানে</span><span class="e">Which events</span></span>
+<div style="display:grid;gap:8px"><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">আইবুড়োভাত</span><span class="e">Aiburobhat</span></label><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">বিয়ে</span><span class="e">The Wedding</span></label><label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--acc)"> <span class="b">বৌভাত</span><span class="e">Bou Bhat</span></label></div></div>
+<label class="l" for="r-note"><span class="b">আশীর্বাদ বা শুভেচ্ছা (ঐচ্ছিক)</span><span class="e">A blessing or note (optional)</span></label><textarea id="r-note" rows="2"></textarea>
+<p class="err" id="r-err" role="alert"></p>
+<button class="send" type="submit"><span class="b">জানিয়ে দিন</span><span class="e">Send RSVP</span></button>
+</form>
+<div class="thanks" id="r-thanks" hidden><div class="big">💌</div><h3><span class="b">ধন্যবাদ!</span><span class="e">Thank you!</span></h3><p><span class="b">উত্তর পৌঁছে গেছে। এটি নমুনা সাইট; আসল সাইটে উত্তর সঙ্গে সঙ্গে পরিবারের ইমেলে যায়।</span><span class="e">Your reply is in. This is a demo; on a real site it reaches the family's email instantly.</span></p></div></div>
+</article></div>
+<footer><p class="made"><a href="index.html">Made with 💌 by Nimontron</a> · <span class="b">নিজের অনুষ্ঠানের জন্য এমন নিমন্ত্রণ চান?</span><span class="e">Want an invite like this?</span> <a href="https://ig.me/m/nimontron_web" target="_blank" rel="noopener"><span class="b">মেসেজ করুন</span><span class="e">Message us</span></a></p></footer><script src="tpl.js" defer></script>
+</body>
+</html>
