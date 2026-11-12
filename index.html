@@ -268,6 +268,7 @@ section { padding-block: 88px; position: relative; }
 .plan:not(.star) .btn { background: transparent; color: var(--ink); border-color: var(--ink); box-shadow: none; }
 .plan.star .btn { background: linear-gradient(180deg, var(--gold2), var(--gold)); color: #2A1305; }
 .plans-note { margin-top: 18px; color: var(--soft); font-size: .93rem; }
+@media (min-width: 961px) { .plans { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; } .plan { padding: 26px 18px; } }
 @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 30rem; margin-inline: auto; } .plan.star { order: -1; margin-top: 10px; transform: none; } .js .plan.star.rv.in.tilt { transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)); } }
 
 /* custom domain add-on */
@@ -383,7 +384,7 @@ html[lang="bn"] body { line-height: 1.7; }
         <p class="fine" data-i18n="hero.fine">Send us your names and date<span class="js-via"></span>. Your personal preview arrives within a few hours and stays live for 48.</p>
         <div class="offer">
           <div class="seal" data-i18n="price.classic">₹1,999</div>
-          <div><b data-i18n="offer.b">Founding couples: Classic at ₹1,999</b><span data-i18n="offer.s">Founding price for the first 10 couples · 50% to book</span></div>
+          <div><b data-i18n="offer.b">Founding couples: Classic at ₹1,999</b><span data-i18n="offer.s"><span class="left js-left">10 of 10</span> founding slots open · 50% to book</span></div>
         </div>
         <p class="fine"><a href="checklist.html" data-i18n="hero.check">Free Biye checklist: what to buy and book, in Bangla + English →</a></p>
       </div>
@@ -504,7 +505,7 @@ html[lang="bn"] body { line-height: 1.7; }
         </div>
         <ul class="chips">
           <li data-i18n="real.c1">Opens like an envelope</li>
-          <li data-i18n="real.c2">Own domain: arsri.online</li>
+          <li data-i18n="real.c2">Their own web address</li>
           <li data-i18n="real.c3">RSVP for every event</li>
         </ul>
         <a class="btn btn-gold js-wa" href="#" data-msg="preview" target="_blank" rel="noopener" data-i18n="real.cta">Want one like this? Get your free preview</a>
@@ -542,12 +543,25 @@ html[lang="bn"] body { line-height: 1.7; }
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow" data-i18n="pk.eyebrow">Packages</p>
-        <h2 data-i18n="pk.h2">Three fixed prices. No surprises.</h2>
-        <p data-i18n="pk.p">Every site stays live for one year and works on any phone.</p>
+        <h2 data-i18n="pk.h2">Four fixed prices. No surprises.</h2>
+        <p data-i18n="pk.p">Every site stays live for one year (Mini: three months) and works on any phone.</p>
       </div>
       <div class="plans">
         <div class="plan tilt rv" style="--i:0">
-          <div><h3 data-i18n="st.h">Starter</h3><p class="for" data-i18n="st.for">One or two events, simple and quick</p></div>
+          <div><h3 data-i18n="mn.h">Mini</h3><p class="for" data-i18n="mn.for">One small event</p></div>
+          <div class="price"><b data-i18n="price.mini">₹699</b></div>
+          <ul>
+            <li data-i18n="mn.1">One event (Annaprashan, birthday, Griha Probesh, anniversary)</li>
+            <li data-i18n="mn.2">Bengali and English</li>
+            <li data-i18n="mn.3">Venue map</li>
+            <li data-i18n="mn.4">RSVP</li>
+            <li data-i18n="mn.5">1 revision round</li>
+            <li data-i18n="mn.6">Live for three months</li>
+          </ul>
+          <a class="btn btn-wa js-wa" href="#" data-msg="mini" target="_blank" rel="noopener" data-i18n="mn.btn">Choose Mini</a>
+        </div>
+        <div class="plan tilt rv" style="--i:0">
+          <div><h3 data-i18n="st.h">Starter</h3><p class="for" data-i18n="st.for">One event, simple and quick</p></div>
           <div class="price"><b data-i18n="price.starter">₹1,499</b></div>
           <ul>
             <li data-i18n="st.1">Up to 2 events</li>
@@ -587,6 +601,7 @@ html[lang="bn"] body { line-height: 1.7; }
           <a class="btn btn-wa js-wa" href="#" data-msg="royal" target="_blank" rel="noopener" data-i18n="ro.btn">Choose Royal</a>
         </div>
       </div>
+      <p class="plans-note rv" data-i18n="pk.addons">Add-ons: printable card design (PDF) ₹499 · QR insert for your printed card ₹299 · your own web address at cost plus ₹500 setup.</p>
       <div class="addon rv" id="domain">
         <div>
           <h3 data-i18n="dom.h">Add-on: your own web address</h3>
@@ -625,8 +640,8 @@ html[lang="bn"] body { line-height: 1.7; }
     <div class="wrap">
       <div class="rv">
         <div class="seal-big" aria-hidden="true"><div>ন</div></div>
-        <h2 data-i18n="close.h2">Wedding this season? Your invite can be live in 48 hours.</h2>
-        <p class="sub" data-i18n="close.sub">Marrying in Magh or Falgun (January to March)? Book in December and send on time.</p>
+        <h2 data-i18n="close.h2">Getting married between 20 November and 12 December?</h2>
+        <p class="sub" data-i18n="close.sub">Invites usually go out three weeks before. Send us your names today and see your preview tonight.</p>
         <div class="cta-row">
           <a class="btn btn-gold js-wa" href="#" data-msg="preview" target="_blank" rel="noopener" data-i18n="close.cta">Get my free preview</a>
           <a class="btn btn-ghost js-pay" href="#" target="_blank" rel="noopener" data-i18n="close.pay">Book with 50% deposit</a>
@@ -637,6 +652,7 @@ html[lang="bn"] body { line-height: 1.7; }
         <p class="js-book"></p>
         <div class="upi js-upi-row" hidden><code class="js-upi"></code><button type="button" id="copy-upi"></button></div>
         <p class="js-contact"></p>
+        <p data-i18n="pay.terms">50% advance to start, balance on delivery. The advance is not refundable once work has started. We usually deliver within 48 hours of receiving all your details; that is our usual time, not a guarantee. Sites stay live for one year (Mini: three months). RSVP data is deleted 90 days after the event.</p>
       </div>
     </div>
   </section>
@@ -670,7 +686,7 @@ var BN = {
   "hero.see": "নমুনা দেখুন",
   "hero.fine": "আপনাদের নাম আর বিয়ের তারিখ পাঠান<span class=\"js-via\"></span>। কয়েক ঘণ্টার মধ্যে পৌঁছে যাবে আপনাদের নিজস্ব নমুনা, থাকবে ৪৮ ঘণ্টা।",
   "offer.b": "প্রথম ১০ জোড়ার জন্য: ক্লাসিক মাত্র ₹১,৯৯৯",
-  "offer.s": "প্রথম ১০ দম্পতির জন্য বিশেষ মূল্য · বুক করতে ৫০%",
+  "offer.s": "<span class=\"left js-left\"></span> জায়গা খালি · বুকিংয়ে ৫০%",
   "hero.check": "বিনামূল্যে বিয়ের চেকলিস্ট: কখন কী কিনবেন, কী বুক করবেন →",
   "tag.a": "মাসি জানালেন: ৪ জন আসছেন",
   "strip": "যে অনুষ্ঠানের জন্য",
@@ -693,7 +709,7 @@ var BN = {
   "real.eyebrow": "সত্যিকারের একটি বিয়ে",
   "real.h2": "অর্ণব ও সৃজিতার নিমন্ত্রণ, নিজেদের ওয়েব ঠিকানায়।",
   "real.p": "অকল্যান্ড থেকে কলকাতা। ওঁদের অতিথিরা প্রথমে খুলেছেন একটা খাম, তারপর দুজনের গল্প, বাংলা আর ইংরেজিতে, সঙ্গে আরএসভিপি, ভেন্যুর ম্যাপ, আর বিয়ে ও বৌভাতের আলাদা লিংক। এখানে একটু ঝলক দেখুন; বাকিটা শুধু ওঁদের অতিথিদের জন্য।",
-  "real.c1": "খামের মতো খোলে", "real.c2": "নিজস্ব ডোমেন: arsri.online", "real.c3": "প্রতিটি অনুষ্ঠানের আরএসভিপি",
+  "real.c1": "খামের মতো খোলে", "real.c2": "ওঁদের নিজস্ব ওয়েব ঠিকানা", "real.c3": "প্রতিটি অনুষ্ঠানের আরএসভিপি",
   "real.cta": "এমন একটা চান? বিনামূল্যে নমুনা নিন",
   "real.lock": "বাকিটা শুধু ওঁদের অতিথিদের জন্য", "real.lock2": "আপনারটাও হতে পারে এমন",
   "steps.eyebrow": "কীভাবে হয়", "steps.h2": "একটা মেসেজ থেকে দুদিনে তৈরি নিমন্ত্রণ।",
@@ -701,11 +717,15 @@ var BN = {
   "s2h": "নমুনা দেখুন", "s2p": "কয়েক ঘণ্টার মধ্যে আপনাদের নামে সাইট। বিনামূল্যে, থাকবে ৪৮ ঘণ্টা।",
   "s3h": "৫০% দিয়ে বুক করুন", "s3p": "ইউপিআই-তে অর্ধেক টাকা দিয়ে পাকা করুন। ছবি আর পরিবারের নাম পাঠান।",
   "s4h": "লিংক পাঠান", "s4p": "৪৮ ঘণ্টায় লাইভ। একবার সংশোধন ফ্রি। বাকি টাকা ডেলিভারির সময়।",
-  "pk.eyebrow": "প্যাকেজ", "pk.h2": "তিনটে নির্দিষ্ট দাম। কোনো লুকোনো খরচ নেই।", "pk.p": "প্রতিটি সাইট এক বছর লাইভ থাকে, যেকোনো ফোনে চলে।",
+  "pk.eyebrow": "প্যাকেজ", "pk.h2": "চারটে নির্দিষ্ট দাম। কোনো লুকোনো খরচ নেই।", "pk.p": "প্রতিটি সাইট এক বছর লাইভ থাকে (মিনি: তিন মাস), যেকোনো ফোনে চলে।",
+  "pk.addons": "অ্যাড-অন: ছাপার উপযোগী কার্ড ডিজাইন (PDF) ₹৪৯৯ · ছাপানো কার্ডের জন্য কিউআর ইনসার্ট ₹২৯৯ · নিজের ওয়েব ঠিকানা খরচ আর ₹৫০০ সেটআপ।",
   "price.starter": "₹১,৪৯৯", "price.classic": "₹১,৯৯৯", "price.classicOld": "₹৩,৪৯৯", "price.royal": "₹৭,৯৯৯",
-  "st.h": "স্টার্টার", "st.for": "এক বা দুটি অনুষ্ঠান, সহজ আর তাড়াতাড়ি",
+  "st.h": "স্টার্টার", "st.for": "একটা অনুষ্ঠান, সহজ আর তাড়াতাড়ি",
   "st.1": "২টি পর্যন্ত অনুষ্ঠান", "st.2": "বাংলা আর ইংরেজি", "st.3": "ল্যান্ডমার্ক সহ ভেন্যুর ম্যাপ", "st.4": "ইমেল অ্যালার্ট সহ আরএসভিপি", "st.5": "১ বার সংশোধন",
   "st.btn": "স্টার্টার নিন",
+  "mn.h": "মিনি", "mn.for": "একটি ছোট অনুষ্ঠান", "price.mini": "₹৬৯৯",
+  "mn.1": "একটি অনুষ্ঠান (অন্নপ্রাশন, জন্মদিন, গৃহপ্রবেশ, বার্ষিকী)", "mn.2": "বাংলা আর ইংরেজি", "mn.3": "ভেন্যুর ম্যাপ", "mn.4": "আরএসভিপি", "mn.5": "১ বার সংশোধন", "mn.6": "তিন মাস লাইভ থাকবে",
+  "mn.btn": "মিনি নিন",
   "cl.ribbon": "শুরুর অফার", "cl.h": "ক্লাসিক", "cl.for": "পুরো বাঙালি বিয়ে", "cl.small": "প্রথম ১০ জোড়ার জন্য",
   "cl.1": "আইবুড়োভাত থেকে রিসেপশন, ৫টি পর্যন্ত অনুষ্ঠান", "cl.2": "কনে আর বরের বাড়ির আলাদা লিংক", "cl.3": "বাংলা তারিখ আর লগ্নের সময়",
   "cl.4": "প্রতিটি অনুষ্ঠানের আলাদা আরএসভিপি ও অতিথি সংখ্যা", "cl.5": "ছবির গ্যালারি আর কাউন্টডাউন", "cl.6": "ছাপানো কার্ডের জন্য কিউআর কোড", "cl.7": "২ বার সংশোধন",
@@ -726,10 +746,11 @@ var BN = {
   "q5": "আমাদের কী কী দিতে হবে?", "a5": "নাম, অনুষ্ঠানের তারিখ ও সময়, ভেন্যু, আর নিমন্ত্রণে যে পরিবারের নাম থাকবে। ছবি দিলে ভালো, না দিলেও চলবে।",
   "q6": "আরএসভিপি-র উত্তর কারা দেখতে পায়?", "a6": "শুধু আপনারা। উত্তর যায় আপনাদের ইমেলে। অনুষ্ঠানের ৯০ দিন পরে আমরা সেই তথ্য মুছে ফেলি।",
   "q7": "অন্য অনুষ্ঠানের জন্যও হয়?", "a7": "হ্যাঁ: অন্নপ্রাশন, গৃহপ্রবেশ, জন্মদিন, বিবাহবার্ষিকী। তারিখ জানিয়ে মেসেজ করুন।",
-  "close.h2": "এই মরসুমে বিয়ে? ৪৮ ঘণ্টায় আপনার নিমন্ত্রণ তৈরি।",
-  "close.sub": "মাঘ-ফাল্গুনে বিয়ে? ডিসেম্বরে বুক করুন, সময়মতো পাঠান।",
+  "close.h2": "২০ নভেম্বর থেকে ১২ ডিসেম্বরের মধ্যে বিয়ে?",
+  "close.sub": "নিমন্ত্রণ সাধারণত তিন সপ্তাহ আগে পাঠানো হয়। আজই নাম পাঠান, আজ রাতেই নমুনা দেখুন।",
   "close.cta": "বিনামূল্যে নমুনা চাই", "close.pay": "৫০% দিয়ে বুক করুন",
   "pay.h": "কীভাবে বুক করবেন",
+  "pay.terms": "শুরুতে ৫০% অগ্রিম, ডেলিভারির সময় বাকিটা। কাজ শুরু হয়ে গেলে অগ্রিম ফেরত হয় না। সব তথ্য পাওয়ার পর সাধারণত ৪৮ ঘণ্টার মধ্যে ডেলিভারি দিই; এটাই আমাদের সাধারণ সময়, কোনো নিশ্চয়তা নয়। সাইট এক বছর লাইভ থাকে (মিনি: তিন মাস)। অনুষ্ঠানের ৯০ দিন পরে আরএসভিপি-র তথ্য মুছে ফেলা হয়।",
   "foot.city": "কলকাতা", "foot.r": "বাঙালি বিয়ে ও অনুষ্ঠানের নিমন্ত্রণ-ওয়েবসাইট"
 };
 Object.assign(BN, {
@@ -758,6 +779,7 @@ function bnNum(n) { return String(n).replace(/\d/g, function (d) { return "০�
     hello: "Hi Nimontron! I'd like to know more about invitation websites.",
     preview: "Hi Nimontron! Please make a free preview for us.\nNames: \nEvent(s): \nDate(s): \nVenue(s): ",
     starter: "Hi Nimontron! We'd like the Starter package (Rs 1,499).\nNames: \nDate: ",
+    mini: "Hi Nimontron! We'd like the Mini package (Rs 699).\nNames: \nDate: ",
     classic: "Hi Nimontron! We'd like the Classic founding offer (Rs 1,999).\nNames: \nDates: ",
     royal: "Hi Nimontron! We'd like the Royal package (Rs 7,999).\nNames: \nDates: ",
     deposit: "Hi Nimontron! We'd like to pay the 50% deposit to book.\nNames: \nPackage: ",
@@ -981,7 +1003,7 @@ function bnNum(n) { return String(n).replace(/\d/g, function (d) { return "০�
 
   /* typed custom domain */
   var typed = D.getElementById("typed"), names = D.getElementById("typedNames");
-  var doms = [["ritam-debolina.in", "ঋতম ও দেবলীনা"], ["tiyasha-aritra.online", "তিয়াসা ও অরিত্র"], ["arsri.online", "অর্ণব ও সৃজিতা"]];
+  var doms = [["ritam-debolina.in", "ঋতম ও দেবলীনা"], ["tiyasha-aritra.online", "তিয়াসা ও অরিত্র"]];
   if (typed && !reduce) {
     var di = 0, ci = doms[0][0].length, dirn = -1, visible = false, timer = null;
     var tick = function () {
