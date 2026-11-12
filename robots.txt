@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nimontron.shop/sitemap.xml
