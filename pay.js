@@ -14,7 +14,7 @@
   var CHECKOUT_SRC = "https://checkout.razorpay.com/v1/checkout.js";
   /* Display prices in rupees. The Worker holds the real ones; keep both lists the same. */
   var PLANS = {
-    mini: { en: "Mini", bn: "মিনি", price: 699 },
+    mini: { en: "Mini", bn: "মিনি", price: 5 }, /* TEMP TEST PRICE (real price 699). Revert after testing. */
     starter: { en: "Starter", bn: "স্টার্টার", price: 1499 },
     classic: { en: "Classic", bn: "ক্লাসিক", price: 1999 },
     royal: { en: "Royal", bn: "রয়্যাল", price: 7999 }
