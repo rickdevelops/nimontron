@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sample website · Nimontron</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Figtree:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<!--
+  Nimontron vendor sample site.
+  Make a preview for a vendor by adding these to the link:
+    n   = business name            (required)  e.g. n=Rupkatha%20Studio
+    t   = type: photo | mua | decor | mehendi | cater | plan   (default photo)
+    ig  = their Instagram handle   (optional)  e.g. ig=rupkatha.studio
+    city= city / area              (default Kolkata)
+    s   = style 1 (maroon) | 2 (ivory) | 3 (night)   (default 1)
+    lang= bn to open in Bengali
+  Example: https://nimontron.shop/vendor.html?n=Rupkatha%20Studio&t=photo&ig=rupkatha.studio&city=Behala
+  Samples are noindex, so a vendor's name never shows up in Google from a preview.
+-->
+<style>
+  :root{
+    --bg:#FBF6EC; --sheet:#FFFFFF; --ink:#22141C; --soft:#6B5A60; --line:#EADFCB;
+    --hero:#4A1324; --hero2:#1A0A10; --accent:#E9B65A; --on-hero:#FBF3E4; --tile1:#F4EAD8; --tile2:#EAD6BC;
+  }
+  body[data-style="2"]{ --bg:#FFFDF8; --hero:#F6EEDF; --hero2:#EADBC2; --on-hero:#3A1F14; --accent:#B0322A; --tile1:#F7EFE2; --tile2:#E9DCC8; }
+  body[data-style="3"]{ --bg:#14100F; --sheet:#1E1816; --ink:#F3E9DA; --soft:#B8A99A; --line:#3A2F2A;
+    --hero:#0E0B0A; --hero2:#241A16; --accent:#D9A54A; --on-hero:#F3E9DA; --tile1:#2A211D; --tile2:#3A2D26; }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body.bn{font-family:"Hind Siliguri",Figtree,sans-serif}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+  body.bn h1,body.bn h2,body.bn h3{font-family:"Tiro Bangla",Fraunces,serif;font-weight:400}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  .ribbon{position:sticky;top:0;z-index:20;background:#1A0A10;color:#FBF3E4;font-size:13px;padding:8px 16px;text-align:center}
+  .ribbon a{color:#E9B65A;font-weight:600;text-decoration:none;white-space:nowrap}
+
+  nav.top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1040px;margin:0 auto}
+  .brand{font-family:Fraunces,serif;font-weight:600;font-size:20px}
+  .lang{border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+
+  header.hero{background:radial-gradient(120% 120% at 20% 0%,var(--hero) 0%,var(--hero2) 100%);color:var(--on-hero);padding:72px 0 80px;position:relative;overflow:hidden}
+  header.hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;border-radius:50%;
+    border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);box-shadow:0 0 0 30px color-mix(in srgb,var(--accent) 8%,transparent)}
+  .kicker{letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--accent);font-weight:600}
+  body.bn .kicker{letter-spacing:0;text-transform:none;font-size:15px}
+  .hero h1{font-size:clamp(38px,7vw,68px);margin:12px 0 14px;max-width:14ch;overflow-wrap:anywhere}
+  .hero p{max-width:52ch;opacity:.9;margin:0 0 28px;font-size:18px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+  .btn.primary{background:var(--accent);color:#1A0A10}
+  body[data-style="2"] .btn.primary{color:#fff}
+  .btn.ghost{background:transparent;color:var(--on-hero);border:1px solid color-mix(in srgb,var(--on-hero) 40%,transparent)}
+  .stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;font-size:14px;opacity:.85}
+  .stats b{display:block;font-family:Fraunces,serif;font-size:24px;color:var(--accent)}
+
+  section{padding:64px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(28px,4vw,38px)}
+  .muted{color:var(--soft)}
+
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:10px}
+  .tile{border-radius:14px;background:linear-gradient(135deg,var(--tile1),var(--tile2));position:relative;overflow:hidden;
+    display:flex;align-items:end;padding:12px;font-size:13px;color:var(--soft)}
+  .tile svg{position:absolute;inset:0;margin:auto;width:44px;height:44px;opacity:.35}
+  .tile.big{grid-column:span 2;grid-row:span 2}
+  .tile.tall{grid-row:span 2}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card h3{font-size:20px;margin-bottom:6px}
+  .price{font-family:Fraunces,serif;font-size:26px;color:var(--accent);margin:10px 0 4px}
+  .card ul{padding-left:18px;margin:10px 0 0;color:var(--soft);font-size:15px}
+  .card.featured{border:2px solid var(--accent)}
+
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  blockquote{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:22px;font-style:italic}
+  blockquote footer{font-style:normal;margin-top:10px;font-size:14px;color:var(--soft)}
+
+  .book{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+  .book h2{font-size:clamp(26px,4vw,34px);margin-bottom:8px}
+  .book .btns .btn.ghost{color:var(--ink);border-color:var(--line)}
+
+  footer.site{padding:40px 0 90px;text-align:center;font-size:14px;color:var(--soft)}
+  footer.site a{color:var(--accent);font-weight:600;text-decoration:none}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;transition:.25s;background:#1A0A10;color:#FBF3E4;
+    padding:12px 18px;border-radius:12px;font-size:14px;max-width:calc(100% - 32px);z-index:30;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (max-width:720px){
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}
+    .book{grid-template-columns:1fr;padding:24px}
+    header.hero{padding:56px 0 64px}
+    section{padding:48px 0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+</style>
+</head>
+<body data-style="1">
+
+<div class="ribbon"><span data-i="ribbon"></span> <a href="https://ig.me/m/nimontron_web" data-i="ribbonCta"></a></div>
+
+<nav class="top">
+  <div class="brand" data-v="name"></div>
+  <button class="lang" id="lang" type="button" aria-label="Switch language"></button>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker"><span data-v="type"></span> · <span data-v="city"></span></div>
+    <h1 data-v="name"></h1>
+    <p data-v="tagline"></p>
+    <div class="btns">
+      <button class="btn primary js-wa" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.3-.2-.5-.3Z"/></svg>
+        <span data-i="book"></span>
+      </button>
+      <a class="btn ghost" href="#work" data-i="seeWork"></a>
+    </div>
+    <div class="stats">
+      <div><b data-i="s1n"></b><span data-i="s1"></span></div>
+      <div><b data-i="s2n"></b><span data-i="s2"></span></div>
+      <div><b data-i="s3n"></b><span data-i="s3"></span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i="workTitle"></h2>
+      <a class="muted js-ig" target="_blank" rel="noopener" data-i="moreOnIg"></a>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i="pkgTitle"></h2><span class="muted" data-i="pkgNote"></span></div>
+    <div class="cards" id="packages"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i="revTitle"></h2></div>
+    <div class="quotes">
+      <blockquote><span data-i="q1"></span><footer data-i="q1by"></footer></blockquote>
+      <blockquote><span data-i="q2"></span><footer data-i="q2by"></footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="book">
+      <div>
+        <h2 data-i="bookTitle"></h2>
+        <p class="muted" data-i="bookText"></p>
+      </div>
+      <div class="btns">
+        <button class="btn primary js-wa" type="button" data-i="book"></button>
+        <a class="btn ghost js-ig" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div>© <span data-v="name"></span> · <span data-v="city"></span></div>
+  <div style="margin-top:8px"><span data-i="madeBy"></span> <a href="https://nimontron.shop/#vendors" target="_blank" rel="noopener">Nimontron</a></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const q = new URLSearchParams(location.search);
+  const clean = (v, max) => (v || '').replace(/[\u0000-\u001f<>]/g, '').trim().slice(0, max);
+  const name = clean(q.get('n'), 48) || 'Your Studio Name';
+  const ig = clean(q.get('ig'), 40).replace(/^@/, '').replace(/[^A-Za-z0-9._]/g, '');
+  const cityRaw = clean(q.get('city'), 32);
+  const style = ['1','2','3'].includes(q.get('s')) ? q.get('s') : '1';
+  const TYPES = ['photo','mua','decor','mehendi','cater','plan'];
+  const type = TYPES.includes(q.get('t')) ? q.get('t') : 'photo';
+  let lang = q.get('lang') === 'bn' ? 'bn' : 'en';
+  document.body.dataset.style = style;
+
+  // Per-type wording. Prices are placeholders on purpose: the vendor fills in their own.
+  const T = {
+    photo:{en:{type:'Wedding Photography',tag:'Candid moments, family portraits and cinematic films for Bengali weddings, from Gaye Holud to Bou Bhat.',
+                pk:[['Biye only','Wedding day coverage','Edited photos','Online album'],['Biye + Bou Bhat','Two days of coverage','Highlight film','Printed album'],['Full wedding','Gaye Holud to Bou Bhat','Pre-wedding shoot','Cinematic film']]},
+           bn:{type:'বিয়ের ফটোগ্রাফি',tag:'গায়ে হলুদ থেকে বৌভাত — ক্যান্ডিড মুহূর্ত, পরিবারের ছবি আর সিনেম্যাটিক ফিল্ম।',
+                pk:[['শুধু বিয়ে','বিয়ের দিনের কভারেজ','এডিট করা ছবি','অনলাইন অ্যালবাম'],['বিয়ে + বৌভাত','দু\'দিনের কভারেজ','হাইলাইট ফিল্ম','প্রিন্টেড অ্যালবাম'],['পুরো বিয়ে','গায়ে হলুদ থেকে বৌভাত','প্রি-ওয়েডিং শুট','সিনেম্যাটিক ফিল্ম']]}},
+    mua:{en:{type:'Bridal Makeup',tag:'Bengali bridal looks that last from the first shubhodrishti to the last photo.',
+                pk:[['Bridal look','Biye makeup and hair','Saree draping','Trial on request'],['Bridal + Reception','Two looks','Hair and draping','Touch-up kit'],['Bride + family','Bridal look','2 family looks','Draping for all']]},
+          bn:{type:'ব্রাইডাল মেকআপ',tag:'শুভদৃষ্টি থেকে শেষ ছবি পর্যন্ত টিকে থাকা বাঙালি কনের সাজ।',
+                pk:[['কনের সাজ','বিয়ের মেকআপ ও চুল','শাড়ি পরানো','ট্রায়াল (অনুরোধে)'],['বিয়ে + রিসেপশন','দুটি লুক','চুল ও শাড়ি','টাচ-আপ কিট'],['কনে + পরিবার','কনের সাজ','পরিবারের ২টি লুক','সবার শাড়ি পরানো']]}},
+    decor:{en:{type:'Wedding Decoration',tag:'Mandaps, stages and entrances, from classic shola and marigold to modern minimal.',
+                pk:[['Stage','Reception stage','Flowers and lights','Setup and teardown'],['Stage + Mandap','Mandap and stage','Entrance gate','Lighting'],['Full venue','Every area styled','Gaye Holud setup','Photo corner']]},
+           bn:{type:'বিয়ের ডেকোরেশন',tag:'ছাদনাতলা, স্টেজ আর গেট — শোলা আর গাঁদা থেকে আধুনিক মিনিমাল।',
+                pk:[['স্টেজ','রিসেপশন স্টেজ','ফুল ও আলো','সেটআপ'],['স্টেজ + ছাদনাতলা','ছাদনাতলা ও স্টেজ','গেট','আলো'],['পুরো ভেন্যু','সব জায়গা সাজানো','গায়ে হলুদের সেটআপ','ফটো কর্নার']]}},
+    mehendi:{en:{type:'Mehendi Artist',tag:'Bridal and guest mehendi with deep colour and fine detail.',
+                pk:[['Bridal hands','Both hands','Custom motifs','Natural henna'],['Hands + feet','Full bridal set','Names hidden in design','Aftercare tips'],['Bride + guests','Bridal set','10 guests','Same-day team']]},
+             bn:{type:'মেহেন্দি',tag:'গাঢ় রং আর সূক্ষ্ম নকশায় কনে ও অতিথিদের মেহেন্দি।',
+                pk:[['কনের হাত','দুই হাত','নিজস্ব নকশা','প্রাকৃতিক মেহেন্দি'],['হাত + পা','পুরো ব্রাইডাল সেট','নকশায় নাম লুকোনো','যত্নের টিপস'],['কনে + অতিথি','ব্রাইডাল সেট','১০ জন অতিথি','একই দিনে টিম']]}},
+    cater:{en:{type:'Wedding Catering',tag:'Biye, Bou Bhat and Aiburobhat menus, from shukto to mishti doi.',
+                pk:[['Up to 150 guests','Set menu','Service staff','Veg and non-veg'],['150–300 guests','Custom menu','Live counter','Service staff'],['300+ guests','Full custom menu','2 live counters','Tasting session']]},
+           bn:{type:'বিয়ের ক্যাটারিং',tag:'বিয়ে, বৌভাত আর আইবুড়োভাতের মেনু — শুক্তো থেকে মিষ্টি দই।',
+                pk:[['১৫০ জন পর্যন্ত','নির্দিষ্ট মেনু','পরিবেশনকারী','নিরামিষ ও আমিষ'],['১৫০–৩০০ জন','নিজের মতো মেনু','লাইভ কাউন্টার','পরিবেশনকারী'],['৩০০+ জন','পুরো কাস্টম মেনু','২টি লাইভ কাউন্টার','টেস্টিং']]}},
+    plan:{en:{type:'Wedding Planning',tag:'We plan it, you enjoy it: vendors, timelines and the day itself.',
+                pk:[['Day-of coordination','Run sheet','On-site team','Vendor handling'],['Partial planning','Vendor shortlist','Budget plan','Day-of team'],['Full planning','Everything end to end','Guest management','All events']]},
+          bn:{type:'ওয়েডিং প্ল্যানিং',tag:'আমরা পরিকল্পনা করি, আপনি উপভোগ করুন — ভেন্ডর, সময়সূচি আর বিয়ের দিন।',
+                pk:[['বিয়ের দিনের সমন্বয়','সময়সূচি','অন-সাইট টিম','ভেন্ডর সামলানো'],['আংশিক পরিকল্পনা','ভেন্ডর বাছাই','বাজেট পরিকল্পনা','বিয়ের দিনের টিম'],['পুরো পরিকল্পনা','শুরু থেকে শেষ','অতিথি সামলানো','সব অনুষ্ঠান']]}}
+  };
+
+  const I = {
+    en:{ribbon:'Free sample website made for '+name+' by Nimontron. Not live yet.',ribbonCta:'Make it yours →',
+        book:'Book on WhatsApp',seeWork:'See our work',s1n:'100+',s1:'weddings (your number)',s2n:'5★',s2:'client reviews',s3n:'Kolkata',s3:'and outstation',
+        workTitle:'Our work',moreOnIg:'More on Instagram →',photo:'Your photo',
+        pkgTitle:'Packages',pkgNote:'Prices are yours to set',price:'₹ your price',
+        revTitle:'What couples say',q1:'“Your clients’ own words go here, like the lovely messages you already get on WhatsApp.”',q1by:'— A happy couple, Dec 2025',
+        q2:'“A second review. Real reviews with names (with permission) build the most trust.”',q2by:'— Another couple, Feb 2026',
+        bookTitle:'Check your date',bookText:'Dates for the Agrahayan, Magh and Falgun seasons fill up fast. Send your date and venue on WhatsApp and we will reply the same day.',
+        madeBy:'Website by',toastWa:'On the live site, this opens your WhatsApp with a ready message.',toastIg:'On the live site, this opens your Instagram.',langBtn:'বাংলা',city:'Kolkata'},
+    bn:{ribbon:'Nimontron-এর তৈরি '+name+'-এর জন্য বিনামূল্যে নমুনা ওয়েবসাইট। এখনও লাইভ নয়।',ribbonCta:'নিজের করে নিন →',
+        book:'হোয়াটসঅ্যাপে বুক করুন',seeWork:'আমাদের কাজ দেখুন',s1n:'১০০+',s1:'বিয়ে (আপনার সংখ্যা)',s2n:'৫★',s2:'ক্লায়েন্ট রিভিউ',s3n:'কলকাতা',s3:'ও বাইরে',
+        workTitle:'আমাদের কাজ',moreOnIg:'ইনস্টাগ্রামে আরও →',photo:'আপনার ছবি',
+        pkgTitle:'প্যাকেজ',pkgNote:'দাম আপনি ঠিক করবেন',price:'₹ আপনার দাম',
+        revTitle:'দম্পতিরা যা বলেন',q1:'“এখানে আপনার ক্লায়েন্টদের নিজের কথা থাকবে — হোয়াটসঅ্যাপে যে সুন্দর মেসেজগুলো পান।”',q1by:'— এক খুশি দম্পতি, ডিসেম্বর ২০২৫',
+        q2:'“আরেকটি রিভিউ। নাম সহ আসল রিভিউ (অনুমতি নিয়ে) সবচেয়ে বেশি ভরসা জাগায়।”',q2by:'— আরেক দম্পতি, ফেব্রুয়ারি ২০২৬',
+        bookTitle:'আপনার তারিখ খালি আছে কি না দেখুন',bookText:'অগ্রহায়ণ, মাঘ আর ফাল্গুনের তারিখ তাড়াতাড়ি ভরে যায়। হোয়াটসঅ্যাপে তারিখ আর ভেন্যু পাঠান, আমরা সেদিনই উত্তর দেব।',
+        madeBy:'ওয়েবসাইট:',toastWa:'লাইভ সাইটে এটি আপনার হোয়াটসঅ্যাপ খুলবে, মেসেজ তৈরি থাকবে।',toastIg:'লাইভ সাইটে এটি আপনার ইনস্টাগ্রাম খুলবে।',langBtn:'English',city:'কলকাতা'}
+  };
+
+  const camera = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+  const shapes = ['big','','tall','','','','',''];
+
+  function render(){
+    const t = I[lang], k = T[type][lang];
+    document.documentElement.lang = lang;
+    document.body.classList.toggle('bn', lang === 'bn');
+    document.title = name + ' · ' + k.type;
+    const vals = {name:name, type:k.type, city: cityRaw || t.city, tagline:k.tag};
+    document.querySelectorAll('[data-v]').forEach(el => { el.textContent = vals[el.dataset.v]; });
+    document.querySelectorAll('[data-i]').forEach(el => { if (t[el.dataset.i] !== undefined) el.textContent = t[el.dataset.i]; });
+    document.getElementById('lang').textContent = t.langBtn;
+
+    const g = document.getElementById('gallery'); g.innerHTML = '';
+    shapes.forEach(s => { const d = document.createElement('div'); d.className = 'tile ' + s; d.innerHTML = camera; const l = document.createElement('span'); l.textContent = t.photo; d.appendChild(l); g.appendChild(d); });
+
+    const p = document.getElementById('packages'); p.innerHTML = '';
+    k.pk.forEach((pk, i) => {
+      const c = document.createElement('div'); c.className = 'card' + (i === 1 ? ' featured' : '');
+      const h = document.createElement('h3'); h.textContent = pk[0];
+      const pr = document.createElement('div'); pr.className = 'price'; pr.textContent = t.price;
+      const ul = document.createElement('ul'); pk.slice(1).forEach(x => { const li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
+      c.append(h, pr, ul); p.appendChild(c);
+    });
+
+    document.querySelectorAll('.js-ig').forEach(a => {
+      if (ig) { a.href = 'https://instagram.com/' + ig; a.onclick = null; }
+      else { a.href = '#'; a.onclick = e => { e.preventDefault(); toast(t.toastIg); }; }
+    });
+  }
+
+  let tm;
+  function toast(msg){ const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(tm); tm = setTimeout(() => el.classList.remove('show'), 3200); }
+
+  document.querySelectorAll('.js-wa').forEach(b => b.addEventListener('click', () => toast(I[lang].toastWa)));
+  document.getElementById('lang').addEventListener('click', () => { lang = lang === 'en' ? 'bn' : 'en'; render(); });
+  render();
+})();
+</script>
+<script src="stats.js" defer></script></body>
+</html>
