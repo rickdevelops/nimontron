@@ -20,7 +20,7 @@ function mockRazorpay(status = 200, payload) {
 test("amounts are server-side: full, and deposit rounded up to a whole rupee", () => {
   assert.equal(amountFor("classic", "full"), 199900);
   assert.equal(amountFor("classic", "deposit"), 100000);
-  assert.equal(amountFor("mini", "deposit"), 35000);
+  assert.equal(amountFor("mini", "deposit"), 300); // TEMP: Mini is Rs 5 for testing (real: 35000 at Rs 699)
   assert.equal(amountFor("royal", "deposit"), 400000);
 });
 
