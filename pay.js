@@ -43,6 +43,7 @@
       dHalfBody: "Want to see it first? We'll make a free preview with your names.",
       dHalfBtn: "Get my free preview",
       okFull: "Payment received. Thank you!", okHalf: "Deposit received. Thank you!",
+      custTitle: "Your details", custBody: "So we can reach you about your invitation. We use these only for your order.", custName: "Your name", custPhone: "Phone number (WhatsApp if possible)", custEmail: "Email (optional)", custGo: "Continue to payment", errName: "Please enter your name.", errPhone: "Please enter a valid phone number, for example 98XXXXXXXX.", errEmail: "That email does not look right. You can leave it empty.",
       okBodyNote: "Your spot is booked. We have received your payment details and will message you shortly. To get started, send us your names, event dates and venues on Instagram.",
       okBody: "Your spot is booked. Send us your names, event dates and venues along with the payment ID below, and we'll start right away.",
       balance: function (r) { return "The balance of " + r + " is due on delivery."; },
@@ -74,6 +75,7 @@
       dHalfBody: "আগে দেখে নিতে চান? আপনাদের নামে বিনামূল্যে নমুনা বানিয়ে দেব।",
       dHalfBtn: "বিনামূল্যে নমুনা নিন",
       okFull: "পেমেন্ট পেয়েছি। ধন্যবাদ!", okHalf: "অগ্রিম পেয়েছি। ধন্যবাদ!",
+      custTitle: "আপনার তথ্য", custBody: "আপনার আমন্ত্রণ নিয়ে যোগাযোগ করার জন্য। শুধু এই অর্ডারের জন্যই ব্যবহার হবে।", custName: "আপনার নাম", custPhone: "ফোন নম্বর (সম্ভব হলে হোয়াটসঅ্যাপ)", custEmail: "ইমেল (ঐচ্ছিক)", custGo: "পেমেন্টে এগিয়ে যান", errName: "অনুগ্রহ করে নাম লিখুন।", errPhone: "সঠিক ফোন নম্বর লিখুন, যেমন 98XXXXXXXX।", errEmail: "ইমেলটি ঠিক মনে হচ্ছে না। চাইলে ফাঁকা রাখতে পারেন।",
       okBodyNote: "আপনার জায়গা পাকা। আপনার পেমেন্টের তথ্য আমরা পেয়ে গেছি, শীঘ্রই যোগাযোগ করব। কাজ শুরু করতে ইনস্টাগ্রামে আপনাদের নাম, অনুষ্ঠানের তারিখ আর ভেন্যু পাঠান।",
       okBody: "আপনার জায়গা পাকা। নিচের পেমেন্ট আইডি-র সঙ্গে নাম, অনুষ্ঠানের তারিখ আর ভেন্যু পাঠান, আমরা সঙ্গে সঙ্গে কাজ শুরু করব।",
       balance: function (r) { return "বাকি " + r + " ডেলিভারির সময় দিতে হবে।"; },
@@ -123,6 +125,11 @@
     ".np-dlg{background:var(--paper,#FBF6EC);color:var(--ink,#22141C);width:100%;max-width:26rem;border-radius:24px;padding:24px 22px;display:grid;gap:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);max-height:calc(100vh - 32px);overflow:auto}" +
     ".np-dlg h3{margin:0;font:500 1.4rem/1.2 var(--f-display,Georgia,serif)}" +
     ".np-dlg p{margin:0;font-size:.97rem;line-height:1.5}" +
+    ".np-f{display:grid;gap:10px}" +
+    ".np-f label{display:grid;gap:4px;font-size:.85rem;font-weight:600}" +
+    ".np-f input{font:inherit;font-weight:400;font-size:1rem;padding:11px 12px;border-radius:10px;border:1.5px solid rgba(34,20,28,.35);background:#fff;color:#22141C;width:100%;box-sizing:border-box}" +
+    ".np-f input:focus{outline:3px solid var(--gold,#E9B65A);outline-offset:1px}" +
+    ".np-f .np-err{color:#B3261E;font-size:.85rem;min-height:1.1em}" +
     ".np-acts{display:grid;gap:8px}" +
     ".np-dlg .np-btn.np-ghost{background:transparent;color:var(--ink,#22141C);border:1.5px solid var(--ink,#22141C);font-size:.95rem;padding:11px 14px}" +
     ".np-dlg .np-btn.np-link{background:transparent;color:var(--soft,#6B5A60);font-size:.9rem;padding:8px;text-decoration:underline}" +
@@ -244,7 +251,45 @@
     });
   }
 
-  function begin(plan, mode) {
+  var customer = null;
+  function normPhone(s) {
+    var raw = String(s || "").replace(/[\s\-().]/g, "");
+    if (/^\+(?!91)\d{8,15}$/.test(raw)) return raw;
+    var d = raw.replace(/^\+?91/, "").replace(/^0/, "");
+    return /^[6-9]\d{9}$/.test(d) ? "+91" + d : "";
+  }
+  function askDetails(plan, mode) {
+    if (busy) return;
+    var t = tx(), box = el("div", "np-f"), err = el("p", "np-err");
+    function field(label, type, ac) {
+      var l = el("label", "", label), i = el("input");
+      i.type = type; i.autocomplete = ac; i.maxLength = 120;
+      l.appendChild(i); box.appendChild(l); return i;
+    }
+    var iName = field(t.custName, "text", "name");
+    var iPhone = field(t.custPhone, "tel", "tel"); iPhone.setAttribute("inputmode", "tel");
+    var iMail = field(t.custEmail, "email", "email");
+    if (customer) { iName.value = customer.name; iPhone.value = customer.phone; iMail.value = customer.email; }
+    box.appendChild(err);
+    function go() {
+      var name = iName.value.trim().replace(/\s+/g, " "), ph = normPhone(iPhone.value), mail = iMail.value.trim();
+      err.textContent = "";
+      if (name.length < 2) { err.textContent = t.errName; iName.focus(); return; }
+      if (!ph) { err.textContent = t.errPhone; iPhone.focus(); return; }
+      if (mail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { err.textContent = t.errEmail; iMail.focus(); return; }
+      customer = { name: name.slice(0, 80), phone: ph, email: mail.slice(0, 120) };
+      beginPay(plan, mode);
+    }
+    [iName, iPhone, iMail].forEach(function (i) {
+      i.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); go(); } });
+    });
+    dialog({ title: t.custTitle, body: t.custBody, extra: box, acts: [{ label: t.custGo, onClick: go }, { label: t.close, kind: "link", onClick: closeDialog }] });
+    setTimeout(function () { iName.focus(); }, 60);
+  }
+
+  function begin(plan, mode) { askDetails(plan, mode); }
+
+  function beginPay(plan, mode) {
     if (busy) return;
     busy = true;
     dialog({ title: tx().opening, spinner: true, dismissible: false });
@@ -254,13 +299,13 @@
       busy = false;
       var t = tx();
       message(t.failTitle, err && err.kind === "script" ? t.errScript : err && err.kind === "net" ? t.errNet : t.errGeneric,
-        function () { begin(plan, mode); });
+        function () { beginPay(plan, mode); });
     });
   }
 
   function createOrder(plan, mode) {
     return fetch(API + "/api/create-order", {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ plan: plan, mode: mode })
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ plan: plan, mode: mode, customer: customer })
     }).then(function (res) {
       return res.json().catch(function () { return {}; }).then(function (data) {
         if (!res.ok || !data.order_id) throw { kind: "server", status: res.status };
@@ -276,6 +321,8 @@
     var rzp = new window.Razorpay({
       key: order.key_id, order_id: order.order_id, amount: order.amount, currency: order.currency,
       name: "Nimontron",
+      prefill: { name: (customer || {}).name || "", contact: (customer || {}).phone || "", email: (customer || {}).email || "" },
+      notes: { customer_name: (customer || {}).name || "", customer_phone: (customer || {}).phone || "", customer_email: (customer || {}).email || "", plan: plan, mode: mode },
       description: name + " · " + (mode === "full" ? "full payment" : "50% deposit"),
       theme: { color: "#C0262D" },
       handler: function (resp) { settled = true; verify(resp, plan, mode); },
@@ -290,7 +337,7 @@
     });
     /* Razorpay keeps its own window open for retries, so remember the reason and show it if they leave. */
     rzp.on("payment.failed", function (resp) { failure = (resp && resp.error && resp.error.description) || true; });
-    try { rzp.open(); } catch (e) { busy = false; message(tx().failTitle, tx().errGeneric, function () { begin(plan, mode); }); }
+    try { rzp.open(); } catch (e) { busy = false; message(tx().failTitle, tx().errGeneric, function () { beginPay(plan, mode); }); }
   }
 
   function verify(resp, plan, mode) {
@@ -323,10 +370,13 @@
     var due = mode === "deposit" ? balance(plan) : 0;
     var payload = {
       access_key: KEY,
-      subject: "Nimontron PAYMENT " + (verified ? "received" : "NEEDS CHECK") + " - " + PLANS[plan].en + " (" + (mode === "full" ? "full" : "50% deposit") + ") Rs " + paid,
+      subject: "Nimontron PAYMENT " + (verified ? "received" : "NEEDS CHECK") + " - " + PLANS[plan].en + " (" + (mode === "full" ? "full" : "50% deposit") + ") Rs " + paid + (customer ? " - " + customer.name : ""),
       from_name: "Nimontron website",
       status: verified ? "Verified by server (signature OK)" : "NOT verified yet - check the Razorpay dashboard",
       plan: PLANS[plan].en,
+      customer_name: customer ? customer.name : "(not given)",
+      customer_phone: customer ? customer.phone : "(not given)",
+      customer_email: customer && customer.email ? customer.email : "(not given)",
       payment_type: mode === "full" ? "Full payment" : "50% deposit",
       amount_paid: "Rs " + paid,
       balance_due_on_delivery: "Rs " + due,
@@ -337,6 +387,7 @@
       time_utc: new Date().toISOString(),
       botcheck: false
     };
+    if (customer && customer.email) { payload.email = customer.email; payload.replyto = customer.email; }
     var send = fetch("https://api.web3forms.com/submit", {
       method: "POST", keepalive: true,
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
