@@ -43,6 +43,7 @@
       dHalfBody: "Want to see it first? We'll make a free preview with your names.",
       dHalfBtn: "Get my free preview",
       okFull: "Payment received. Thank you!", okHalf: "Deposit received. Thank you!",
+      okBodyNote: "Your spot is booked. We have received your payment details and will message you shortly. To get started, send us your names, event dates and venues on Instagram.",
       okBody: "Your spot is booked. Send us your names, event dates and venues along with the payment ID below, and we'll start right away.",
       balance: function (r) { return "The balance of " + r + " is due on delivery."; },
       payId: "Payment ID", copy: "Copy", copied: "Copied",
@@ -73,6 +74,7 @@
       dHalfBody: "আগে দেখে নিতে চান? আপনাদের নামে বিনামূল্যে নমুনা বানিয়ে দেব।",
       dHalfBtn: "বিনামূল্যে নমুনা নিন",
       okFull: "পেমেন্ট পেয়েছি। ধন্যবাদ!", okHalf: "অগ্রিম পেয়েছি। ধন্যবাদ!",
+      okBodyNote: "আপনার জায়গা পাকা। আপনার পেমেন্টের তথ্য আমরা পেয়ে গেছি, শীঘ্রই যোগাযোগ করব। কাজ শুরু করতে ইনস্টাগ্রামে আপনাদের নাম, অনুষ্ঠানের তারিখ আর ভেন্যু পাঠান।",
       okBody: "আপনার জায়গা পাকা। নিচের পেমেন্ট আইডি-র সঙ্গে নাম, অনুষ্ঠানের তারিখ আর ভেন্যু পাঠান, আমরা সঙ্গে সঙ্গে কাজ শুরু করব।",
       balance: function (r) { return "বাকি " + r + " ডেলিভারির সময় দিতে হবে।"; },
       payId: "পেমেন্ট আইডি", copy: "কপি", copied: "কপি হয়েছে",
@@ -303,23 +305,68 @@
       .catch(function () { return false; })
       .then(function (ok) {
         busy = false;
-        if (ok) success(plan, mode, payload.razorpay_payment_id);
+        if (ok) notify(plan, mode, payload, true).then(function (sent) { success(plan, mode, payload.razorpay_payment_id, sent); });
         else unconfirmed(plan, mode, resp);
       });
   }
 
-  function success(plan, mode, paymentId) {
+  var SHEET_LOG = "https://script.google.com/macros/s/AKfycbzOo0YX5TnkR-Zjp4iRCduA9D5dCeZtM1yCMfEl-tnWz39kmkL-TerhdW7P4eDPvTFd2A/exec";
+  var notified = {};
+  /* Emails the owner (via Web3Forms, same key as the contact form) with the payment details. Resolves true if sent. */
+  function notify(plan, mode, resp, verified) {
+    var id = resp.razorpay_payment_id, key = id + (verified ? ":v" : ":u");
+    if (notified[key]) return notified[key];
+    var me = D.querySelector('script[src*="contact-form.js"]');
+    var KEY = (me && me.getAttribute("data-key")) || "";
+    if (!KEY) { notified[key] = Promise.resolve(false); return notified[key]; }
+    var paid = mode === "full" ? PLANS[plan].price : deposit(plan);
+    var due = mode === "deposit" ? balance(plan) : 0;
+    var payload = {
+      access_key: KEY,
+      subject: "Nimontron PAYMENT " + (verified ? "received" : "NEEDS CHECK") + " - " + PLANS[plan].en + " (" + (mode === "full" ? "full" : "50% deposit") + ") Rs " + paid,
+      from_name: "Nimontron website",
+      status: verified ? "Verified by server (signature OK)" : "NOT verified yet - check the Razorpay dashboard",
+      plan: PLANS[plan].en,
+      payment_type: mode === "full" ? "Full payment" : "50% deposit",
+      amount_paid: "Rs " + paid,
+      balance_due_on_delivery: "Rs " + due,
+      payment_id: id || "(missing)",
+      order_id: resp.razorpay_order_id || "(missing)",
+      page_language: lang(),
+      page: location.origin + location.pathname,
+      time_utc: new Date().toISOString(),
+      botcheck: false
+    };
+    var send = fetch("https://api.web3forms.com/submit", {
+      method: "POST", keepalive: true,
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (r) { return r.json().then(function (d) { return !!(r.ok && d && d.success); }, function () { return false; }); })
+      .catch(function () { return false; });
+    /* Backup record: a row in the owner's Google Sheet (Apps Script web app). */
+    var sheet = fetch(SHEET_LOG, {
+      method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(Object.assign({}, payload, { access_key: undefined }))
+    }).then(function (r) { return r.json().then(function (d) { return !!(d && d.success); }, function () { return false; }); })
+      .catch(function () { return false; });
+    var both = Promise.all([send, sheet]).then(function (r) { return r[0] || r[1]; });
+    var wait = new Promise(function (res) { setTimeout(function () { res(false); }, 8000); });
+    notified[key] = Promise.race([both, wait]);
+    return notified[key];
+  }
+
+  function success(plan, mode, paymentId, sent) {
     var t = tx(), box = el("div");
     box.style.display = "grid"; box.style.gap = "10px";
     if (mode === "deposit") box.appendChild(el("p", "", t.balance(money(balance(plan)))));
-    box.appendChild(paymentIdBox(paymentId));
+    if (!sent) box.appendChild(paymentIdBox(paymentId));
     dialog({
-      title: mode === "full" ? t.okFull : t.okHalf, body: t.okBody, extra: box,
+      title: mode === "full" ? t.okFull : t.okHalf, body: sent ? t.okBodyNote : t.okBody, extra: box,
       acts: [{ label: contactLabel(), href: contactHref() }, { label: t.close, kind: "link", onClick: closeDialog }]
     });
   }
 
   function unconfirmed(plan, mode, resp) {
+    notify(plan, mode, resp, false);
     var t = tx();
     dialog({
       title: t.unTitle, body: t.unBody, extra: paymentIdBox(resp.razorpay_payment_id),
