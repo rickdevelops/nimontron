@@ -1,0 +1,8 @@
+name = "nimontron-pay"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# Not secret. Only these websites may call the API from a browser.
+# RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET are NOT here: set them with `wrangler secret put`.
+[vars]
+ALLOWED_ORIGINS = "https://nimontron.shop,https://www.nimontron.shop"
