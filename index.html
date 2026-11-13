@@ -655,7 +655,7 @@ html[lang="bn"] body { line-height: 1.7; }
         <p class="js-book"></p>
         <div class="upi js-upi-row" hidden><code class="js-upi"></code><button type="button" id="copy-upi"></button></div>
         <p class="js-contact"></p>
-        <p data-i18n="pay.terms">50% advance to start, balance on delivery. The advance is not refundable once work has started. We usually deliver within 48 hours of receiving all your details; that is our usual time, not a guarantee. Sites stay live for one year (Mini: three months). RSVP data is deleted 90 days after the event.</p>
+        <p data-i18n="pay.terms">50% advance to start and the balance on delivery, or pay in full up front. The advance is not refundable once work has started. We usually deliver within 48 hours of receiving all your details; that is our usual time, not a guarantee. Sites stay live for one year (Mini: three months). RSVP data is deleted 90 days after the event.</p>
       </div>
     </div>
   </section>
@@ -675,6 +675,9 @@ var SITE = {
   whatsapp: "",                          // WhatsApp Business number, digits only, e.g. 919876543210
   payLink: "",                           // Razorpay / Instamojo link; empty = we send payment details in chat
   upi: "",                               // your real UPI ID; empty hides the UPI box
+  payApi: "",                            // Razorpay checkout: your deployed Worker URL (see worker/README.md); empty = no pay buttons
+  fullPayPerk: "",                       // optional one-line bonus shown on "Pay in full" (only promise what you will deliver)
+  fullPayPerkBn: "",                     // the same line in Bengali
   foundingLeft: 10, foundingTotal: 10    // update as couples book
 };
 /* ========================================================== */
@@ -753,7 +756,7 @@ var BN = {
   "close.sub": "মাঘ-ফাল্গুনে বিয়ে? ডিসেম্বরে বুক করুন, সময়মতো পাঠান।",
   "close.cta": "বিনামূল্যে নমুনা চাই", "close.pay": "৫০% দিয়ে বুক করুন",
   "pay.h": "কীভাবে বুক করবেন",
-  "pay.terms": "শুরুতে ৫০% অগ্রিম, ডেলিভারির সময় বাকিটা। কাজ শুরু হয়ে গেলে অগ্রিম ফেরত হয় না। সব তথ্য পাওয়ার পর সাধারণত ৪৮ ঘণ্টার মধ্যে ডেলিভারি দিই; এটাই আমাদের সাধারণ সময়, কোনো নিশ্চয়তা নয়। সাইট এক বছর লাইভ থাকে (মিনি: তিন মাস)। অনুষ্ঠানের ৯০ দিন পরে আরএসভিপি-র তথ্য মুছে ফেলা হয়।",
+  "pay.terms": "শুরুতে ৫০% অগ্রিম আর ডেলিভারির সময় বাকিটা, অথবা শুরুতেই পুরোটা দিতে পারেন। কাজ শুরু হয়ে গেলে অগ্রিম ফেরত হয় না। সব তথ্য পাওয়ার পর সাধারণত ৪৮ ঘণ্টার মধ্যে ডেলিভারি দিই; এটাই আমাদের সাধারণ সময়, কোনো নিশ্চয়তা নয়। সাইট এক বছর লাইভ থাকে (মিনি: তিন মাস)। অনুষ্ঠানের ৯০ দিন পরে আরএসভিপি-র তথ্য মুছে ফেলা হয়।",
   "foot.city": "কলকাতা", "foot.r": "বাঙালি বিয়ে ও অনুষ্ঠানের নিমন্ত্রণ-ওয়েবসাইট"
 };
 Object.assign(BN, {
@@ -801,7 +804,9 @@ function bnNum(n) { return String(n).replace(/\d/g, function (d) { return "০�
   function dynamic() {
     var t = UI[lang];
     document.querySelectorAll(".js-wa").forEach(function (a) { a.href = link(a.getAttribute("data-msg")); });
-    document.querySelector(".js-pay").href = SITE.payLink || link("deposit");
+    var payBtn = document.querySelector(".js-pay");
+    if (SITE.payApi) { payBtn.href = "#pay-now"; payBtn.removeAttribute("target"); payBtn.removeAttribute("rel"); }
+    else payBtn.href = SITE.payLink || link("deposit");
     document.querySelectorAll(".js-via").forEach(function (e) { e.textContent = useWa ? t.viaWa : t.via(SITE.instagram); });
     document.querySelectorAll(".js-left").forEach(function (e) { e.textContent = t.left(SITE.foundingLeft, SITE.foundingTotal); });
     var contact = document.querySelector(".js-contact");
@@ -1056,5 +1061,5 @@ function bnNum(n) { return String(n).replace(/\d/g, function (d) { return "০�
   });
 })();
 </script>
-<script src="contact-form.js" data-key="edf0750b-e237-4179-bb66-22ac0040a6c5" defer></script><script src="site-extras.js" defer></script><script src="stats.js" defer></script></body>
+<script src="contact-form.js" data-key="edf0750b-e237-4179-bb66-22ac0040a6c5" defer></script><script src="site-extras.js" defer></script><script src="pay.js" defer></script><script src="stats.js" defer></script></body>
 </html>

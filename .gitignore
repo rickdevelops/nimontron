@@ -1,0 +1,7 @@
+# Secrets: never commit these (this repo is public and served by GitHub Pages)
+.env
+.env.*
+!.env.example
+.dev.vars
+node_modules/
+.wrangler/
