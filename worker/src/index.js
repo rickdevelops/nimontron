@@ -12,7 +12,7 @@ const MIN_PAISE = 100;
 
 /* Rupees. Keep in sync with the packages on the website. */
 const PLANS = Object.freeze({
-  mini: { name: "Mini", price: 5 }, // TEMP TEST PRICE (real price 699). Revert after testing.
+  mini: { name: "Mini", price: 699 },
   starter: { name: "Starter", price: 1499 },
   classic: { name: "Classic", price: 1999 },
   royal: { name: "Royal", price: 7999 },
