@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>You're invited · নিমন্ত্রণ</title>
+<meta property="og:title" content="You're invited 💌 নিমন্ত্রণ">
+<meta property="og:description" content="Open your invitation: date, time and venue in one link.">
+<meta property="og:image" content="https://nimontron.shop/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Galada&family=Marcellus&family=Tiro+Bangla:ital@0;1&family=Figtree:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<!--
+  Nimontron free invite (v1). The whole invitation lives in the link itself (?d=...), nothing is stored on a server.
+  Links are made by free-invitation-maker.html. Text is shown as plain text only; no HTML or custom links are accepted.
+-->
+<style>
+  :root { --bg:#FBF3E4; --card:#FFFDF8; --ink:#2A1418; --soft:#7A5F63; --accent:#B3202A; --gold:#C8932E; --line:#EADBBE; --btn:#B3202A; --btn-ink:#fff; }
+  body[data-style="2"] { --bg:#1A0A10; --card:#2B0E18; --ink:#FBF3E4; --soft:#D9C3B0; --accent:#F0C36B; --gold:#E9B65A; --line:#5A2A35; --btn:#E9B65A; --btn-ink:#2A1305; }
+  body[data-style="3"] { --bg:#FFF4C9; --card:#FFFBEA; --ink:#3A2A05; --soft:#7A6420; --accent:#C2560C; --gold:#E0A100; --line:#F1DB8A; --btn:#C2560C; --btn-ink:#fff; }
+  body[data-style="4"] { --bg:#F6F7F2; --card:#FFFFFF; --ink:#1F2A24; --soft:#5E6B63; --accent:#2F6B4F; --gold:#8FA998; --line:#DCE3DA; --btn:#1F2A24; --btn-ink:#fff; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--ink); font:400 17px/1.65 Figtree,"Hind Siliguri",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  body.bn { font-family:"Hind Siliguri",Figtree,system-ui,sans-serif; }
+  .page { max-width:560px; margin:0 auto; padding:20px 16px 40px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:28px; padding:36px 24px 30px; text-align:center; position:relative; overflow:hidden; box-shadow:0 30px 60px -40px rgba(60,20,30,.45); }
+  .card::before, .card::after { content:""; position:absolute; left:14px; right:14px; height:1px; background:var(--gold); opacity:.55; }
+  .card::before { top:14px; } .card::after { bottom:14px; }
+  .orn { width:132px; height:132px; margin:0 auto 6px; display:block; }
+  .top { font-family:"Tiro Bangla",Marcellus,serif; color:var(--soft); margin:0 0 6px; font-size:1rem; }
+  .eyebrow { font-family:"Tiro Bangla",Marcellus,serif; color:var(--accent); font-size:1.15rem; letter-spacing:.04em; margin:0 0 10px; }
+  h1 { font-family:Galada,"Tiro Bangla",Marcellus,serif; font-weight:400; font-size:clamp(2.3rem,10vw,3.4rem); line-height:1.2; margin:0; color:var(--accent); overflow-wrap:anywhere; }
+  body.en h1 { font-family:Marcellus,"Tiro Bangla",serif; }
+  h1 .amp { display:block; font-size:.5em; color:var(--gold); margin:2px 0; }
+  .msg { font-family:"Tiro Bangla",Marcellus,serif; font-size:1.06rem; margin:22px auto 0; max-width:30em; white-space:pre-line; overflow-wrap:anywhere; }
+  .div { display:flex; align-items:center; gap:12px; margin:24px auto; max-width:240px; color:var(--gold); }
+  .div::before, .div::after { content:""; flex:1; height:1px; background:currentColor; opacity:.6; }
+  .when { font-family:"Tiro Bangla",Marcellus,serif; font-size:1.3rem; line-height:1.4; margin:0; }
+  .when small { display:block; font-size:.95rem; color:var(--soft); margin-top:2px; }
+  .count { display:inline-block; margin-top:12px; padding:5px 14px; border:1px solid var(--line); border-radius:999px; font-size:.9rem; color:var(--soft); }
+  .where { margin:22px 0 0; }
+  .where b { display:block; font-size:1.15rem; }
+  .where span { color:var(--soft); overflow-wrap:anywhere; }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:22px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:999px; font:600 .95rem/1.2 inherit; text-decoration:none; min-height:46px; }
+  .btn.main { background:var(--btn); color:var(--btn-ink); }
+  .btn.ghost { border:1.5px solid var(--line); color:var(--ink); }
+  .btn svg { width:18px; height:18px; flex:none; }
+  .by { margin:26px 0 0; }
+  .by small { display:block; color:var(--soft); font-size:.85rem; letter-spacing:.06em; }
+  .by span { font-family:"Tiro Bangla",Marcellus,serif; font-size:1.08rem; overflow-wrap:anywhere; }
+  .made { text-align:center; margin:22px 0 0; font-size:.92rem; color:var(--soft); }
+  .made a { color:var(--accent); font-weight:600; text-decoration:none; white-space:nowrap; }
+  .made a.up { display:block; margin-top:6px; font-size:.85rem; font-weight:500; color:var(--soft); text-decoration:underline; white-space:normal; }
+  .sample { text-align:center; font-size:.85rem; color:var(--soft); margin:0 0 12px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .card { animation: rise .7s ease both; }
+    .orn { animation: turn 60s linear infinite; }
+    @keyframes rise { from { opacity:0; transform:translateY(14px); } }
+    @keyframes turn { to { transform:rotate(360deg); } }
+  }
+</style>
+</head>
+<body data-style="1" class="en">
+<div class="page">
+  <p class="sample" id="sample" hidden></p>
+  <main class="card" id="card"></main>
+  <p class="made" id="made"></p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var TYPES = ["biye","boubhat","aiburobhat","gayeholud","annaprashan","birthday","griha","anniversary","other"];
+  var L = {
+    en: { eyebrow: { biye:"Wedding", boubhat:"Bou Bhat & Reception", aiburobhat:"Aiburobhat", gayeholud:"Gaye Holud", annaprashan:"Annaprashan", birthday:"Birthday", griha:"Griha Probesh", anniversary:"Anniversary", other:"You're invited" },
+          and:"&", map:"Open in Google Maps", cal:"Add to calendar", by:"With love from", days:function (n) { return n + (n === 1 ? " day to go" : " days to go"); }, today:"It's today!",
+          made:"Made free with 💌 Nimontron", make:"Make your own free invite →", up:"Want RSVP, a venue map with landmarks and Bangla + English? See nimontron.shop",
+          sample:"This is a sample. Make your own free invitation link below." },
+    bn: { eyebrow: { biye:"শুভ বিবাহ", boubhat:"বৌভাত ও প্রীতিভোজ", aiburobhat:"আইবুড়োভাত", gayeholud:"গায়ে হলুদ", annaprashan:"শুভ অন্নপ্রাশন", birthday:"শুভ জন্মদিন", griha:"গৃহপ্রবেশ", anniversary:"বিবাহবার্ষিকী", other:"সাদর আমন্ত্রণ" },
+          and:"ও", map:"গুগল ম্যাপে খুলুন", cal:"ক্যালেন্ডারে রাখুন", by:"নিবেদক", days:function (n) { return "আর " + bn(n) + " দিন বাকি"; }, today:"আজই সেই দিন!",
+          made:"💌 Nimontron দিয়ে বিনামূল্যে তৈরি", make:"আপনার নিমন্ত্রণও বিনামূল্যে বানান →", up:"আরএসভিপি, ল্যান্ডমার্ক সহ ম্যাপ আর বাংলা + ইংরেজি চান? দেখুন nimontron.shop",
+          sample:"এটি একটি নমুনা। নিচের লিংক থেকে নিজের নিমন্ত্রণ বিনামূল্যে বানিয়ে নিন।" }
+  };
+  /* Default messages, same text as the maker. A link with dm:1 uses these, which keeps links short. */
+  var MSG = {"bn":{"biye":"সবিনয় নিবেদন, এই শুভ বিবাহ অনুষ্ঠানে আপনার সবান্ধব উপস্থিতি ও আশীর্বাদ একান্তভাবে প্রার্থনা করি।","boubhat":"সবিনয় নিবেদন, নবদম্পতিকে আশীর্বাদ করতে বৌভাত ও প্রীতিভোজে আপনার সবান্ধব উপস্থিতি প্রার্থনা করি।","aiburobhat":"বিয়ের আগে শেষ আইবুড়োভাত! আপনাকে ছাড়া এই আনন্দ অসম্পূর্ণ। অবশ্যই আসবেন।","gayeholud":"হলুদের রঙে, গানে আর আনন্দে মেতে উঠতে গায়ে হলুদের অনুষ্ঠানে আপনাকে সাদর আমন্ত্রণ।","annaprashan":"আমাদের আদরের সোনার শুভ অন্নপ্রাশন উপলক্ষে আপনার উপস্থিতি ও আশীর্বাদ প্রার্থনা করি।","birthday":"জন্মদিনের আনন্দ ভাগ করে নিতে আপনাকে সাদর আমন্ত্রণ। অবশ্যই আসবেন।","griha":"আমাদের নতুন বাড়ির গৃহপ্রবেশ অনুষ্ঠানে আপনার সবান্ধব উপস্থিতি ও আশীর্বাদ প্রার্থনা করি।","anniversary":"আমাদের বিবাহবার্ষিকীর আনন্দ-অনুষ্ঠানে আপনাকে সাদর আমন্ত্রণ।","other":"আমাদের এই আনন্দ-অনুষ্ঠানে আপনার উপস্থিতি একান্তভাবে কাম্য।"},"en":{"biye":"With the blessings of our elders, we warmly invite you and your family to the wedding. Your presence and blessings would mean the world to us.","boubhat":"Please join us for the Bou Bhat and reception to bless the newly married couple.","aiburobhat":"One last Aiburobhat before the wedding! It won't be the same without you. Please come.","gayeholud":"Come in yellow, bring your songs. You're warmly invited to the Gaye Holud.","annaprashan":"Please join us and bless our little one at the Annaprashan (first rice ceremony).","birthday":"Come celebrate with us. Cake, food and good company are waiting for you.","griha":"We're moving into our new home. Please join us for the Griha Probesh and bless the new beginning.","anniversary":"Please join us as we celebrate our wedding anniversary.","other":"We would love to have you with us on this happy occasion."}};
+  var SAMPLE = { t:"biye", l:"bn", s:1, a:"দেবলীনা", b:"ঋতম", d:"2027-02-11", h:"19:00", vn:"নবরত্ন ব্যাঙ্কোয়েট", va:"সল্টলেক, কলকাতা",
+    m:"সবিনয় নিবেদন, এই শুভ বিবাহ অনুষ্ঠানে আপনার সবান্ধব উপস্থিতি ও আশীর্বাদ একান্তভাবে প্রার্থনা করি।", by:"চট্টোপাধ্যায় পরিবার", top:"" };
+
+  function bn(s) { return String(s).replace(/[0-9]/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }); }
+  function str(v, max) { return typeof v === "string" ? v.replace(/[\u0000-\u0008\u000b-\u001f]/g, "").trim().slice(0, max) : ""; }
+  function decode(raw) {
+    try {
+      var b64 = raw.replace(/-/g, "+").replace(/_/g, "/"); while (b64.length % 4) b64 += "=";
+      var bin = atob(b64), bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      var o = JSON.parse(new TextDecoder().decode(bytes));
+      return o && typeof o === "object" && !Array.isArray(o) ? o : null;
+    } catch (e) { return null; }
+  }
+  function clean(o) {
+    return {
+      t: TYPES.indexOf(o.t) > -1 ? o.t : "other", l: o.l === "bn" ? "bn" : "en", s: [1,2,3,4].indexOf(+o.s) > -1 ? +o.s : 1,
+      a: str(o.a, 40), b: str(o.b, 40), d: /^\d{4}-\d{2}-\d{2}$/.test(o.d) ? o.d : "", h: /^\d{2}:\d{2}$/.test(o.h) ? o.h : "",
+      vn: str(o.vn, 80), va: str(o.va, 140), m: str(o.m, 420), dm: o.dm === 1, by: str(o.by, 90), bd: str(o.bd, 40), top: str(o.top, 60)
+    };
+  }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function fmtDate(d, lang) {
+    var p = d.split("-"), dt = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (isNaN(dt)) return "";
+    if (lang === "bn") {
+      var wd = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"][dt.getDay()];
+      var mo = ["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"][dt.getMonth()];
+      return wd + ", " + bn(dt.getDate()) + " " + mo + " " + bn(dt.getFullYear());
+    }
+    return dt.toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+  }
+  function fmtTime(h, lang) {
+    var p = h.split(":"), H = +p[0], M = p[1], h12 = H % 12 || 12;
+    if (lang === "bn") {
+      var part = H < 4 ? "রাত" : H < 6 ? "ভোর" : H < 12 ? "সকাল" : H < 15 ? "দুপুর" : H < 18 ? "বিকেল" : H < 20 ? "সন্ধ্যা" : "রাত";
+      return part + " " + bn(h12) + (M === "00" ? "টা" : ":" + bn(M));
+    }
+    return h12 + (M === "00" ? "" : ":" + M) + (H < 12 ? " am" : " pm");
+  }
+  function daysLeft(d) {
+    var p = d.split("-"), ev = new Date(+p[0], +p[1] - 1, +p[2]), now = new Date();
+    return Math.round((ev - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function calLink(c, title) {
+    var d = c.d.replace(/-/g, ""), dates;
+    if (c.h) {
+      var H = +c.h.slice(0, 2), M = c.h.slice(3), end = new Date(+c.d.slice(0, 4), +c.d.slice(5, 7) - 1, +c.d.slice(8, 10), H + 4, +M);
+      dates = d + "T" + pad(H) + M + "00/" + end.getFullYear() + pad(end.getMonth() + 1) + pad(end.getDate()) + "T" + pad(end.getHours()) + pad(end.getMinutes()) + "00";
+    } else {
+      var nx = new Date(+c.d.slice(0, 4), +c.d.slice(5, 7) - 1, +c.d.slice(8, 10) + 1);
+      dates = d + "/" + nx.getFullYear() + pad(nx.getMonth() + 1) + pad(nx.getDate());
+    }
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(title) + "&dates=" + dates +
+      "&ctz=Asia/Kolkata&location=" + encodeURIComponent([c.vn, c.va].filter(Boolean).join(", "));
+  }
+  function ornament() {
+    var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "-60 -60 120 120"); svg.setAttribute("class", "orn"); svg.setAttribute("aria-hidden", "true");
+    [[12, 40, 13, 5, "var(--gold)", .9], [8, 24, 12, 5.5, "var(--accent)", .85]].forEach(function (r) {
+      for (var i = 0; i < r[0]; i++) {
+        var e = document.createElementNS(ns, "ellipse");
+        e.setAttribute("cx", 0); e.setAttribute("cy", -r[1]); e.setAttribute("rx", r[3]); e.setAttribute("ry", r[2]);
+        e.setAttribute("fill", r[4]); e.setAttribute("opacity", r[5]); e.setAttribute("transform", "rotate(" + (360 / r[0] * i) + ")");
+        svg.appendChild(e);
+      }
+    });
+    var c = document.createElementNS(ns, "circle"); c.setAttribute("r", 9); c.setAttribute("fill", "var(--gold)"); svg.appendChild(c);
+    return svg;
+  }
+  function icon(d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>'; }
+
+  var q = new URLSearchParams(location.search), raw = q.get("d"), data = raw ? decode(raw) : null, isSample = !data;
+  var c = clean(data || SAMPLE), t = L[c.l];
+  if (c.dm && !c.m) c.m = MSG[c.l][c.t] || "";
+  if (!c.a) { c = clean(SAMPLE); t = L[c.l]; isSample = true; }
+
+  document.documentElement.lang = c.l;
+  document.body.className = c.l;
+  document.body.setAttribute("data-style", c.s);
+  var names = c.b ? c.a + " " + t.and + " " + c.b : c.a, eyebrow = t.eyebrow[c.t];
+  document.title = names + " · " + eyebrow;
+
+  var card = document.getElementById("card");
+  card.appendChild(ornament());
+  if (c.top) card.appendChild(el("p", "top", c.top));
+  card.appendChild(el("p", "eyebrow", eyebrow));
+  var h1 = el("h1");
+  h1.appendChild(el("span", "", c.a));
+  if (c.b) { h1.appendChild(el("span", "amp", t.and)); h1.appendChild(el("span", "", c.b)); }
+  card.appendChild(h1);
+  if (c.m) card.appendChild(el("p", "msg", c.m));
+  if (c.d) {
+    card.appendChild(el("div", "div", "✦"));
+    var when = el("p", "when", fmtDate(c.d, c.l));
+    var sub = [c.h ? fmtTime(c.h, c.l) : "", c.bd].filter(Boolean).join(" · ");
+    if (sub) when.appendChild(el("small", "", sub));
+    card.appendChild(when);
+    var left = daysLeft(c.d);
+    if (left >= 0 && left < 400) card.appendChild(el("span", "count", left === 0 ? t.today : t.days(left)));
+  }
+  if (c.vn || c.va) {
+    var where = el("p", "where");
+    if (c.vn) where.appendChild(el("b", "", c.vn));
+    if (c.va) where.appendChild(el("span", "", c.va));
+    card.appendChild(where);
+  }
+  var btns = el("div", "btns");
+  if (c.vn || c.va) {
+    var m = el("a", "btn main"); m.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([c.vn, c.va].filter(Boolean).join(", "));
+    m.target = "_blank"; m.rel = "noopener"; m.innerHTML = icon("M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"); m.appendChild(document.createTextNode(t.map));
+    btns.appendChild(m);
+  }
+  if (c.d) {
+    var k = el("a", "btn ghost"); k.href = calLink(c, names + " · " + eyebrow); k.target = "_blank"; k.rel = "noopener";
+    k.innerHTML = icon("M7 3v4M17 3v4M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"); k.appendChild(document.createTextNode(t.cal));
+    btns.appendChild(k);
+  }
+  if (btns.children.length) card.appendChild(btns);
+  if (c.by) { var by = el("p", "by"); by.appendChild(el("small", "", t.by)); by.appendChild(el("span", "", c.by)); card.appendChild(by); }
+
+  var made = document.getElementById("made");
+  made.appendChild(document.createTextNode(t.made + " · "));
+  var mk = el("a", "", t.make); mk.href = "free-invitation-maker.html?ref=" + (isSample ? "sample-invite" : "guest-invite") + "&l=" + c.l; made.appendChild(mk);
+  var up = el("a", "up", t.up); up.href = "index.html?ref=" + (isSample ? "sample-invite" : "guest-invite") + "&lang=" + c.l; made.appendChild(up);
+  if (isSample) { var s = document.getElementById("sample"); s.textContent = t.sample; s.hidden = false; }
+})();
+</script>
+<script src="stats.js" defer></script>
+</body>
+</html>
